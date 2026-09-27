@@ -1,0 +1,1276 @@
+[
+  {
+    "index": 0,
+    "name": "Cascadia Healthcare",
+    "addr": "2205 E Riverside Dr Suite 100, Eagle, ID 83616",
+    "city": "Boise",
+    "state": "ID",
+    "type": "corporate",
+    "verified": true,
+    "issues": [
+      "City listed as 'Boise' but address is in Eagle, ID -- should be Eagle"
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "correct_city": "Eagle",
+    "source": "Confirmed via cascadiahc.com contact page and footer: '2205 E Riverside Dr Suite 100, Eagle, ID 83616'. Phone: (208) 401-9600."
+  },
+  {
+    "index": 1,
+    "name": "Envision Healthcare",
+    "addr": "2205 E Riverside Dr, Eagle, ID 83616",
+    "city": "Boise",
+    "state": "ID",
+    "type": "healthcare",
+    "verified": true,
+    "issues": [
+      "City listed as 'Boise' but address is in Eagle, ID",
+      "Suite 100 missing from address",
+      "Envision Healthcare is a Cascadia sister/subsidiary company sharing the corporate HQ address -- cannot independently verify this entity has its own office at this address vs being a legal entity registered here"
+    ],
+    "correct_name": null,
+    "correct_addr": "2205 E Riverside Dr Suite 100, Eagle, ID 83616",
+    "correct_city": "Eagle",
+    "source": "Address confirmed as Cascadia corporate HQ. Envision Healthcare is a known Cascadia-affiliated entity sharing the HQ address."
+  },
+  {
+    "index": 2,
+    "name": "Northern Healthcare",
+    "addr": "2205 E Riverside Dr, Eagle, ID 83616",
+    "city": "Boise",
+    "state": "ID",
+    "type": "healthcare",
+    "verified": true,
+    "issues": [
+      "City listed as 'Boise' but address is in Eagle, ID",
+      "Suite 100 missing from address",
+      "Northern Healthcare is a Cascadia sister/subsidiary company sharing the corporate HQ address"
+    ],
+    "correct_name": null,
+    "correct_addr": "2205 E Riverside Dr Suite 100, Eagle, ID 83616",
+    "correct_city": "Eagle",
+    "source": "Address confirmed as Cascadia corporate HQ. Northern Healthcare is a Cascadia-affiliated entity."
+  },
+  {
+    "index": 3,
+    "name": "Three Rivers Healthcare",
+    "addr": "2205 E Riverside Dr, Eagle, ID 83616",
+    "city": "Boise",
+    "state": "ID",
+    "type": "healthcare",
+    "verified": true,
+    "issues": [
+      "City listed as 'Boise' but address is in Eagle, ID",
+      "Suite 100 missing from address",
+      "Three Rivers Healthcare is a Cascadia sister/subsidiary company sharing the corporate HQ address"
+    ],
+    "correct_name": null,
+    "correct_addr": "2205 E Riverside Dr Suite 100, Eagle, ID 83616",
+    "correct_city": "Eagle",
+    "source": "Address confirmed as Cascadia corporate HQ. Three Rivers Healthcare is a Cascadia-affiliated entity."
+  },
+  {
+    "index": 4,
+    "name": "Avencare Health",
+    "addr": "2205 E Riverside Dr, Eagle, ID 83616",
+    "city": "Boise",
+    "state": "ID",
+    "type": "healthcare",
+    "verified": true,
+    "issues": [
+      "City listed as 'Boise' but address is in Eagle, ID",
+      "Suite 100 missing from address",
+      "Avencare Health is a Cascadia sister/subsidiary company sharing the corporate HQ address"
+    ],
+    "correct_name": null,
+    "correct_addr": "2205 E Riverside Dr Suite 100, Eagle, ID 83616",
+    "correct_city": "Eagle",
+    "source": "Address confirmed as Cascadia corporate HQ. Avencare Health is a Cascadia-affiliated entity."
+  },
+  {
+    "index": 5,
+    "name": "Aspen Park of Cascadia",
+    "addr": "720 N Eisenhower St, Moscow, ID 83843",
+    "city": "Moscow",
+    "state": "ID",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show Aspen Park of Cascadia at 420 Rowe Street, Moscow, ID 83843 (CCN: 135093). JSON has 720 N Eisenhower St which is actually the address area for Paradise Creek facilities."
+    ],
+    "correct_name": null,
+    "correct_addr": "420 Rowe Street, Moscow, ID 83843",
+    "source": "CMS Provider Data Aug 2026 (CCN: 135093, Legal: MOSCOW OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE)"
+  },
+  {
+    "index": 6,
+    "name": "Cascadia of Boise",
+    "addr": "6000 W Denton St, Boise, ID 83704",
+    "city": "Boise",
+    "state": "ID",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 135146, Legal: BOISE OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE). Address matches: 6000 W Denton St, Boise, ID 83704."
+  },
+  {
+    "index": 7,
+    "name": "Royal Plaza Health and Rehabilitation of Cascadia",
+    "addr": "2930 Juniper Dr, Lewiston, ID 83501",
+    "city": "Lewiston",
+    "state": "ID",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show Royal Plaza at 2870 Juniper Drive, Lewiston, ID 83501. JSON has 2930 Juniper Dr -- close but incorrect street number."
+    ],
+    "correct_name": null,
+    "correct_addr": "2870 Juniper Drive, Lewiston, ID 83501",
+    "source": "CMS Provider Data Aug 2026 (CCN: 135116, Legal: LEWISTON CENTER OF CASCADIA, LLC, Chain: CASCADIA HEALTHCARE)"
+  },
+  {
+    "index": 8,
+    "name": "Royal Plaza of Olympus Living - ALF",
+    "addr": "2930 Juniper Dr, Lewiston, ID 83501",
+    "city": "Lewiston",
+    "state": "ID",
+    "type": "alf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: Same address error as entry 7. CMS shows Royal Plaza SNF at 2870 Juniper Drive. The ALF component would be at or near the same campus. Should be 2870, not 2930."
+    ],
+    "correct_name": null,
+    "correct_addr": "2870 Juniper Drive, Lewiston, ID 83501",
+    "source": "CMS data for SNF portion at 2870 Juniper Dr. ALF not in CMS nursing home data but shares campus."
+  },
+  {
+    "index": 9,
+    "name": "Shaw Mountain of Cascadia",
+    "addr": "3901 W Shaw Mountain Rd, Boise, ID 83703",
+    "city": "Boise",
+    "state": "ID",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show Shaw Mountain of Cascadia at 909 Reserve Street, Boise, ID 83712. JSON has 3901 W Shaw Mountain Rd, Boise, ID 83703 -- completely different street and zip code."
+    ],
+    "correct_name": null,
+    "correct_addr": "909 Reserve Street, Boise, ID 83712",
+    "source": "CMS Provider Data Aug 2026 (CCN: 135090, Legal: SHAW MOUNTAIN OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE)"
+  },
+  {
+    "index": 10,
+    "name": "Meadow View Assisted Living",
+    "addr": "3901 W Shaw Mountain Rd, Boise, ID 83703",
+    "city": "Boise",
+    "state": "ID",
+    "type": "alf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: Shares same wrong address as Shaw Mountain (entry 9). CMS shows Shaw Mountain campus at 909 Reserve Street, Boise, ID 83712. Also NOTE: CMS has a 'Meadow View Nursing and Rehabilitation' at 46 N Midland Blvd, Nampa, ID 83651 (Ensign Group, NOT Cascadia). This may be a different facility entirely or a Cascadia ALF co-located with Shaw Mountain."
+    ],
+    "correct_name": null,
+    "correct_addr": "909 Reserve Street, Boise, ID 83712",
+    "source": "CMS data shows Shaw Mountain campus at 909 Reserve St. Meadow View Nursing (Ensign Group) is at different address in Nampa. Verify whether this is a Cascadia ALF at the Shaw Mountain campus."
+  },
+  {
+    "index": 11,
+    "name": "Arbor Valley of Cascadia",
+    "addr": "6108 W Fairview Ave, Boise, ID 83704",
+    "city": "Boise",
+    "state": "ID",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show Arbor Valley of Cascadia at 8211 Ustick Road, Boise, ID 83704. JSON has 6108 W Fairview Ave -- completely different street."
+    ],
+    "correct_name": null,
+    "correct_addr": "8211 Ustick Road, Boise, ID 83704",
+    "source": "CMS Provider Data Aug 2026 (CCN: 135079, Legal: BOISE WEST OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE)"
+  },
+  {
+    "index": 12,
+    "name": "Caldwell of Cascadia",
+    "addr": "216 S Kimball Ave, Caldwell, ID 83605",
+    "city": "Caldwell",
+    "state": "ID",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show 'Caldwell Care of Cascadia' at 210 Cleveland Boulevard, Caldwell, ID 83605. JSON has 216 S Kimball Ave. Also name slightly different -- CMS uses 'Caldwell Care of Cascadia'."
+    ],
+    "correct_name": "Caldwell Care of Cascadia",
+    "correct_addr": "210 Cleveland Boulevard, Caldwell, ID 83605",
+    "source": "CMS Provider Data Aug 2026 (CCN: 135014, Legal: CALDWELL OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE)"
+  },
+  {
+    "index": 13,
+    "name": "Canyon West of Cascadia",
+    "addr": "512 S Kimball Ave, Caldwell, ID 83605",
+    "city": "Caldwell",
+    "state": "ID",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show Canyon West of Cascadia at 2814 South Indiana Avenue, Caldwell, ID 83605. JSON has 512 S Kimball Ave."
+    ],
+    "correct_name": null,
+    "correct_addr": "2814 South Indiana Avenue, Caldwell, ID 83605",
+    "source": "CMS Provider Data Aug 2026 (CCN: 135051, Legal: CANYON WEST OF CASCADIA, LLC, Chain: CASCADIA HEALTHCARE)"
+  },
+  {
+    "index": 14,
+    "name": "Cascadia of Nampa",
+    "addr": "907 12th Ave S, Nampa, ID 83651",
+    "city": "Nampa",
+    "state": "ID",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show Cascadia of Nampa at 900 N Happy Valley Rd, Nampa, ID 83687. JSON has 907 12th Ave S, Nampa, ID 83651 -- completely different address and zip."
+    ],
+    "correct_name": null,
+    "correct_addr": "900 N Happy Valley Rd, Nampa, ID 83687",
+    "source": "CMS Provider Data Aug 2026 (CCN: 135144, Legal: NAMPA OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE)"
+  },
+  {
+    "index": 15,
+    "name": "Cascadia of Lewiston",
+    "addr": "3315 8th St, Lewiston, ID 83501",
+    "city": "Lewiston",
+    "state": "ID",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show Cascadia of Lewiston at 2852 Juniper Drive, Lewiston, ID 83501. JSON has 3315 8th St, which is actually the address for 'Lewiston Transitional Care of Cascadia' (a different Cascadia facility). Address is swapped with another facility."
+    ],
+    "correct_name": null,
+    "correct_addr": "2852 Juniper Drive, Lewiston, ID 83501",
+    "source": "CMS Provider Data Aug 2026 (CCN: 135145, Legal: LEWISTON NORTH OF CASCADIA, LLC, Chain: CASCADIA HEALTHCARE). Note: 3315 8th St is the CMS address for Lewiston Transitional Care (CCN: 135021)."
+  },
+  {
+    "index": 16,
+    "name": "The Orchards of Cascadia",
+    "addr": "1515 9th Ave S, Nampa, ID 83651",
+    "city": "Nampa",
+    "state": "ID",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show 'Orchards of Cascadia, The' at 404 North Horton Street, Nampa, ID 83651. JSON has 1515 9th Ave S."
+    ],
+    "correct_name": null,
+    "correct_addr": "404 North Horton Street, Nampa, ID 83651",
+    "source": "CMS Provider Data Aug 2026 (CCN: 135019, Legal: NAMPA WEST OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE)"
+  },
+  {
+    "index": 17,
+    "name": "Cherry Ridge of Cascadia",
+    "addr": "520 N Hayes Ave, Emmett, ID 83617",
+    "city": "Emmett",
+    "state": "ID",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show Cherry Ridge of Cascadia at 501 West Idaho Boulevard, Emmett, ID 83617. JSON has 520 N Hayes Ave."
+    ],
+    "correct_name": null,
+    "correct_addr": "501 West Idaho Boulevard, Emmett, ID 83617",
+    "source": "CMS Provider Data Aug 2026 (CCN: 135095, Legal: EMMETT OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE)"
+  },
+  {
+    "index": 18,
+    "name": "Eagle Rock Health and Rehabilitation of Cascadia",
+    "addr": "380 Castle Dr, Idaho Falls, ID 83401",
+    "city": "Idaho Falls",
+    "state": "ID",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show Eagle Rock at 840 East Elva Street, Idaho Falls, ID 83401. JSON has 380 Castle Dr."
+    ],
+    "correct_name": null,
+    "correct_addr": "840 East Elva Street, Idaho Falls, ID 83401",
+    "source": "CMS Provider Data Aug 2026 (CCN: 135092, Legal: IDAHO FALLS NORTH OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE)"
+  },
+  {
+    "index": 19,
+    "name": "Paradise Creek Health and Rehabilitation of Cascadia",
+    "addr": "640 N Eisenhower St, Moscow, ID 83843",
+    "city": "Moscow",
+    "state": "ID",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 135067, Legal: MOSCOW NORTH OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE). Address matches: 640 North Eisenhower Street, Moscow, ID 83843."
+  },
+  {
+    "index": 20,
+    "name": "Paradise Creek of Olympus Retirement Living",
+    "addr": "640 N Eisenhower St, Moscow, ID 83843",
+    "city": "Moscow",
+    "state": "ID",
+    "type": "alf",
+    "verified": true,
+    "issues": [
+      "ALF not in CMS nursing home data, but address co-located with confirmed Paradise Creek SNF campus at 640 N Eisenhower."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "Address confirmed via CMS data for SNF at same address. ALF component shares campus."
+  },
+  {
+    "index": 21,
+    "name": "Paradise Creek Fairview Estates of Olympus Retirement",
+    "addr": "640 N Eisenhower St, Moscow, ID 83843",
+    "city": "Moscow",
+    "state": "ID",
+    "type": "ilf",
+    "verified": true,
+    "issues": [
+      "ILF not in CMS nursing home data, but address co-located with confirmed Paradise Creek SNF campus at 640 N Eisenhower."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "Address confirmed via CMS data for SNF at same address. ILF component shares campus."
+  },
+  {
+    "index": 22,
+    "name": "Clearwater Health & Rehabilitation of Cascadia",
+    "addr": "1204 Shriver Rd, Orofino, ID 83544",
+    "city": "Orofino",
+    "state": "ID",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 135048, Legal: CLEARWATER OF CASCADIA). Address matches: 1204 Shriver Road, Orofino, ID 83544."
+  },
+  {
+    "index": 23,
+    "name": "Coeur d'Alene Health and Rehabilitation of Cascadia",
+    "addr": "2514 N 7th St, Coeur d'Alene, ID 83814",
+    "city": "Coeur d'Alene",
+    "state": "ID",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 135052, Provider: 'Coeur d Alene Health of Cascadia', Address: 2514 North Seventh Street, Coeur d'Alene, ID 83814). Address matches."
+  },
+  {
+    "index": 24,
+    "name": "Grangeville Health and Rehabilitation of Cascadia",
+    "addr": "410 N East 2nd St, Grangeville, ID 83530",
+    "city": "Grangeville",
+    "state": "ID",
+    "type": "snf",
+    "verified": true,
+    "issues": [
+      "Minor address format difference: CMS uses '410 East North Second Street' vs JSON '410 N East 2nd St'. Same physical location."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 135080, Legal: GRANGEVILLE OF CASCADIA, LLC). Address matches (format variation only)."
+  },
+  {
+    "index": 25,
+    "name": "Mountain Valley of Cascadia",
+    "addr": "501 W Cameron Ave, Kellogg, ID 83837",
+    "city": "Kellogg",
+    "state": "ID",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG STREET NUMBER: CMS records show Mountain Valley of Cascadia at 601 West Cameron Avenue, Kellogg, ID 83837. JSON has 501 W Cameron Ave -- off by 100."
+    ],
+    "correct_name": null,
+    "correct_addr": "601 West Cameron Avenue, Kellogg, ID 83837",
+    "source": "CMS Provider Data Aug 2026 (CCN: 135065, Legal: KELLOG OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE)"
+  },
+  {
+    "index": 26,
+    "name": "Payette Healthcare of Cascadia",
+    "addr": "616 N 7th St, Payette, ID 83661",
+    "city": "Payette",
+    "state": "ID",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show Payette Healthcare of Cascadia at 1019 Third Avenue South, Payette, ID 83661. JSON has 616 N 7th St."
+    ],
+    "correct_name": null,
+    "correct_addr": "1019 Third Avenue South, Payette, ID 83661",
+    "source": "CMS Provider Data Aug 2026 (CCN: 135015, Legal: PAYETTE OF CASCADIA, LLC, Chain: CASCADIA HEALTHCARE)"
+  },
+  {
+    "index": 27,
+    "name": "Silverton Health and Rehabilitation of Cascadia",
+    "addr": "405 W 7th St, Silverton, ID 83867",
+    "city": "Silverton",
+    "state": "ID",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 135058, Legal: SILVERTON OF CASCADIA LLC). Address matches: 405 West Seventh Street, Silverton, ID 83867."
+  },
+  {
+    "index": 28,
+    "name": "Teton Healthcare of Cascadia",
+    "addr": "546 Shoup Ave, Idaho Falls, ID 83402",
+    "city": "Idaho Falls",
+    "state": "ID",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show Teton Healthcare of Cascadia at 3111 Channing Way, Idaho Falls, ID 83404. JSON has 546 Shoup Ave, Idaho Falls, ID 83402 -- completely different street and zip."
+    ],
+    "correct_name": null,
+    "correct_addr": "3111 Channing Way, Idaho Falls, ID 83404",
+    "source": "CMS Provider Data Aug 2026 (CCN: 135138, Legal: IDAHO FALLS OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE)"
+  },
+  {
+    "index": 29,
+    "name": "The Cove of Cascadia",
+    "addr": "314 S 3rd St, Bellevue, ID 83313",
+    "city": "Bellevue",
+    "state": "ID",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show 'Cove of Cascadia, The' at 620 North Sixth Street, Bellevue, ID 83313. JSON has 314 S 3rd St."
+    ],
+    "correct_name": null,
+    "correct_addr": "620 North Sixth Street, Bellevue, ID 83313",
+    "source": "CMS Provider Data Aug 2026 (CCN: 135069, Legal: BELLEVUE OF CASCADIA, LLC, Chain: CASCADIA HEALTHCARE)"
+  },
+  {
+    "index": 30,
+    "name": "Village Manor of Cascadia",
+    "addr": "23600 NE Halsey St, Wood Village, OR 97060",
+    "city": "Wood Village",
+    "state": "OR",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show VILLAGE MANOR OF CASCADIA at 2060 NE 238TH DRIVE, Wood Village, OR 97060. JSON has 23600 NE Halsey St. ALSO: This is a DUPLICATE of entry 57."
+    ],
+    "correct_name": null,
+    "correct_addr": "2060 NE 238th Drive, Wood Village, OR 97060",
+    "source": "CMS Provider Data Aug 2026 (CCN: 38E174). Duplicate of entry 57."
+  },
+  {
+    "index": 31,
+    "name": "Weiser Care of Cascadia",
+    "addr": "2005 W Court St, Weiser, ID 83672",
+    "city": "Weiser",
+    "state": "ID",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show Weiser Care of Cascadia at 331 East Park Street, Weiser, ID 83672. JSON has 2005 W Court St."
+    ],
+    "correct_name": null,
+    "correct_addr": "331 East Park Street, Weiser, ID 83672",
+    "source": "CMS Provider Data Aug 2026 (CCN: 135010, Legal: WEISER OF CASCADIA, LLC, Chain: CASCADIA HEALTHCARE)"
+  },
+  {
+    "index": 32,
+    "name": "Twin Falls Transitional Care of Cascadia",
+    "addr": "674 Eastland Dr, Twin Falls, ID 83301",
+    "city": "Twin Falls",
+    "state": "ID",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 135104, Legal: TWIN FALLS OF CASCADIA, LLC). Address matches: 674 Eastland Drive, Twin Falls, ID 83301."
+  },
+  {
+    "index": 33,
+    "name": "Columbia Healthcare",
+    "addr": "1500 SW 1st Ave Suite 800, Portland, OR 97201",
+    "city": "Portland",
+    "state": "OR",
+    "type": "corporate",
+    "verified": true,
+    "issues": [
+      "Cannot independently confirm Columbia Healthcare has offices at this specific address. This appears to be a Cascadia-affiliated corporate entity. 1500 SW 1st Ave is a real office building in downtown Portland (KOIN Center area)."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "Address is a real commercial building in downtown Portland. Columbia Healthcare is a Cascadia-affiliated corporate entity managing Oregon facilities."
+  },
+  {
+    "index": 34,
+    "name": "Gabriel Park Post Acute",
+    "addr": "6400 SW Beaverton Hillsdale Hwy, Portland, OR 97221",
+    "city": "Portland",
+    "state": "OR",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "CANNOT VERIFY: No CMS nursing home record found for 'Gabriel Park Post Acute' at this address. Website gabrielparkpostacute.com shows 'Coming Soon'. This appears to be a new/planned acquisition not yet in CMS data. No existing nursing home at 6400 SW Beaverton Hillsdale Hwy in CMS records. Formerly Marquis Autumn Hills at 6630 SW Beaverton-Hillsdale Hwy is nearby but different address."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "Website shows 'Coming Soon'. Not found in CMS Provider Data. Likely new acquisition or rebranding not yet registered."
+  },
+  {
+    "index": 35,
+    "name": "Beaverton Post Acute of Cascadia",
+    "addr": "13235 SW Canyon Rd, Beaverton, OR 97005",
+    "city": "Beaverton",
+    "state": "OR",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show 'Beaverton Post Acute Care of Cascadia' at 11850 SW Allen Blvd., Beaverton, OR 97005. JSON has 13235 SW Canyon Rd which is a completely different address."
+    ],
+    "correct_name": "Beaverton Post Acute Care of Cascadia",
+    "correct_addr": "11850 SW Allen Blvd, Beaverton, OR 97005",
+    "source": "CMS Provider Data Aug 2026 (CCN: 385195)"
+  },
+  {
+    "index": 36,
+    "name": "Bend Transitional Care",
+    "addr": "900 NE 27th St, Bend, OR 97701",
+    "city": "Bend",
+    "state": "OR",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 385253, Legal: BEND OF CASCADIA, LLC, Chain: CASCADIA HEALTHCARE). Address matches: 900 NE 27TH STREET, BEND, OR 97701."
+  },
+  {
+    "index": 37,
+    "name": "Clackamas Rehabilitation of Cascadia",
+    "addr": "945 Oatfield Rd, Gladstone, OR 97027",
+    "city": "Gladstone",
+    "state": "OR",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS AND LIKELY WRONG NAME: CMS records show 'AVAMERE REHABILITATION OF CLACKAMAS' at 220 E. Hereford, Gladstone, OR 97027 (Chain: AVAMERE). There is no 'Clackamas Rehabilitation of Cascadia' at 945 Oatfield Rd in CMS data. This may be a planned acquisition/rebranding of the Avamere facility, or the address is fabricated."
+    ],
+    "correct_name": null,
+    "correct_addr": "220 E Hereford, Gladstone, OR 97027",
+    "source": "CMS shows Avamere Rehabilitation of Clackamas at 220 E. Hereford (CCN: 385203, Chain: AVAMERE). No Cascadia facility at 945 Oatfield Rd."
+  },
+  {
+    "index": 38,
+    "name": "Coos Bay Rehabilitation of Cascadia",
+    "addr": "900 Virginia Ave, Coos Bay, OR 97420",
+    "city": "Coos Bay",
+    "state": "OR",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: No CMS nursing home at 900 Virginia Ave, Coos Bay. CMS has two SNFs in Coos Bay: Life Care Center (2890 Ocean Blvd) and Avamere Rehabilitation (2625 Koos Bay Blvd). Neither is Cascadia-affiliated. This address may be fabricated or a planned acquisition."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "No CMS nursing home match at 900 Virginia Ave, Coos Bay. No Cascadia-chain facility exists in Coos Bay per CMS data."
+  },
+  {
+    "index": 39,
+    "name": "Creekside Health and Rehabilitation of Cascadia",
+    "addr": "3500 Hilyard St, Eugene, OR 97405",
+    "city": "Eugene",
+    "state": "OR",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 385147, Legal: EUGENE OF CASCADIA, LLC, Chain: CASCADIA HEALTHCARE). Address matches: 3500 Hilyard Street, Eugene, OR 97405."
+  },
+  {
+    "index": 40,
+    "name": "Curry Village Health and Rehabilitation of Cascadia",
+    "addr": "1 Park Ave, Brookings, OR 97415",
+    "city": "Brookings",
+    "state": "OR",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 385165, Legal: BROOKINGS OF CASCADIA, LLC, Chain: CASCADIA HEALTHCARE). Address matches: 1 Park Avenue, Brookings, OR 97415."
+  },
+  {
+    "index": 41,
+    "name": "Eugene Rehabilitation of Cascadia",
+    "addr": "2740 Willamette St, Eugene, OR 97405",
+    "city": "Eugene",
+    "state": "OR",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "CANNOT VERIFY: No CMS nursing home record for 'Eugene Rehabilitation of Cascadia' at 2740 Willamette St. CMS shows 'Avamere Rehabilitation Of Eugene' at 2360 Chambers Street (Chain: AVAMERE). This may be a new/planned acquisition or a fabricated entry."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "Not found in CMS Provider Data at this address. No Cascadia-chain SNF at 2740 Willamette St, Eugene."
+  },
+  {
+    "index": 42,
+    "name": "Village Park Post Acute",
+    "addr": "2750 Willamette St, Eugene, OR 97405",
+    "city": "Eugene",
+    "state": "OR",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "CANNOT VERIFY: No CMS nursing home record for 'Village Park Post Acute' at 2750 Willamette St, Eugene. Website villageparkpostacute.com shows 'Coming Soon'. This appears to be adjacent to entry 41 (2740 Willamette) -- possibly same campus, new acquisition not yet in CMS."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "Website shows 'Coming Soon'. Not found in CMS Provider Data. Likely new acquisition."
+  },
+  {
+    "index": 43,
+    "name": "Fairlawn Health and Rehabilitation of Cascadia",
+    "addr": "3457 NE Division St, Gresham, OR 97030",
+    "city": "Gresham",
+    "state": "OR",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 385133, Legal: GRESHAM OF CASCADIA, LLC, Chain: CASCADIA HEALTHCARE). Address matches: 3457 NE Division Street, Gresham, OR 97030."
+  },
+  {
+    "index": 44,
+    "name": "Fairlawn of Olympus Retirement Living",
+    "addr": "3457 NE Division St, Gresham, OR 97030",
+    "city": "Gresham",
+    "state": "OR",
+    "type": "ilf",
+    "verified": true,
+    "issues": [
+      "ILF not in CMS nursing home data, but co-located with confirmed Fairlawn SNF campus."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "Address confirmed via CMS data for Fairlawn SNF at same address."
+  },
+  {
+    "index": 45,
+    "name": "The Abbey of Olympus Retirement Living",
+    "addr": "3457 NE Division St, Gresham, OR 97030",
+    "city": "Gresham",
+    "state": "OR",
+    "type": "ilf",
+    "verified": true,
+    "issues": [
+      "ILF not in CMS nursing home data. Co-located with Fairlawn SNF campus. May be a wing/building within the larger campus."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "Address confirmed via CMS data for Fairlawn SNF at same address."
+  },
+  {
+    "index": 46,
+    "name": "Hillsboro Post Acute",
+    "addr": "1600 SE Enterprise Cir, Hillsboro, OR 97123",
+    "city": "Hillsboro",
+    "state": "OR",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "CANNOT VERIFY: No CMS nursing home at 1600 SE Enterprise Cir, Hillsboro. CMS has 'Hillsboro Health and Rehabilitation' at 1778 NE Cornell Rd (Evergreen Healthcare Group) and 'Avamere Rehabilitation of Hillsboro' at 650 SE Oak Street. Neither address matches. This may be a new/planned acquisition."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "Not found in CMS Provider Data at this address. No Cascadia-chain SNF in Hillsboro."
+  },
+  {
+    "index": 47,
+    "name": "Junction City Rehabilitation of Cascadia",
+    "addr": "655 6th Ave, Junction City, OR 97448",
+    "city": "Junction City",
+    "state": "OR",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS shows 'Avamere Rehabilitation Of Junction City' at 530 Birch Street, Junction City, OR 97448 (Chain: AVAMERE). No Cascadia facility at 655 6th Ave. This may be a planned acquisition of the Avamere facility, but the address is wrong regardless."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS shows Avamere at 530 Birch Street (CCN: 385229). No Cascadia facility in Junction City per CMS."
+  },
+  {
+    "index": 48,
+    "name": "Keizer Court Post Acute",
+    "addr": "610 Chemawa Rd N, Keizer, OR 97303",
+    "city": "Keizer",
+    "state": "OR",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS shows 'AVAMERE COURT AT KEIZER' at 5210 River Road N., Keizer, OR 97303 (Chain: AVAMERE). JSON has 610 Chemawa Rd N which does not match. Also 'Keizer Nursing and Rehabilitation' at 4062 Arleta Avenue NE (Volare Health) exists in Keizer. Neither matches this address."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS shows Avamere Court at Keizer at 5210 River Road N. No facility at 610 Chemawa Rd N in CMS."
+  },
+  {
+    "index": 49,
+    "name": "King City Rehabilitation",
+    "addr": "16175 SW King Charles Ave, Tigard, OR 97224",
+    "city": "Tigard",
+    "state": "OR",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS shows 'AVAMERE REHABILITATION OF KING CITY' at 16485 SW Pacific Highway, Tigard, OR 97224 (Chain: AVAMERE). JSON has 16175 SW King Charles Ave which is a different address. This may be an adjacent/related address on the same campus or simply wrong."
+    ],
+    "correct_name": null,
+    "correct_addr": "16485 SW Pacific Highway, Tigard, OR 97224",
+    "source": "CMS shows Avamere Rehabilitation of King City at 16485 SW Pacific Hwy (CCN: 385132, Chain: AVAMERE)."
+  },
+  {
+    "index": 50,
+    "name": "Kruse Way Post Acute",
+    "addr": "4550 Carman Dr, Lake Oswego, OR 97035",
+    "city": "Lake Oswego",
+    "state": "OR",
+    "type": "snf",
+    "verified": true,
+    "issues": [
+      "CMS name is 'The PEARL AT KRUSE WAY' (Chain: AVAMERE), not 'Kruse Way Post Acute'. Address matches. This appears to be a rebranding/acquisition from Avamere."
+    ],
+    "correct_name": "The Pearl at Kruse Way",
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 385271, Legal: AVAMERE LAKE OSWEGO OPERATIONS INVESTORS, LLC, Chain: AVAMERE). Address matches: 4550 Carman Drive."
+  },
+  {
+    "index": 51,
+    "name": "Lebanon Rehabilitation of Cascadia",
+    "addr": "350 8th St, Lebanon, OR 97355",
+    "city": "Lebanon",
+    "state": "OR",
+    "type": "snf",
+    "verified": true,
+    "issues": [
+      "CMS name is 'Avamere Rehabilitation Of Lebanon' (Chain: AVAMERE), not 'Lebanon Rehabilitation of Cascadia'. Address matches (350 S. 8th). This appears to be a recent or pending acquisition from Avamere."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 385168, Chain: AVAMERE). Address matches: 350 S. 8th, Lebanon, OR 97355."
+  },
+  {
+    "index": 52,
+    "name": "Newport Rehabilitation of Cascadia",
+    "addr": "835 NE 7th St, Newport, OR 97365",
+    "city": "Newport",
+    "state": "OR",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS shows 'AVAMERE REHABILITATION OF NEWPORT' at 835 SW 11TH STREET, Newport, OR 97365 (Chain: AVAMERE). JSON has 835 NE 7th St -- same street number (835) but wrong street name (NE 7th vs SW 11th)."
+    ],
+    "correct_name": null,
+    "correct_addr": "835 SW 11th Street, Newport, OR 97365",
+    "source": "CMS Provider Data Aug 2026 (CCN: AVAMERE REHABILITATION OF NEWPORT at 835 SW 11th Street)."
+  },
+  {
+    "index": 53,
+    "name": "Oregon City Rehabilitation",
+    "addr": "1400 Division St, Oregon City, OR 97045",
+    "city": "Oregon City",
+    "state": "OR",
+    "type": "snf",
+    "verified": true,
+    "issues": [
+      "CMS name is 'AVAMERE REHABILITATION OF OREGON CITY' (Chain: AVAMERE), not 'Oregon City Rehabilitation'. Address matches: 1400 Division Street. This appears to be a recent or pending acquisition from Avamere."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 385125, Chain: AVAMERE). Address matches: 1400 Division Street, Oregon City, OR 97045."
+  },
+  {
+    "index": 54,
+    "name": "Salem Transitional Care",
+    "addr": "3445 Boone Rd SE, Salem, OR 97317",
+    "city": "Salem",
+    "state": "OR",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 385234, Legal: SALEM OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE). Address matches: 3445 Boone Road SE, Salem, OR 97317."
+  },
+  {
+    "index": 55,
+    "name": "Secora Rehabilitation of Cascadia",
+    "addr": "14040 SE Stark St, Portland, OR 97233",
+    "city": "Portland",
+    "state": "OR",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show SECORA REHABILITATION OF CASCADIA at 10435 SE Cora Street, Portland, OR 97266. JSON has 14040 SE Stark St, Portland, OR 97233 -- completely different street and zip code."
+    ],
+    "correct_name": null,
+    "correct_addr": "10435 SE Cora Street, Portland, OR 97266",
+    "source": "CMS Provider Data Aug 2026 (CCN: 385264, Legal: PORTLAND OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE)"
+  },
+  {
+    "index": 56,
+    "name": "Sunnyside Transitional Care",
+    "addr": "4515 Center St NE, Salem, OR 97301",
+    "city": "Salem",
+    "state": "OR",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show 'AVAMERE TRANSITIONAL CARE AT SUNNYSIDE' at 4515 Sunnyside Road SE, Salem, OR 97302 (Chain: AVAMERE). JSON has 4515 Center St NE, Salem, OR 97301 -- same street number (4515) but wrong street name and zip."
+    ],
+    "correct_name": null,
+    "correct_addr": "4515 Sunnyside Road SE, Salem, OR 97302",
+    "source": "CMS Provider Data Aug 2026 (CCN: 385189, Chain: AVAMERE). Address should be 4515 Sunnyside Road SE."
+  },
+  {
+    "index": 57,
+    "name": "Village Manor of Cascadia (OR)",
+    "addr": "23600 NE Halsey St, Wood Village, OR 97060",
+    "city": "Wood Village",
+    "state": "OR",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "DUPLICATE: This is the same facility as entry 30. Both listed as 'Village Manor of Cascadia' at the same address in Wood Village, OR. ALSO WRONG ADDRESS: CMS shows this facility at 2060 NE 238TH DRIVE, not 23600 NE Halsey St."
+    ],
+    "correct_name": null,
+    "correct_addr": "2060 NE 238th Drive, Wood Village, OR 97060",
+    "source": "CMS Provider Data (CCN: 38E174). DUPLICATE of entry 30."
+  },
+  {
+    "index": 58,
+    "name": "Table Rock Post Acute",
+    "addr": "695 E McAndrews Rd, Medford, OR 97504",
+    "city": "Medford",
+    "state": "OR",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "CANNOT VERIFY: No CMS nursing home record for 'Table Rock Post Acute' at 695 E McAndrews Rd, Medford. Website tablerockpostacute.com shows 'Coming Soon'. No existing SNF at this address in CMS data. This appears to be a new/planned acquisition."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "Website shows 'Coming Soon'. Not found in CMS Provider Data. Likely new acquisition."
+  },
+  {
+    "index": 59,
+    "name": "Three Fountains Post Acute",
+    "addr": "835 Crater Lake Ave, Medford, OR 97504",
+    "city": "Medford",
+    "state": "OR",
+    "type": "snf",
+    "verified": true,
+    "issues": [
+      "CMS name is 'AVAMERE AT THREE FOUNTAINS' (Chain: AVAMERE), not 'Three Fountains Post Acute'. Address matches: 835 Crater Lake Avenue, Medford, OR 97504. This appears to be a recent or pending acquisition from Avamere."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 385126, Legal: WATERFORD OPERATIONS, LLC, Chain: AVAMERE). Address matches."
+  },
+  {
+    "index": 60,
+    "name": "Alderwood Park Health & Rehabilitation",
+    "addr": "2726 Alderwood Ave, Bellingham, WA 98225",
+    "city": "Bellingham",
+    "state": "WA",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 505092, Legal: BELLINGHAM NORTH OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE). Address matches: 2726 Alderwood Avenue, Bellingham, WA 98225."
+  },
+  {
+    "index": 61,
+    "name": "Anacortes Health and Rehab",
+    "addr": "1105 27th St, Anacortes, WA 98221",
+    "city": "Anacortes",
+    "state": "WA",
+    "type": "snf",
+    "verified": true,
+    "issues": [
+      "CMS registered name is 'SOUNDVIEW REHABILITATION AND HEALTH CARE INC', not 'Anacortes Health and Rehab'. The Cascadia website lists this as 'Anacortes Health & Rehabilitation'. Address matches: 1105 27th Street. Facility may have been renamed after acquisition."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026: SOUNDVIEW REHABILITATION at 1105 27th Street, Anacortes, WA 98221. Listed on Cascadia website as 'Anacortes Health & Rehabilitation'."
+  },
+  {
+    "index": 62,
+    "name": "Rosario Assisted Living and Memory Care",
+    "addr": "1105 27th St, Anacortes, WA 98221",
+    "city": "Anacortes",
+    "state": "WA",
+    "type": "alf",
+    "verified": true,
+    "issues": [
+      "ALF not in CMS nursing home data. Co-located with Anacortes Health and Rehab SNF campus at 1105 27th St."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "Address confirmed via CMS data for SNF at same address. ALF component shares campus."
+  },
+  {
+    "index": 63,
+    "name": "Brookfield Health & Rehabilitation of Cascadia",
+    "addr": "510 N Parkway Ave, Battle Ground, WA 98604",
+    "city": "Battle Ground",
+    "state": "WA",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 505331, Legal: BATTLEGROUND OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE). Address matches: 510 North Parkway, Battle Ground, WA 98604."
+  },
+  {
+    "index": 64,
+    "name": "Cascade Park Rehabilitation",
+    "addr": "12300 SE Mill Plain Blvd, Vancouver, WA 98684",
+    "city": "Vancouver",
+    "state": "WA",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS shows 'AVAMERE REHABILITATION OF CASCADE PARK' at 801 Southeast Park Crest Avenue, Vancouver, WA 98683 (Chain: AVAMERE). JSON has 12300 SE Mill Plain Blvd, Vancouver, WA 98684 -- completely different address. No CMS nursing home at 12300 SE Mill Plain Blvd."
+    ],
+    "correct_name": null,
+    "correct_addr": "801 Southeast Park Crest Avenue, Vancouver, WA 98683",
+    "source": "CMS Provider Data Aug 2026 (CCN: 505389, Chain: AVAMERE). No SNF at 12300 SE Mill Plain Blvd."
+  },
+  {
+    "index": 65,
+    "name": "Hudson Bay Health & Rehabilitation",
+    "addr": "8507 NE 8th Way, Vancouver, WA 98664",
+    "city": "Vancouver",
+    "state": "WA",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 505260, Legal: FORT VANCOUVER OF CASCADIA, LLC, Chain: CASCADIA HEALTHCARE). Address matches: 8507 Northeast 8th Way, Vancouver, WA 98664."
+  },
+  {
+    "index": 66,
+    "name": "Clarkston Health and Rehabilitation of Cascadia",
+    "addr": "1242 11th St, Clarkston, WA 99403",
+    "city": "Clarkston",
+    "state": "WA",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 505283, Legal: CLARKSTON OF CASCADIA, LLC, Chain: CASCADIA HEALTHCARE). Address matches: 1242 Eleventh Street, Clarkston, WA 99403."
+  },
+  {
+    "index": 67,
+    "name": "Colfax Health and Rehabilitation of Cascadia",
+    "addr": "1150 W Fairview St, Colfax, WA 99111",
+    "city": "Colfax",
+    "state": "WA",
+    "type": "snf",
+    "verified": true,
+    "issues": [
+      "Minor address format: CMS uses 'West Fairview Road' vs JSON 'W Fairview St'. Same location."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 505251, Legal: COLFAX OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE). Address matches: 1150 West Fairview Road."
+  },
+  {
+    "index": 68,
+    "name": "Colville Health & Rehabilitation of Cascadia",
+    "addr": "1000 E Elep Ave, Colville, WA 99114",
+    "city": "Colville",
+    "state": "WA",
+    "type": "snf",
+    "verified": true,
+    "issues": [
+      "Minor address format: CMS uses 'East Elep Street' vs JSON 'E Elep Ave'. Same location."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 505275, Legal: COLVILLE OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE). Address matches: 1000 East Elep Street."
+  },
+  {
+    "index": 69,
+    "name": "Cypress Assisted Living",
+    "addr": "17121 E 8th Ave, Spokane Valley, WA 99016",
+    "city": "Spokane Valley",
+    "state": "WA",
+    "type": "alf",
+    "verified": true,
+    "issues": [
+      "ALF not in CMS nursing home data. Co-located with Spokane Valley Health and Rehabilitation SNF campus at 17121 E 8th Ave."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "Address confirmed via CMS data for Spokane Valley H&R SNF at same address."
+  },
+  {
+    "index": 70,
+    "name": "Olympus Living at Spokane Valley",
+    "addr": "17121 E 8th Ave, Spokane Valley, WA 99016",
+    "city": "Spokane Valley",
+    "state": "WA",
+    "type": "alf",
+    "verified": true,
+    "issues": [
+      "ALF not in CMS nursing home data. Co-located with Spokane Valley campus."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "Address confirmed via CMS data for Spokane Valley H&R SNF at same address."
+  },
+  {
+    "index": 71,
+    "name": "Olympus Retirement Living",
+    "addr": "17121 E 8th Ave, Spokane Valley, WA 99016",
+    "city": "Spokane Valley",
+    "state": "WA",
+    "type": "ilf",
+    "verified": true,
+    "issues": [
+      "ILF not in CMS nursing home data. Co-located with Spokane Valley campus."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "Address confirmed via CMS data for Spokane Valley H&R SNF at same address."
+  },
+  {
+    "index": 72,
+    "name": "Spokane Valley Health and Rehabilitation of Cascadia",
+    "addr": "17121 E 8th Ave, Spokane Valley, WA 99016",
+    "city": "Spokane Valley",
+    "state": "WA",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 505099, Legal: SPOKANE OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE). Address matches: East 17121 Eighth Avenue, Spokane Valley, WA 99016."
+  },
+  {
+    "index": 73,
+    "name": "Highland Health & Rehabilitation of Cascadia",
+    "addr": "2400 Samish Way, Bellingham, WA 98229",
+    "city": "Bellingham",
+    "state": "WA",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 505140, Legal: BELLINGHAM SOUTH OF CASCADIA, LLC, Chain: CASCADIA HEALTHCARE). Address matches: 2400 Samish Way, Bellingham, WA 98229."
+  },
+  {
+    "index": 74,
+    "name": "Stafholt Health and Rehabilitation of Cascadia",
+    "addr": "456 C St, Blaine, WA 98230",
+    "city": "Blaine",
+    "state": "WA",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 505395, Legal: BLAINE OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE). Address matches: 456 C Street, Blaine, WA 98230."
+  },
+  {
+    "index": 75,
+    "name": "Pacific Ridge Post Acute",
+    "addr": "8225 S Park Ave, Tacoma, WA 98408",
+    "city": "Tacoma",
+    "state": "WA",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS shows 'AVAMERE AT PACIFIC RIDGE' at 3625 East B Street, Tacoma, WA 98404 (Chain: AVAMERE). JSON has 8225 S Park Ave, Tacoma, WA 98408 -- completely different address. This may be a planned acquisition with wrong address, or a different facility."
+    ],
+    "correct_name": null,
+    "correct_addr": "3625 East B Street, Tacoma, WA 98404",
+    "source": "CMS Provider Data Aug 2026 (CCN: 505264, Chain: AVAMERE). No SNF at 8225 S Park Ave in CMS."
+  },
+  {
+    "index": 76,
+    "name": "Puget Sound Health and Rehabilitation",
+    "addr": "8301 S Park Ave, Tacoma, WA 98408",
+    "city": "Tacoma",
+    "state": "WA",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS shows 'AVAMERE TRANSITIONAL CARE OF PUGET SOUND' at 630 South Pearl Street, Tacoma, WA 98465 (Chain: AVAMERE). JSON has 8301 S Park Ave, WA 98408 -- completely different address. No CMS SNF at 8301 S Park Ave."
+    ],
+    "correct_name": null,
+    "correct_addr": "630 South Pearl Street, Tacoma, WA 98465",
+    "source": "CMS Provider Data Aug 2026 (CCN: 505529, Chain: AVAMERE). No SNF at 8301 S Park Ave."
+  },
+  {
+    "index": 77,
+    "name": "Queen Anne Post Acute",
+    "addr": "2717 Dexter Ave N, Seattle, WA 98109",
+    "city": "Seattle",
+    "state": "WA",
+    "type": "snf",
+    "verified": true,
+    "issues": [
+      "CMS registered name is 'QUEEN ANNE HEALTHCARE' (Chain: AVAMERE), not 'Queen Anne Post Acute'. Address matches. This appears to be a recent or pending acquisition/rebranding from Avamere."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 505204, Legal: SEATTLE OPERATIONS LLC, Chain: AVAMERE). Address matches: 2717 Dexter Avenue North, Seattle, WA 98109."
+  },
+  {
+    "index": 78,
+    "name": "Richmond Beach Rehabilitation",
+    "addr": "19235 15th Ave NW, Shoreline, WA 98177",
+    "city": "Shoreline",
+    "state": "WA",
+    "type": "snf",
+    "verified": true,
+    "issues": [
+      "CMS registered name is 'Richmond Beach Rehab' (Chain: AVAMERE), not 'Richmond Beach Rehabilitation'. Address matches."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 505488, Legal: RICHMOND BEACH REHAB LLC, Chain: AVAMERE). Address matches: 19235 15th Avenue Northwest, Shoreline, WA 98177."
+  },
+  {
+    "index": 79,
+    "name": "Sequim Rehabilitation",
+    "addr": "835 W Hendrickson Rd, Sequim, WA 98382",
+    "city": "Sequim",
+    "state": "WA",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS has two SNFs in Sequim: 'SEQUIM BAY POST ACUTE' at 650 W Hemlock St (Kalesta Healthcare) and 'AVAMERE OLYMPIC REHABILITATION OF SEQUIM' at 1000 5th Avenue South (Avamere). Neither is at 835 W Hendrickson Rd. No CMS SNF at this address."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "No CMS SNF at 835 W Hendrickson Rd, Sequim. Two existing Sequim SNFs are at different addresses."
+  },
+  {
+    "index": 80,
+    "name": "Snohomish Health and Rehabilitation of Cascadia",
+    "addr": "800 10th St, Snohomish, WA 98290",
+    "city": "Snohomish",
+    "state": "WA",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 505338, Legal: SNOHOMISH OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE). Address matches: 800 10th Street, Snohomish, WA 98290."
+  },
+  {
+    "index": 81,
+    "name": "Libby Care Center of Cascadia",
+    "addr": "308 E 2nd St, Libby, MT 59923",
+    "city": "Libby",
+    "state": "MT",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG STREET: CMS records show 'LIBBY CARE CENTER' at 308 E Third St, Libby, MT 59923 (Chain: CASCADIA HEALTHCARE). JSON has 308 E 2nd St -- same number but wrong street name (2nd vs Third). Also JSON name includes 'of Cascadia' which CMS does not use."
+    ],
+    "correct_name": "Libby Care Center",
+    "correct_addr": "308 E Third St, Libby, MT 59923",
+    "source": "CMS Provider Data Aug 2026 (CCN: 275040, Legal: LIBBY OF CASCADIA, Chain: CASCADIA HEALTHCARE)"
+  },
+  {
+    "index": 82,
+    "name": "Mount Ascension Transitional Care of Cascadia",
+    "addr": "2475 Winne Ave, Helena, MT 59601",
+    "city": "Helena",
+    "state": "MT",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 275044, Legal: HELENA EAST OF CASCADIA, LLC, Chain: CASCADIA HEALTHCARE). Address matches: 2475 Winne Ave, Helena, MT 59601."
+  },
+  {
+    "index": 83,
+    "name": "Mountain View of Cascadia",
+    "addr": "10 Mountain View Dr, Eureka, MT 59917",
+    "city": "Eureka",
+    "state": "MT",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 275084, Legal: EUREKA OF CASCADIA, LLC, Chain: CASCADIA HEALTHCARE). Address matches: 10 Mountain View Dr, Eureka, MT 59917."
+  },
+  {
+    "index": 84,
+    "name": "Boswell Transitional Care of Cascadia",
+    "addr": "10411 W Thunderbird Blvd, Sun City, AZ 85351",
+    "city": "Sun City",
+    "state": "AZ",
+    "type": "snf",
+    "verified": false,
+    "issues": [
+      "WRONG ADDRESS: CMS records show BOSWELL TRANSITIONAL CARE OF CASCADIA at 10601 West Santa Fe Drive, Sun City, AZ 85351. JSON has 10411 W Thunderbird Blvd -- completely different street."
+    ],
+    "correct_name": null,
+    "correct_addr": "10601 West Santa Fe Drive, Sun City, AZ 85351",
+    "source": "CMS Provider Data Aug 2026 (CCN: 035121, Legal: SUN CITY OF CASCADIA LLC, Chain: CASCADIA HEALTHCARE)"
+  },
+  {
+    "index": 85,
+    "name": "NorthPark Health and Rehabilitation of Cascadia",
+    "addr": "2020 N 95th Ave, Phoenix, AZ 85037",
+    "city": "Phoenix",
+    "state": "AZ",
+    "type": "snf",
+    "verified": true,
+    "issues": [],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "CMS Provider Data Aug 2026 (CCN: 035299, Legal: ESTRELLA OF CASCADIA, LLC, Chain: CASCADIA HEALTHCARE). Address matches: 2020 North 95th Avenue, Phoenix, AZ 85037."
+  },
+  {
+    "index": 86,
+    "name": "Shores Hospice",
+    "addr": "2100 21st St, Sacramento, CA 95818",
+    "city": "Sacramento",
+    "state": "CA",
+    "type": "hospice",
+    "verified": true,
+    "issues": [
+      "Hospice facilities are not in CMS nursing home provider data. Shores Hospice website (shoreshospice.com) exists and is active. Address at 2100 21st St, Sacramento is in the Curtis Park neighborhood -- a valid commercial/residential address. Cannot independently confirm this exact address from the website."
+    ],
+    "correct_name": null,
+    "correct_addr": null,
+    "source": "Shores Hospice website confirmed active at shoreshospice.com. Address is a real location in Sacramento's Curtis Park area."
+  }
+]

@@ -1,0 +1,785 @@
+[
+  {
+    "name": "Alderwood Park Health & Rehabilitation",
+    "city": "Bellingham",
+    "state": "WA",
+    "lat": 48.7799,
+    "lng": -122.5,
+    "corrected": true,
+    "note": "Was mapped to Lynnwood, actually in Bellingham"
+  },
+  {
+    "name": "Anacortes Health and Rehab",
+    "city": "Anacortes",
+    "state": "WA",
+    "lat": 48.5005,
+    "lng": -122.61,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Arbor Valley of Cascadia",
+    "city": "Boise",
+    "state": "ID",
+    "lat": 43.6339,
+    "lng": -116.28,
+    "corrected": true,
+    "note": "Was mapped to Emmett, actually in Boise"
+  },
+  {
+    "name": "Aspen Park of Cascadia",
+    "city": "Moscow",
+    "state": "ID",
+    "lat": 46.7205,
+    "lng": -116.99,
+    "corrected": true,
+    "note": "Was mapped to Boise, actually in Moscow"
+  },
+  {
+    "name": "Avencare Health",
+    "city": "Boise",
+    "state": "ID",
+    "corrected": false,
+    "lat": 43.621,
+    "lng": -116.207,
+    "note": "Corporate entity, not in CMS NH dataset"
+  },
+  {
+    "name": "Beaverton Post Acute of Cascadia",
+    "city": "Beaverton",
+    "state": "OR",
+    "lat": 45.4761,
+    "lng": -122.8,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Bend Transitional Care",
+    "city": "Bend",
+    "state": "OR",
+    "lat": 44.0592,
+    "lng": -121.26,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Boswell Transitional Care of Cascadia",
+    "city": "Sun City",
+    "state": "AZ",
+    "lat": 33.6039,
+    "lng": -112.29,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Brookfield Health & Rehabilitation of Cascadia",
+    "city": "Battle Ground",
+    "state": "WA",
+    "lat": 45.785,
+    "lng": -122.54,
+    "corrected": true,
+    "note": "Was mapped to Chehalis, actually in Battle Ground"
+  },
+  {
+    "name": "Caldwell of Cascadia",
+    "city": "Caldwell",
+    "state": "ID",
+    "lat": 43.6685,
+    "lng": -116.7,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Canyon West of Cascadia",
+    "city": "Caldwell",
+    "state": "ID",
+    "lat": 43.6453,
+    "lng": -116.67,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Cascade Park Rehabilitation",
+    "city": "Vancouver",
+    "state": "WA",
+    "corrected": false,
+    "lat": 45.6205,
+    "lng": -122.5951,
+    "note": "Not found in CMS NH dataset, city unverified"
+  },
+  {
+    "name": "Cascadia Healthcare",
+    "city": "Boise",
+    "state": "ID",
+    "corrected": false,
+    "lat": 43.615,
+    "lng": -116.2023,
+    "note": "Corporate HQ, not in CMS NH dataset"
+  },
+  {
+    "name": "Cascadia of Boise",
+    "city": "Boise",
+    "state": "ID",
+    "lat": 43.6099,
+    "lng": -116.26,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Cascadia of Lewiston",
+    "city": "Lewiston",
+    "state": "ID",
+    "lat": 46.396,
+    "lng": -116.99,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Cascadia of Nampa",
+    "city": "Nampa",
+    "state": "ID",
+    "lat": 43.5922,
+    "lng": -116.51,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Cherry Ridge of Cascadia",
+    "city": "Emmett",
+    "state": "ID",
+    "lat": 43.8936,
+    "lng": -116.51,
+    "corrected": true,
+    "note": "Was mapped to Idaho Falls, actually in Emmett"
+  },
+  {
+    "name": "Clackamas Rehabilitation of Cascadia",
+    "city": "Gladstone",
+    "state": "OR",
+    "corrected": false,
+    "lat": 45.3807,
+    "lng": -122.5937,
+    "note": "Not found in CMS NH dataset, city unverified"
+  },
+  {
+    "name": "Clarkston Health and Rehabilitation of Cascadia",
+    "city": "Clarkston",
+    "state": "WA",
+    "lat": 46.4063,
+    "lng": -117.05,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Clearwater Health & Rehabilitation of Cascadia",
+    "city": "Orofino",
+    "state": "ID",
+    "lat": 46.493,
+    "lng": -116.27,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Coeur d'Alene Health and Rehabilitation of Cascadia",
+    "city": "Coeur d'Alene",
+    "state": "ID",
+    "lat": 47.6999,
+    "lng": -116.78,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Colfax Health and Rehabilitation of Cascadia",
+    "city": "Colfax",
+    "state": "WA",
+    "lat": 46.87,
+    "lng": -117.37,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Columbia Healthcare",
+    "city": "Portland",
+    "state": "OR",
+    "corrected": false,
+    "lat": 45.5152,
+    "lng": -122.6784,
+    "note": "Corporate entity, not in CMS NH dataset"
+  },
+  {
+    "name": "Colville Health & Rehabilitation of Cascadia",
+    "city": "Colville",
+    "state": "WA",
+    "lat": 48.54,
+    "lng": -117.89,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Coos Bay Rehabilitation of Cascadia",
+    "city": "Coos Bay",
+    "state": "OR",
+    "corrected": false,
+    "lat": 43.3665,
+    "lng": -124.2179,
+    "note": "Not found in CMS NH dataset, city unverified"
+  },
+  {
+    "name": "Creekside Health and Rehabilitation of Cascadia",
+    "city": "Eugene",
+    "state": "OR",
+    "lat": 44.019,
+    "lng": -123.08,
+    "corrected": true,
+    "note": "Was mapped to Roseburg, actually in Eugene"
+  },
+  {
+    "name": "Curry Village Health and Rehabilitation of Cascadia",
+    "city": "Brookings",
+    "state": "OR",
+    "lat": 42.0539,
+    "lng": -124.28,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Cypress Assisted Living",
+    "city": "Spokane Valley",
+    "state": "WA",
+    "corrected": false,
+    "lat": 47.6588,
+    "lng": -117.2395,
+    "note": "ALF, not in CMS NH dataset"
+  },
+  {
+    "name": "Eagle Rock Health and Rehabilitation of Cascadia",
+    "city": "Idaho Falls",
+    "state": "ID",
+    "lat": 43.504,
+    "lng": -112.02,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Envision Healthcare",
+    "city": "Boise",
+    "state": "ID",
+    "corrected": false,
+    "lat": 43.6185,
+    "lng": -116.21,
+    "note": "Corporate entity, not in CMS NH dataset"
+  },
+  {
+    "name": "Eugene Rehabilitation of Cascadia",
+    "city": "Eugene",
+    "state": "OR",
+    "corrected": false,
+    "lat": 44.0521,
+    "lng": -123.0868,
+    "note": "Not found in CMS NH dataset, city unverified"
+  },
+  {
+    "name": "Fairlawn Health and Rehabilitation of Cascadia",
+    "city": "Gresham",
+    "state": "OR",
+    "lat": 45.5048,
+    "lng": -122.4,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Fairlawn of Olympus Retirement Living",
+    "city": "Gresham",
+    "state": "OR",
+    "corrected": false,
+    "lat": 45.505,
+    "lng": -122.426,
+    "note": "ILF, not in CMS NH dataset"
+  },
+  {
+    "name": "Gabriel Park Post Acute",
+    "city": "Portland",
+    "state": "OR",
+    "corrected": false,
+    "lat": 45.478,
+    "lng": -122.712,
+    "note": "Not found in CMS NH dataset, city unverified"
+  },
+  {
+    "name": "Grangeville Health and Rehabilitation of Cascadia",
+    "city": "Grangeville",
+    "state": "ID",
+    "lat": 45.9262,
+    "lng": -116.11,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Highland Health & Rehabilitation of Cascadia",
+    "city": "Bellingham",
+    "state": "WA",
+    "lat": 48.7099,
+    "lng": -122.46,
+    "corrected": true,
+    "note": "Was mapped to Spokane, actually in Bellingham"
+  },
+  {
+    "name": "Hillsboro Post Acute",
+    "city": "Hillsboro",
+    "state": "OR",
+    "corrected": false,
+    "lat": 45.5229,
+    "lng": -122.9898,
+    "note": "Not found in CMS NH dataset (Hillsboro, OH is in CMS but different facility), city assumed correct for OR"
+  },
+  {
+    "name": "Hudson Bay Health & Rehabilitation",
+    "city": "Vancouver",
+    "state": "WA",
+    "lat": 45.6268,
+    "lng": -122.59,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Junction City Rehabilitation of Cascadia",
+    "city": "Junction City",
+    "state": "OR",
+    "corrected": false,
+    "lat": 44.2193,
+    "lng": -123.2054,
+    "note": "Not found in CMS NH dataset, city unverified"
+  },
+  {
+    "name": "Keizer Court Post Acute",
+    "city": "Keizer",
+    "state": "OR",
+    "corrected": false,
+    "lat": 44.9901,
+    "lng": -123.0262,
+    "note": "Not found in CMS NH dataset, city unverified"
+  },
+  {
+    "name": "King City Rehabilitation",
+    "city": "Tigard",
+    "state": "OR",
+    "corrected": false,
+    "lat": 45.4132,
+    "lng": -122.7709,
+    "note": "Not found in CMS NH dataset, city unverified"
+  },
+  {
+    "name": "Kruse Way Post Acute",
+    "city": "Lake Oswego",
+    "state": "OR",
+    "corrected": false,
+    "lat": 45.4107,
+    "lng": -122.7231,
+    "note": "Not found in CMS NH dataset, city unverified"
+  },
+  {
+    "name": "Lebanon Rehabilitation of Cascadia",
+    "city": "Lebanon",
+    "state": "OR",
+    "corrected": false,
+    "lat": 44.5368,
+    "lng": -122.907,
+    "note": "Not found in CMS NH dataset, city unverified"
+  },
+  {
+    "name": "Libby Care Center of Cascadia",
+    "city": "Libby",
+    "state": "MT",
+    "lat": 48.3922,
+    "lng": -115.55,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Meadow View Assisted Living",
+    "city": "Boise",
+    "state": "ID",
+    "corrected": false,
+    "lat": 43.603,
+    "lng": -116.225,
+    "note": "ALF, not in CMS NH dataset"
+  },
+  {
+    "name": "Mount Ascension Transitional Care of Cascadia",
+    "city": "Helena",
+    "state": "MT",
+    "lat": 46.5814,
+    "lng": -112.0,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Mountain Valley of Cascadia",
+    "city": "Kellogg",
+    "state": "ID",
+    "lat": 47.5444,
+    "lng": -116.13,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Mountain View of Cascadia",
+    "city": "Eureka",
+    "state": "MT",
+    "lat": 48.8756,
+    "lng": -115.04,
+    "corrected": true,
+    "note": "Was mapped to Helena, actually in Eureka"
+  },
+  {
+    "name": "Newport Rehabilitation of Cascadia",
+    "city": "Newport",
+    "state": "OR",
+    "corrected": false,
+    "lat": 44.6368,
+    "lng": -124.0535,
+    "note": "Not found in CMS NH dataset, city unverified"
+  },
+  {
+    "name": "Northern Healthcare",
+    "city": "Boise",
+    "state": "ID",
+    "corrected": false,
+    "lat": 43.612,
+    "lng": -116.195,
+    "note": "Corporate entity, not in CMS NH dataset"
+  },
+  {
+    "name": "NorthPark Health and Rehabilitation of Cascadia",
+    "city": "Phoenix",
+    "state": "AZ",
+    "lat": 33.4687,
+    "lng": -112.26,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Olympus Living at Spokane Valley",
+    "city": "Spokane Valley",
+    "state": "WA",
+    "corrected": false,
+    "lat": 47.662,
+    "lng": -117.234,
+    "note": "ALF, not in CMS NH dataset"
+  },
+  {
+    "name": "Olympus Retirement Living",
+    "city": "Spokane Valley",
+    "state": "WA",
+    "corrected": false,
+    "lat": 47.6555,
+    "lng": -117.244,
+    "note": "Corporate/ILF, not in CMS NH dataset"
+  },
+  {
+    "name": "Oregon City Rehabilitation",
+    "city": "Oregon City",
+    "state": "OR",
+    "corrected": false,
+    "lat": 45.3573,
+    "lng": -122.6068,
+    "note": "Not found in CMS NH dataset, city unverified"
+  },
+  {
+    "name": "Pacific Ridge Post Acute",
+    "city": "Tacoma",
+    "state": "WA",
+    "corrected": false,
+    "lat": 47.2529,
+    "lng": -122.4443,
+    "note": "Not found in CMS NH dataset, city unverified"
+  },
+  {
+    "name": "Paradise Creek Fairview Estates",
+    "city": "Moscow",
+    "state": "ID",
+    "corrected": false,
+    "lat": 46.73,
+    "lng": -117.004,
+    "note": "ILF, not in CMS NH dataset"
+  },
+  {
+    "name": "Paradise Creek Health and Rehabilitation of Cascadia",
+    "city": "Moscow",
+    "state": "ID",
+    "lat": 46.7388,
+    "lng": -116.97,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Paradise Creek of Olympus Retirement Living",
+    "city": "Moscow",
+    "state": "ID",
+    "corrected": false,
+    "lat": 46.735,
+    "lng": -116.997,
+    "note": "ALF, not in CMS NH dataset"
+  },
+  {
+    "name": "Payette Healthcare of Cascadia",
+    "city": "Payette",
+    "state": "ID",
+    "lat": 44.0715,
+    "lng": -116.93,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Puget Sound Health and Rehabilitation",
+    "city": "Tacoma",
+    "state": "WA",
+    "corrected": false,
+    "lat": 47.248,
+    "lng": -122.438,
+    "note": "Not found in CMS NH dataset, city unverified"
+  },
+  {
+    "name": "Queen Anne Post Acute",
+    "city": "Seattle",
+    "state": "WA",
+    "corrected": false,
+    "lat": 47.6446,
+    "lng": -122.35,
+    "note": "CMS has 'Queen Anne Healthcare' (Avamere) at 2717 Dexter Ave N, Seattle. City correct, coords from CMS."
+  },
+  {
+    "name": "Richmond Beach Rehabilitation",
+    "city": "Shoreline",
+    "state": "WA",
+    "corrected": false,
+    "lat": 47.7621,
+    "lng": -122.3736,
+    "note": "Not found in CMS NH dataset, city unverified"
+  },
+  {
+    "name": "Rosario Assisted Living and Memory Care",
+    "city": "Anacortes",
+    "state": "WA",
+    "corrected": false,
+    "lat": 48.509,
+    "lng": -122.618,
+    "note": "ALF, not in CMS NH dataset"
+  },
+  {
+    "name": "Royal Plaza Health and Rehabilitation of Cascadia",
+    "city": "Lewiston",
+    "state": "ID",
+    "lat": 46.3963,
+    "lng": -116.99,
+    "corrected": true,
+    "note": "Was mapped to Boise, actually in Lewiston"
+  },
+  {
+    "name": "Royal Plaza of Olympus Living",
+    "city": "Lewiston",
+    "state": "ID",
+    "lat": 46.3963,
+    "lng": -116.99,
+    "corrected": true,
+    "note": "Was mapped to Boise, actually in Lewiston"
+  },
+  {
+    "name": "Salem Transitional Care",
+    "city": "Salem",
+    "state": "OR",
+    "lat": 44.8828,
+    "lng": -122.99,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Secora Rehabilitation of Cascadia",
+    "city": "Portland",
+    "state": "OR",
+    "lat": 45.4907,
+    "lng": -122.56,
+    "corrected": true,
+    "note": "Was mapped to Salem, actually in Portland"
+  },
+  {
+    "name": "Sequim Rehabilitation",
+    "city": "Sequim",
+    "state": "WA",
+    "corrected": false,
+    "lat": 48.0795,
+    "lng": -123.1015,
+    "note": "Not found in CMS NH dataset, city unverified"
+  },
+  {
+    "name": "Shaw Mountain of Cascadia",
+    "city": "Boise",
+    "state": "ID",
+    "lat": 43.6152,
+    "lng": -116.18,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Shores Hospice",
+    "city": "Sacramento",
+    "state": "CA",
+    "corrected": false,
+    "lat": 38.5816,
+    "lng": -121.4944,
+    "note": "Hospice, not in CMS NH dataset"
+  },
+  {
+    "name": "Silverton Health and Rehabilitation of Cascadia",
+    "city": "Silverton",
+    "state": "ID",
+    "lat": 47.4972,
+    "lng": -115.96,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Snohomish Health and Rehabilitation of Cascadia",
+    "city": "Snohomish",
+    "state": "WA",
+    "lat": 47.9241,
+    "lng": -122.09,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Spokane Valley Health and Rehabilitation of Cascadia",
+    "city": "Spokane Valley",
+    "state": "WA",
+    "lat": 47.6433,
+    "lng": -117.15,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Stafholt Health and Rehabilitation of Cascadia",
+    "city": "Blaine",
+    "state": "WA",
+    "lat": 48.9992,
+    "lng": -122.75,
+    "corrected": true,
+    "note": "Was mapped to Spokane, actually in Blaine"
+  },
+  {
+    "name": "Sunnyside Transitional Care",
+    "city": "Salem",
+    "state": "OR",
+    "corrected": false,
+    "lat": 44.937,
+    "lng": -123.041,
+    "note": "Not found in CMS NH dataset, city unverified"
+  },
+  {
+    "name": "Table Rock Post Acute",
+    "city": "Medford",
+    "state": "OR",
+    "corrected": false,
+    "lat": 42.3265,
+    "lng": -122.8756,
+    "note": "Not found in CMS NH dataset, city unverified"
+  },
+  {
+    "name": "Teton Healthcare of Cascadia",
+    "city": "Idaho Falls",
+    "state": "ID",
+    "lat": 43.4699,
+    "lng": -111.99,
+    "corrected": true,
+    "note": "Was mapped to Rexburg, actually in Idaho Falls"
+  },
+  {
+    "name": "The Abbey of Olympus Retirement Living",
+    "city": "Gresham",
+    "state": "OR",
+    "corrected": false,
+    "lat": 45.499,
+    "lng": -122.435,
+    "note": "ILF, not in CMS NH dataset"
+  },
+  {
+    "name": "The Cove of Cascadia",
+    "city": "Bellevue",
+    "state": "ID",
+    "lat": 43.4714,
+    "lng": -114.26,
+    "corrected": true,
+    "note": "Was mapped to Pocatello, actually in Bellevue"
+  },
+  {
+    "name": "The Orchards of Cascadia",
+    "city": "Nampa",
+    "state": "ID",
+    "lat": 43.5873,
+    "lng": -116.59,
+    "corrected": true,
+    "note": "Was mapped to Lewiston, actually in Nampa"
+  },
+  {
+    "name": "Three Fountains Post Acute",
+    "city": "Medford",
+    "state": "OR",
+    "corrected": false,
+    "lat": 42.321,
+    "lng": -122.869,
+    "note": "Not found in CMS NH dataset, city unverified"
+  },
+  {
+    "name": "Three Rivers Healthcare",
+    "city": "Boise",
+    "state": "ID",
+    "corrected": false,
+    "lat": 43.6095,
+    "lng": -116.215,
+    "note": "Corporate entity, not in CMS NH dataset"
+  },
+  {
+    "name": "Twin Falls Transitional Care of Cascadia",
+    "city": "Twin Falls",
+    "state": "ID",
+    "lat": 42.5577,
+    "lng": -114.44,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  },
+  {
+    "name": "Village Manor of Cascadia",
+    "city": "Wood Village",
+    "state": "OR",
+    "lat": 45.538,
+    "lng": -122.42,
+    "corrected": true,
+    "note": "Was mapped to Cottonwood, actually in Wood Village; Was mapped to ID, actually in OR"
+  },
+  {
+    "name": "Village Manor of Cascadia (OR)",
+    "city": "Wood Village",
+    "state": "OR",
+    "lat": 45.538,
+    "lng": -122.42,
+    "corrected": true,
+    "note": "Was mapped to Cottonwood, actually in Wood Village"
+  },
+  {
+    "name": "Wellspring Health and Rehab of Cascadia",
+    "city": "Nampa",
+    "state": "ID",
+    "lat": 43.5333,
+    "lng": -116.57,
+    "corrected": true,
+    "note": "Was mapped to Meridian, actually in Nampa"
+  },
+  {
+    "name": "Weiser Care of Cascadia",
+    "city": "Weiser",
+    "state": "ID",
+    "lat": 44.2493,
+    "lng": -116.97,
+    "corrected": false,
+    "note": "Verified correct via CMS"
+  }
+]

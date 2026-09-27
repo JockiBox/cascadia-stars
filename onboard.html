@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the Stars of Cascadia</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/qrcode-generator@1.4.4/qrcode.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e8f5e9 0%,#e0f2f1 50%,#e8eaf6 100%);min-height:100vh;color:#2d3748}
+.header{background:linear-gradient(135deg,#43b692 0%,#2d9a7e 40%,#1f7a6a 100%);padding:24px;text-align:center;color:white;position:relative;box-shadow:0 4px 20px rgba(45,154,126,0.3)}
+.header::after{content:'';position:absolute;bottom:-12px;left:0;right:0;height:14px;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0c200 14 400 14 600 0s400-14 600 0v14H0z' fill='%23e8f5e9'/%3E%3C/svg%3E") repeat-x;background-size:600px 14px;z-index:10}
+.header-icon{font-size:42px;margin-bottom:8px}
+.header h1{font-size:24px;font-weight:900}
+.header p{font-size:14px;color:rgba(255,255,255,0.8);margin-top:4px;font-weight:600}
+.container{max-width:480px;margin:32px auto;padding:0 20px 40px}
+.card{background:white;border-radius:20px;padding:28px;box-shadow:0 4px 24px rgba(0,0,0,0.08);border:2px solid #e8efe9;margin-bottom:20px}
+.card-title{font-size:16px;font-weight:900;color:#1f7a6a;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.card-title .step{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#43b692,#2d9a7e);color:white;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.form-group{margin-bottom:16px}
+.form-label{display:block;font-size:12px;font-weight:800;color:#5a7568;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.form-input,.form-select{width:100%;padding:12px 16px;background:#f0f5f3;border:2px solid #d6e4dc;border-radius:14px;font-size:15px;color:#2d3748;outline:none;transition:all 0.3s;font-family:'Nunito',sans-serif;font-weight:600;-webkit-appearance:none;appearance:none}
+.form-input::placeholder{color:#8fa89e}
+.form-input:focus,.form-select:focus{border-color:#43b692;background:white;box-shadow:0 0 0 4px rgba(67,182,146,0.15)}
+.form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238fa89e' stroke-width='2.5'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px;cursor:pointer}
+.form-hint{font-size:11px;color:#8fa89e;margin-top:4px;font-weight:600}
+.form-error{font-size:12px;color:#e85d75;margin-top:4px;font-weight:700;display:none}
+.pw-strength{height:4px;border-radius:4px;background:#e8efe9;margin-top:8px;overflow:hidden}
+.pw-strength-bar{height:100%;border-radius:4px;transition:all 0.3s;width:0}
+.pw-strength-text{font-size:11px;margin-top:4px;font-weight:700}
+.btn-submit{width:100%;padding:14px;border:none;border-radius:16px;background:linear-gradient(135deg,#43b692,#2d9a7e);color:white;font-size:16px;font-weight:900;cursor:pointer;transition:all 0.3s;font-family:'Nunito',sans-serif;box-shadow:0 4px 16px rgba(67,182,146,0.3)}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(67,182,146,0.4)}
+.btn-submit:active{transform:translateY(0)}
+.btn-submit:disabled{opacity:0.5;cursor:not-allowed;transform:none}
+.success-screen{display:none;text-align:center;padding:40px 20px;max-width:480px;margin:0 auto}
+.success-icon{font-size:64px;margin-bottom:16px}
+.success-title{font-size:22px;font-weight:900;color:#1f7a6a;margin-bottom:8px}
+.success-msg{font-size:14px;color:#5a7568;font-weight:600;line-height:1.6;margin-bottom:24px}
+.btn-login{display:inline-block;padding:12px 32px;border-radius:14px;background:linear-gradient(135deg,#43b692,#2d9a7e);color:white;font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 4px 16px rgba(67,182,146,0.3);font-family:'Nunito',sans-serif}
+.error-banner{display:none;background:#fef2f4;border:2px solid #fecdd3;border-radius:14px;padding:12px 16px;margin-bottom:16px;color:#be123c;font-size:13px;font-weight:700}
+.facility-banner{background:linear-gradient(135deg,#e6f7f0,#d1fae5);border:2px solid #a7f3d0;border-radius:14px;padding:12px 16px;margin-bottom:16px;text-align:center}
+.facility-banner-name{font-size:15px;font-weight:900;color:#1f7a6a}
+.facility-banner-sub{font-size:11px;color:#5a7568;font-weight:600;margin-top:2px}
+.admin-section{display:none;max-width:900px;margin:32px auto;padding:0 20px 40px}
+.admin-card{background:white;border-radius:20px;padding:28px;box-shadow:0 4px 24px rgba(0,0,0,0.08);border:2px solid #e8efe9}
+.qr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:16px}
+.qr-item{text-align:center;padding:16px;border:2px solid #e8efe9;border-radius:14px;background:#fafcfb}
+.qr-facility{font-size:12px;font-weight:800;color:#2d3748;margin-bottom:4px}
+.qr-url{font-size:8px;color:#8fa89e;word-break:break-all;margin-top:4px}
+.btn-print{padding:10px 24px;border:none;border-radius:12px;background:linear-gradient(135deg,#4a9ff5,#357ae8);color:white;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:16px}
+@media print{.header,.admin-section>*:first-child>h2,.admin-section>*:first-child>p,.btn-print{display:none}.admin-section{display:block!important;margin:0;padding:0}.admin-card{box-shadow:none;border:none;padding:0}.qr-grid{grid-template-columns:repeat(3,1fr)}.qr-item{break-inside:avoid;border:1px solid #ccc;page-break-inside:avoid}}
+@media(max-width:480px){.container{padding:0 12px 32px;margin-top:24px}.card{padding:20px}}
+</style>
+</head>
+<body>
+<div class="header">
+<div class="header-icon">&#11088;</div>
+<h1>Join the Stars of Cascadia</h1>
+<p>Set up your profile in 60 seconds</p>
+</div>
+<div class="container" id="formContainer">
+<div class="facility-banner" id="facilityBanner" style="display:none">
+<div class="facility-banner-name" id="facilityBannerName"></div>
+<div class="facility-banner-sub">You are joining this facility</div>
+</div>
+<div class="error-banner" id="errorBanner"></div>
+<div class="card">
+<div class="card-title"><span class="step">1</span> Your Information</div>
+<div class="form-group"><label class="form-label">Full Name</label><input type="text" class="form-input" id="fullName" placeholder="e.g. Jane Smith" autocomplete="name" /></div>
+<div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" id="email" placeholder="e.g. jsmith@cascadiahc.com" autocomplete="email" /><div class="form-hint">Use your Cascadia Healthcare email</div></div>
+<div class="form-group"><label class="form-label">Job Title / Role</label><input type="text" class="form-input" id="role" placeholder="e.g. CEO, CNO, CIT, Operations Director" /></div>
+</div>
+<div class="card">
+<div class="card-title"><span class="step">2</span> Your Facility</div>
+<div class="form-group"><label class="form-label">Facility</label><select class="form-select" id="facility"><option value="">Select your facility...</option></select></div>
+</div>
+<div class="card">
+<div class="card-title"><span class="step">3</span> Set Your Password</div>
+<div class="form-group"><label class="form-label">Password</label><input type="password" class="form-input" id="password" placeholder="Create a password (min 6 characters)" autocomplete="new-password" /><div class="pw-strength"><div class="pw-strength-bar" id="pwBar"></div></div><div class="pw-strength-text" id="pwText"></div></div>
+<div class="form-group"><label class="form-label">Confirm Password</label><input type="password" class="form-input" id="passwordConfirm" placeholder="Confirm your password" autocomplete="new-password" /><div class="form-error" id="pwMatchError">Passwords do not match</div></div>
+</div>
+<button class="btn-submit" id="submitBtn" disabled>Create My Account</button>
+</div>
+<div class="success-screen" id="successScreen">
+<div class="success-icon">&#127775;</div>
+<div class="success-title">Welcome to the Stars!</div>
+<div class="success-msg" id="successMsg"></div>
+<a href="https://cascadiastars.com" class="btn-login">Log In Now</a>
+</div>
+<div class="admin-section" id="adminSection">
+<div class="admin-card">
+<h2 style="font-size:20px;font-weight:900;color:#1f7a6a;margin-bottom:8px">Onboarding QR Codes</h2>
+<p style="font-size:13px;color:#5a7568;font-weight:600;margin-bottom:8px">Print these and post at each facility. Scanning takes staff directly to the signup page with their facility pre-selected.</p>
+<button class="btn-print" onclick="window.print()">Print All QR Codes</button>
+<div class="qr-grid" id="qrGrid"></div>
+</div>
+</div>
+<script>
+const SB_URL='https://oilrqcuyqjfxqbbvwopi.supabase.co';
+const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9pbHJxY3V5cWpmeHFiYnZ3b3BpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg1MjIwMjIsImV4cCI6MjA4NDA5ODAyMn0.eTdOsZ1lkeJo7TcYSyC4CdrX0sXm8kvVEtigg40tENw';
+const BASE=window.location.origin+window.location.pathname;
+const facilities=["Alderwood Park Health & Rehabilitation", "Anacortes Health and Rehab", "Arbor Valley of Cascadia", "Aspen Park of Cascadia", "Avencare Health", "Beaverton Post Acute of Cascadia", "Bend Transitional Care", "Boswell Transitional Care of Cascadia", "Brookfield Health & Rehabilitation of Cascadia", "Caldwell of Cascadia", "Canyon West of Cascadia", "Cascade Park Rehabilitation", "Cascadia Healthcare", "Cascadia of Boise", "Cascadia of Lewiston", "Cascadia of Nampa", "Cherry Ridge of Cascadia", "Clackamas Rehabilitation of Cascadia", "Clarkston Health and Rehabilitation of Cascadia", "Clearwater Health & Rehabilitation of Cascadia", "Coeur d'Alene Health and Rehabilitation of Cascadia", "Colfax Health and Rehabilitation of Cascadia", "Columbia Healthcare", "Colville Health & Rehabilitation of Cascadia", "Coos Bay Rehabilitation of Cascadia", "Creekside Health and Rehabilitation of Cascadia", "Curry Village Health and Rehabilitation of Cascadia", "Eagle Rock Health and Rehabilitation of Cascadia", "Envision Healthcare", "Eugene Rehabilitation of Cascadia", "Fairlawn Health and Rehabilitation of Cascadia", "Fairlawn of Olympus Retirement Living ILF", "Gabriel Park Post Acute", "Grangeville Health and Rehabilitation of Cascadia", "Highland Health & Rehabilitation of Cascadia", "Hillsboro Post Acute", "Hudson Bay Health & Rehabilitation", "Junction City Rehabilitation of Cascadia", "Keizer Court Post Acute", "King City Rehabilitation", "Kruse Way Post Acute", "Lebanon Rehabilitation of Cascadia", "Lewiston Transitional Care of Cascadia", "Libby Care Center of Cascadia", "Meadow View Assisted Living", "Mount Ascension Transitional Care of Cascadia", "Mountain Valley of Cascadia", "Mountain View of Cascadia", "Newport Rehabilitation of Cascadia", "NorthPark Health and Rehabilitation of Cascadia", "Northern Healthcare", "Olympus Living at Spokane Valley-ALF", "Olympus Retirement Living", "Oregon City Rehabilitation", "Pacific Ridge Post Acute", "Paradise Creek Health and Rehabilitation of Cascadia - SNF", "Paradise Creek of Olympus Retirement Living - ALF", "Payette Healthcare of Cascadia", "Puget Sound Health and Rehabilitation", "Queen Anne Post Acute", "Richmond Beach Rehabilitation", "Rosario Assisted Living and Memory Care", "Royal Plaza Health and Rehabilitation of Cascadia", "Royal Plaza of Olympus Living - ALF", "Salem Transitional Care", "Secora Rehabilitation of Cascadia", "Sequim Rehabilitation", "Shaw Mountain of Cascadia", "Shores Hospice", "Silverton Health and Rehabilitation of Cascadia", "Snohomish Health and Rehabilitation of Cascadia", "Spokane Valley Health and Rehabilitation of Cascadia", "Stafholt Health and Rehabilitation of Cascadia", "Sunnyside Transitional Care", "Table Rock Post Acute", "Teton Healthcare of Cascadia", "The Abbey of Olympus Retirement Living ILF", "The Cove of Cascadia - SNF", "The Orchards of Cascadia", "Three Fountains Post Acute", "Three Rivers Healthcare", "Twin Falls Transitional Care of Cascadia", "Village Manor of Cascadia", "Village Park Post Acute", "Weiser Care of Cascadia", "Wellspring Health and Rehab of Cascadia"];
+const sel=document.getElementById('facility');
+facilities.forEach(f=>{const o=document.createElement('option');o.value=f;o.textContent=f;sel.appendChild(o)});
+const params=new URLSearchParams(window.location.search);
+const preFac=params.get('facility');
+const isAdmin=params.get('admin')==='true';
+if(preFac){sel.value=preFac;if(sel.value===preFac){document.getElementById('facilityBanner').style.display='block';document.getElementById('facilityBannerName').textContent=preFac}}
+if(isAdmin){
+  document.getElementById('formContainer').style.display='none';
+  document.getElementById('adminSection').style.display='block';
+  const grid=document.getElementById('qrGrid');
+  // Universal
+  const ui=document.createElement('div');ui.className='qr-item';ui.style.borderColor='#43b692';ui.style.background='#f0faf5';
+  ui.innerHTML='<div class="qr-facility" style="color:#1f7a6a;font-size:14px">UNIVERSAL LINK</div>';
+  const uc=document.createElement('div');ui.appendChild(uc);
+  var uq=qrcode(0,'M');uq.addData(BASE);uq.make();uc.innerHTML=uq.createSvgTag(4,0);
+  ui.innerHTML+='<div class="qr-url">'+BASE+'</div>';grid.appendChild(ui);
+  // Per facility
+  facilities.forEach(f=>{
+    const it=document.createElement('div');it.className='qr-item';
+    it.innerHTML='<div class="qr-facility">'+f+'</div>';
+    const cv=document.createElement('div');it.appendChild(cv);
+    const url=BASE+'?facility='+encodeURIComponent(f);
+    var q=qrcode(0,'M');q.addData(url);q.make();cv.innerHTML=q.createSvgTag(3,0);
+    it.innerHTML+='<div class="qr-url">'+url+'</div>';grid.appendChild(it);
+  });
+}
+const pwI=document.getElementById('password'),pwB=document.getElementById('pwBar'),pwT=document.getElementById('pwText');
+pwI.addEventListener('input',()=>{
+  const p=pwI.value;let s=0;if(p.length>=6)s++;if(p.length>=8)s++;if(/[A-Z]/.test(p))s++;if(/[0-9]/.test(p))s++;if(/[^A-Za-z0-9]/.test(p))s++;
+  const c=['#e85d75','#f5a623','#f5a623','#43b692','#1f7a6a'],l=['Weak','Fair','Fair','Good','Strong'];
+  pwB.style.width=(s*20)+'%';pwB.style.background=c[Math.max(0,s-1)]||'#e8efe9';
+  pwT.textContent=p.length>0?l[Math.max(0,s-1)]:'';pwT.style.color=c[Math.max(0,s-1)]||'#8fa89e';vf()});
+const pwC=document.getElementById('passwordConfirm'),pmE=document.getElementById('pwMatchError');
+pwC.addEventListener('input',()=>{pmE.style.display=(pwC.value&&pwC.value!==pwI.value)?'block':'none';vf()});
+const nI=document.getElementById('fullName'),eI=document.getElementById('email'),rI=document.getElementById('role'),sb=document.getElementById('submitBtn');
+[nI,eI,rI,sel,pwI,pwC].forEach(el=>{el.addEventListener('input',vf);el.addEventListener('change',vf)});
+function vf(){sb.disabled=!(nI.value.trim().length>=2&&eI.value.includes('@')&&rI.value.trim().length>=2&&sel.value&&pwI.value.length>=6&&pwI.value===pwC.value)}
+function gi(n){const p=n.trim().split(/\s+/);return p.length>=2?(p[0][0]+p[p.length-1][0]).toUpperCase():n.substring(0,2).toUpperCase()}
+function gc(n){const c=['#e11d48','#f59e0b','#10b981','#3b82f6','#8b5cf6','#ec4899','#06b6d4','#f97316','#6366f1','#14b8a6'];let h=0;for(let i=0;i<n.length;i++)h=n.charCodeAt(i)+((h<<5)-h);return c[Math.abs(h)%c.length]}
+async function sha(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(b=>b.toString(16).padStart(2,'0')).join('')}
+sb.addEventListener('click',async()=>{
+  sb.disabled=true;sb.textContent='Creating account...';document.getElementById('errorBanner').style.display='none';
+  try{
+    const name=nI.value.trim(),email=eI.value.trim().toLowerCase(),role=rI.value.trim(),fac=sel.value,pw=pwI.value;
+    const hash=await sha(pw),initials=gi(name),color=gc(name);
+    const hd={'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':'application/json','Prefer':'return=representation'};
+    // Check existing
+    const ck=await fetch(SB_URL+'/rest/v1/cf_accounts?email=eq.'+encodeURIComponent(email),{headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY}});
+    const ex=await ck.json();if(ex.length>0)throw new Error('An account with this email already exists. Try logging in at cascadiastars.com instead.');
+    // Create employee (id column requires a UUID)
+    const empId=crypto.randomUUID();
+    const er=await fetch(SB_URL+'/rest/v1/cf_employees',{method:'POST',headers:hd,body:JSON.stringify({id:empId,name,email,role,facility:fac,initials,color})});
+    if(!er.ok){const e=await er.json();throw new Error(e.message||'Failed to create profile')}
+    const emp=await er.json();const eid=empId;
+    // Create account
+    const ar=await fetch(SB_URL+'/rest/v1/cf_accounts',{method:'POST',headers:hd,body:JSON.stringify({email,password_hash:hash,role:'user',must_change_password:false,employee_id:eid})});
+    if(!ar.ok){const e=await ar.json();throw new Error(e.message||'Failed to create account')}
+    document.getElementById('formContainer').style.display='none';
+    document.getElementById('successScreen').style.display='block';
+    document.getElementById('successMsg').textContent='Welcome, '+name+'! Your account at '+fac+' is ready. Log in to start filling out your profile with your favorites, fun facts, and more.';
+  }catch(err){
+    document.getElementById('errorBanner').textContent=err.message;document.getElementById('errorBanner').style.display='block';
+    sb.disabled=false;sb.textContent='Create My Account';
+  }
+});
+</script>
+</body>
+</html>

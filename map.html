@@ -300,9 +300,9 @@ function selectFacility(f){
       staffCountEl.textContent=staff.length+' member'+(staff.length>1?'s':'');
       staffListEl.innerHTML=staff.map(function(s){
         var tag=s.id?'a':'div';
-        var href=s.id?' href="/profile.html?id='+'" ':'';
+        var href=s.id?' href="profile.html?id='+'" ':'';
         if(s.id){
-          return '<a href="/profile.html?id='+s.id+'" class="staff-person" style="text-decoration:none;color:inherit;cursor:pointer">'+
+          return '<a href="profile.html?id='+s.id+'" class="staff-person" style="text-decoration:none;color:inherit;cursor:pointer">'+
             '<div class="staff-avatar" style="background:'+s.c+'">'+s.i+'</div>'+
             '<div class="staff-details">'+
             '<div class="staff-name">'+s.n+'</div>'+
