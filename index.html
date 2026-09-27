@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Stars of Cascadia</title>
+<link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden;font-family:system-ui,-apple-system,sans-serif}
+.shell-nav{
+  background:linear-gradient(135deg,#134e4a,#0f766e);
+  display:flex;align-items:center;height:52px;padding:0 16px;
+  position:fixed;top:0;left:0;right:0;z-index:9999;
+  box-shadow:0 2px 12px rgba(0,0,0,0.18);
+}
+.shell-brand{display:flex;align-items:center;gap:10px;margin-right:auto;cursor:pointer}
+.shell-brand svg{width:28px;height:28px}
+.shell-brand .brand-text{font-weight:900;font-size:15px;color:white;letter-spacing:0.3px}
+.shell-brand .brand-text span{color:#fbbf24}
+.shell-tabs{display:flex;gap:4px;align-items:center}
+.shell-tab{
+  padding:7px 16px;border-radius:10px;font-size:13px;font-weight:700;
+  color:rgba(255,255,255,0.7);cursor:pointer;transition:all 0.2s;
+  border:none;background:none;outline:none;
+}
+.shell-tab:hover{background:rgba(255,255,255,0.1);color:white}
+.shell-tab.active{background:rgba(255,255,255,0.18);color:white}
+.shell-tab-icon{display:none}
+@media(max-width:480px){
+  .shell-tab .tab-label{display:none}
+  .shell-tab-icon{display:inline}
+  .shell-tab{padding:8px 12px;font-size:16px}
+}
+.frame-container{
+  position:fixed;top:52px;left:0;right:0;bottom:0;
+}
+.frame-container iframe{
+  width:100%;height:100%;border:none;
+  position:absolute;top:0;left:0;
+  transition:opacity 0.15s ease;
+}
+.frame-container iframe.hidden{
+  opacity:0;pointer-events:none;z-index:0;
+}
+.frame-container iframe.visible{
+  opacity:1;pointer-events:auto;z-index:1;
+}
+</style>
+</head>
+<body>
+<nav class="shell-nav">
+  <div class="shell-brand" onclick="switchTab('directory')">
+    <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#14b8a6"/><text x="16" y="21" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="system-ui">&#9733;</text></svg>
+    <div class="brand-text">Stars of <span>Cascadia</span></div>
+  </div>
+  <div class="shell-tabs">
+    <button class="shell-tab active" data-tab="directory" onclick="switchTab('directory')">
+      <span class="shell-tab-icon">&#128101;</span>
+      <span class="tab-label">Directory</span>
+    </button>
+    <button class="shell-tab" data-tab="map" onclick="switchTab('map')">
+      <span class="shell-tab-icon">&#128506;</span>
+      <span class="tab-label">Map</span>
+    </button>
+  </div>
+</nav>
+<div class="frame-container">
+  <iframe id="frame-directory" class="visible" src="/app.html"></iframe>
+  <iframe id="frame-map" class="hidden" src="about:blank" data-src="/map.html"></iframe>
+  <iframe id="frame-profile" class="hidden" src="about:blank"></iframe>
+</div>
+<script>
+var currentTab = 'directory';
+var mapLoaded = false;
+
+function switchTab(tab, opts) {
+  opts = opts || {};
+  currentTab = tab;
+
+  // Update tab buttons
+  document.querySelectorAll('.shell-tab').forEach(function(btn){
+    btn.classList.toggle('active', btn.getAttribute('data-tab') === tab);
+  });
+
+  // Handle frame visibility
+  ['directory','map','profile'].forEach(function(t){
+    var frame = document.getElementById('frame-' + t);
+    if(t === tab){
+      frame.classList.remove('hidden');
+      frame.classList.add('visible');
+    } else {
+      frame.classList.add('hidden');
+      frame.classList.remove('visible');
+    }
+  });
+
+  // Lazy-load map on first visit
+  if(tab === 'map' && !mapLoaded){
+    var mapFrame = document.getElementById('frame-map');
+    mapFrame.src = mapFrame.getAttribute('data-src');
+    mapLoaded = true;
+  }
+
+  // Load profile if switching to profile tab
+  if(tab === 'profile' && opts.profileId){
+    var profileFrame = document.getElementById('frame-profile');
+    if(profileFrame.src === 'about:blank' || !profileFrame.contentWindow){
+      profileFrame.src = '/profile.html?id=' + opts.profileId;
+    } else {
+      profileFrame.contentWindow.postMessage({type:'loadProfile', id: opts.profileId}, '*');
+    }
+  }
+}
+
+// Listen for messages from child frames
+window.addEventListener('message', function(e){
+  if(!e.data || !e.data.type) return;
+
+  if(e.data.type === 'openProfile' && e.data.id){
+    // Load profile frame and switch to it
+    var profileFrame = document.getElementById('frame-profile');
+    profileFrame.src = '/profile.html?id=' + e.data.id;
+    switchTab('profile', {profileId: e.data.id});
+  }
+
+  if(e.data.type === 'backToMap'){
+    switchTab('map');
+  }
+
+  if(e.data.type === 'backToDirectory'){
+    switchTab('directory');
+  }
+});
+</script>
+</body>
+</html>

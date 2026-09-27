@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/app.html", "destination": "/app.html" },
+    { "source": "/map.html", "destination": "/map.html" },
+    { "source": "/profile.html", "destination": "/profile.html" },
+    { "source": "/onboard", "destination": "/onboard.html" },
+    { "source": "/join", "destination": "/onboard.html" },
+    { "source": "/((?!assets|app\\.html|map\\.html|onboard\\.html|profile\\.html|shell\\.html|vite\\.svg).*)", "destination": "/index.html" }
+  ]
+}

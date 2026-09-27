@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Stars of Cascadia - Staff Directory</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Nunito',sans-serif;background:#f0f5f3;color:#2d3748;min-height:100vh}
+.header{
+  background:linear-gradient(135deg,#43b692 0%,#2d9a7e 40%,#1f7a6a 100%);
+  padding:0 28px;height:72px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:100;
+  box-shadow:0 4px 20px rgba(45,154,126,0.3);
+}
+.header::after{
+  content:'';position:absolute;bottom:-12px;left:0;right:0;height:14px;
+  background:url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0c200 14 400 14 600 0s400-14 600 0v14H0z' fill='%23f0f5f3'/%3E%3C/svg%3E") repeat-x;
+  background-size:600px 14px;z-index:10;
+}
+.header-left{display:flex;align-items:center;gap:14px}
+.logo-mark{
+  width:44px;height:44px;border-radius:14px;background:white;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 3px 10px rgba(0,0,0,0.15);transform:rotate(-3deg);
+}
+.logo-mark svg{width:24px;height:24px}
+.header-title{font-size:18px;font-weight:900;color:white;letter-spacing:0.5px}
+.header-title span{color:#ffe082}
+.header-sub{font-size:12px;color:rgba(255,255,255,0.75);font-weight:600;margin-top:1px}
+.header-stats{display:flex;gap:20px}
+.stat{text-align:center;background:rgba(255,255,255,0.18);border-radius:14px;padding:6px 18px;backdrop-filter:blur(4px)}
+.stat-value{font-size:24px;font-weight:900;color:white}
+.stat-label{font-size:9px;color:rgba(255,255,255,0.8);text-transform:uppercase;letter-spacing:1.5px;font-weight:700}
+
+.controls{padding:20px 28px 10px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:12px}
+.search-wrap{position:relative;flex:1;min-width:240px;max-width:480px}
+.search-box{
+  width:100%;padding:12px 16px 12px 44px;background:white;
+  border:2px solid #d6e4dc;border-radius:16px;font-size:14px;
+  color:#2d3748;outline:none;transition:all 0.3s;
+  font-family:'Nunito',sans-serif;font-weight:600;
+}
+.search-box::placeholder{color:#8fa89e;font-weight:600}
+.search-box:focus{border-color:#43b692;box-shadow:0 0 0 4px rgba(67,182,146,0.15)}
+.search-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:#8fa89e;display:flex;align-items:center}
+.search-icon svg{width:18px;height:18px}
+
+.filter-group{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.filter-label{font-size:10px;color:#8fa89e;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;margin-right:2px}
+.filter-select{
+  padding:8px 32px 8px 14px;border-radius:12px;border:2px solid #d6e4dc;
+  background:white;font-size:13px;color:#2d3748;cursor:pointer;
+  font-family:'Nunito',sans-serif;font-weight:700;
+  appearance:none;-webkit-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238fa89e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 10px center;
+  transition:all 0.2s;outline:none;
+}
+.filter-select:focus{border-color:#43b692;box-shadow:0 0 0 4px rgba(67,182,146,0.15)}
+
+.results-bar{padding:6px 28px 12px;font-size:13px;color:#8fa89e;font-weight:700;display:flex;align-items:center;gap:8px}
+.results-num{color:#43b692;font-weight:900;font-size:15px}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:16px;padding:0 28px 40px;
+}
+.card{
+  background:white;border-radius:18px;border:2px solid #e8efe9;
+  padding:20px;cursor:pointer;
+  transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  display:flex;align-items:center;gap:14px;
+  position:relative;overflow:hidden;
+}
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 28px rgba(67,182,146,0.15);
+  border-color:#43b692;
+}
+.card-avatar{
+  width:52px;height:52px;border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;font-weight:900;color:white;flex-shrink:0;
+  box-shadow:0 3px 10px rgba(0,0,0,0.12);
+  letter-spacing:0.5px;
+}
+.card-info{flex:1;min-width:0}
+.card-name{font-size:15px;font-weight:800;color:#2d3748;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card-role{font-size:12px;color:#8fa89e;font-weight:600;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card-facility{
+  font-size:11px;color:#43b692;font-weight:700;margin-top:5px;
+  display:flex;align-items:center;gap:5px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.card-facility svg{width:12px;height:12px;flex-shrink:0}
+.card-state{
+  position:absolute;top:10px;right:10px;
+  font-size:9px;padding:4px 10px;border-radius:10px;
+  font-weight:800;text-transform:uppercase;letter-spacing:0.5px;
+}
+
+.empty-state{
+  text-align:center;padding:60px 20px;
+  grid-column:1/-1;
+}
+.empty-state svg{width:64px;height:64px;color:#d6e4dc;margin-bottom:16px}
+.empty-title{font-size:18px;font-weight:800;color:#8fa89e;margin-bottom:8px}
+.empty-sub{font-size:14px;color:#b8ccc3;font-weight:600}
+
+@media(max-width:768px){
+  .header{height:60px;padding:0 16px}
+  .header-stats{display:none}
+  .controls{padding:16px 16px 8px}
+  .grid{padding:0 16px 32px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+  .results-bar{padding:6px 16px 10px}
+  .filter-group{width:100%}
+}
+@media(max-width:480px){
+  .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-left">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#43b692" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div>
+      <div class="header-title">THE STARS OF <span>CASCADIA</span></div>
+      <div class="header-sub">Staff Directory</div>
+    </div>
+  </div>
+  <div class="header-stats">
+    <div class="stat"><div class="stat-value" id="totalPeople">0</div><div class="stat-label">People</div></div>
+    <div class="stat"><div class="stat-value" id="totalFacilities">0</div><div class="stat-label">Facilities</div></div>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="search-wrap">
+    <span class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+    <input type="text" class="search-box" placeholder="Search by name, role, or facility..." id="searchInput" autocomplete="off" />
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">Facility</span>
+    <select class="filter-select" id="facilityFilter"><option value="">All Facilities</option></select>
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">State</span>
+    <select class="filter-select" id="stateFilter"><option value="">All States</option></select>
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">Role</span>
+    <select class="filter-select" id="roleFilter"><option value="">All Roles</option></select>
+  </div>
+</div>
+
+<div class="results-bar">
+  Showing <span class="results-num" id="resultsCount">0</span> people
+  <span id="filterDesc"></span>
+</div>
+
+<div class="grid" id="staffGrid"></div>
+
+<script>
+var staffByFacility = {"Unassigned":[{"n":"Andrea Hernandez Nunez","r":"","i":"AN","c":"#7c3aed","id":"e5850b4c-5a60-4da0-9443-21a802d7c912"},{"n":"Angela Reiher","r":"","i":"AR","c":"#186e77","id":"a6bdf18b-329b-41a7-be6d-fb997e3651a2"},{"n":"Bill Howell","r":"","i":"BH","c":"#0369a1","id":"0c50b3ff-024f-478b-b7ed-04b1181522bb"},{"n":"Brandon Aldridge","r":"","i":"BA","c":"#059669","id":"f4e0c7b0-90c7-4153-9cdb-39fff205ee6d"},{"n":"Catie Hayes","r":"","i":"CH","c":"#186e77","id":"54626c59-e9d7-4297-b64e-ceba16cab3fd"},{"n":"Ellen Aiken","r":"","i":"EA","c":"#4f46e5","id":"86d11ad9-72d6-46f7-93b9-427671c90b8c"},{"n":"Erin Holthaus","r":"","i":"EH","c":"#0b7280","id":"7e248c57-1061-4f62-8d71-f2193ba99cfe"},{"n":"Gwen Veitkus","r":"","i":"GV","c":"#dc2626","id":"34c111b7-df0b-4ac3-bab0-f5bc4759e195"},{"n":"Joseph Wagner","r":"","i":"JW","c":"#e11d48","id":"aa5d12e3-575a-449d-bae9-9bd8fa9d83cf"},{"n":"Sarah Harrington","r":"","i":"SH","c":"#d97706","id":"bda0da70-c1ea-4852-a8df-71a5c0246540"},{"n":"Sarah Rowan","r":"","i":"SR","c":"#0b7280","id":"f362ff65-581d-46e4-a5cc-2e221063414e"},{"n":"Shelly Phelps","r":"","i":"SP","c":"#186e77","id":"93f4c99c-1424-43d6-b7f2-1c9111f2c351"},{"n":"Shianne Honeycutt","r":"","i":"ZW","c":"#0b7280","id":"f0bda29f-efd1-4083-995f-ea67b40aa5d2"},{"n":"Steve LaForte","r":"","i":"SL","c":"#059669","id":"0d886a69-24c5-4c85-95cb-6cbcab6dc09d"},{"n":"Tracie Trabert-Heflin","r":"","i":"TT","c":"#16a34a","id":"a9ed59a8-b6d3-4660-af4c-22d3bb32a44c"},{"n":"Zane Woolsey","r":"","i":"SH","c":"#186e77","id":"a54c4dc7-fb17-49ec-8bd4-ed6a464a7fd8"},{"n":"Cathy Mannion","r":"","i":"CM","c":"#8fa89e","id":"dae08795-89db-4243-b6ac-d8030ea87b32"}],"Alderwood Park Health & Rehabilitation":[{"n":"Chelsey Buisson","r":"Chief Nursing Officer","i":"CB","c":"#dc2626","id":"3ac5fdb6-5141-40e8-b20a-324eb3df6461"},{"n":"Joe Rudd","r":"CEO","i":"JR","c":"#dc2626","id":"a6cd19af-6223-44c3-93df-5f60f412942d"}],"Anacortes Health and Rehab":[{"n":"Geinah Gumban","r":"CEO/Admi","i":"GG","c":"#4f46e5","id":"58c2718f-e8e6-4726-bd57-9279c904be19"},{"n":"LeAnn Fenwick","r":"CNO","i":"LF","c":"#d97706","id":"482afd6c-e962-47e6-9c05-92d0d21ae12d"}],"Arbor Valley of Cascadia":[{"n":"Jaxen Nielsen","r":"Operations Manager CIT","i":"JN","c":"#059669","id":"895e7bbe-1c18-4244-925c-d06cea4e6cd5"},{"n":"Lisa Bowens","r":"RN/CNO","i":"LB","c":"#d97706","id":"aa910703-ac9b-48e2-b89f-44d3ca412412"},{"n":"Nicholas Hopkins","r":"CEO","i":"NH","c":"#16a34a","id":"f79ac5f9-f12c-4c7e-b516-cbff2d3b982a"}],"Aspen Park of Cascadia":[{"n":"Maggie Gale","r":"CNO","i":"MG","c":"#0369a1","id":"4155ffb6-3d78-479a-ab98-254dffdce2dc"},{"n":"Rachel Zimmerman","r":"CEO","i":"RZ","c":"#b45309","id":"457e3ffe-b670-492b-b27d-ae278fa81efd"}],"Avencare Health":[{"n":"Kevin Peay","r":"President","i":"KP","c":"#059669","id":"15129db7-d405-4a48-ac6b-59c65e633084"},{"n":"Kraig Langheinrich","r":"President - Home Health and Hospice","i":"KL","c":"#059669","id":"a0bf1dab-8781-41d7-9911-91ebff81730f"}],"Beaverton Post Acute of Cascadia":[{"n":"Blake Epp","r":"CEO","i":"BE","c":"#7c3aed","id":"1ab1f80a-8cbd-49e8-a7ab-cd8869a21ff0"},{"n":"LouAnn Manwarren","r":"CNO","i":"LM","c":"#0b7280","id":"aa4fdbee-9b9b-4223-ba2e-c571a4345ea1"}],"Bend Transitional Care":[{"n":"Charla Wright","r":"Operations Director, LNHA","i":"CW","c":"#7c3aed","id":"50fb705b-d5b6-4940-902b-58527e2b3f64"},{"n":"Heather Jeffers","r":"CEO","i":"HJ","c":"#dc2626","id":"8b01f376-455d-4e41-ac4a-849b96d976c9"},{"n":"Michelle Restivo","r":"CNO","i":"MR","c":"#d97706","id":"96e38b75-34fb-4989-91bf-4892730ed878"}],"Boswell Transitional Care of Cascadia":[{"n":"Annie Shoemaker","r":"CNO","i":"AS","c":"#0b7280","id":"6d15a059-60d9-4217-998d-649734eb8e47"},{"n":"Mike Aston","r":"CIT","i":"MA","c":"#dc2626","id":"f0fde7ea-fecd-47df-a66f-05b5cc86b973"},{"n":"Nigel Santiago","r":"CEO","i":"NS","c":"#c026d3","id":"68ea764d-353f-4b98-ab9b-aec765d6ad7e"}],"Brookfield Health & Rehabilitation of Cascadia":[{"n":"Reahna Cavalli","r":"CEO","i":"RC","c":"#e11d48","id":"ce03206a-3687-4d94-b3a9-88e1d4f85a9b"},{"n":"Tai Duhamel","r":"RN, MSN/CNO","i":"TD","c":"#4f46e5","id":"db4b3799-84b8-4e61-a95e-309b5e1efd6d"}],"Caldwell of Cascadia":[{"n":"Davia Smith","r":"Operations Director CIT","i":"DS","c":"#059669","id":"459bb311-18bb-485b-82ba-69a0b9424cd4"},{"n":"Mark Dudley","r":"CEO","i":"MD","c":"#059669","id":"1df9d6c6-3049-42bd-b303-e9f559c57e7a"},{"n":"Will Merrick","r":"COO, JockiBox","i":"WM","c":"#e11d48","id":"44e7c126-7a3e-40f2-9196-f61649c297e0"}],"Canyon West of Cascadia":[{"n":"Angela Reiher","r":"Registered Nurse, CNO","i":"AR","c":"#186e77","id":"a6bdf18b-329b-41a7-be6d-fb997e3651a2"},{"n":"Buzz Hoopes","r":"Administrator","i":"BH","c":"#7c3aed","id":"dab22a64-5db6-4b87-bf4c-469a10d85a56"},{"n":"Jordan Pope","r":"CIT","i":"JP","c":"#059669","id":"e63fe49c-2492-4ead-a9ac-ccaabb6b1580"}],"Cascadia Healthcare":[{"n":"Andy Zollinger","r":"General Counsel","i":"AZ","c":"#0b7280","id":"efc02541-146a-497c-b20e-24762a99c920"},{"n":"Chantel De La Chica","r":"AR Resource","i":"CC","c":"#b45309","id":"3ee9d860-eb6c-4cbd-b65a-426d02cd7fba"},{"n":"Chase Gunderson","r":"EVP of Operations","i":"CG","c":"#b45309","id":"ce39b7e0-0a4f-4d31-983f-b54e0e435eb7"},{"n":"Danny White","r":"Operations Manager of New Ventures","i":"DW","c":"#0b7280","id":"eec660cc-8506-4d8e-b401-a43b85a3585f"},{"n":"Dustin Crowell","r":"Business Intelligence Developer","i":"DC","c":"#d97706","id":"39042c9f-a79e-4b9c-bfc9-d0d132523cc6"},{"n":"Erik Frelund","r":"VP, Product Development","i":"EF","c":"#c026d3","id":"7d18f481-6b76-4870-b33e-b2d708cb6bff"},{"n":"Heather Baird","r":"Deputy General Counsel","i":"HB","c":"#16a34a","id":"92646ab1-b2c5-4b45-a9cf-d5269ea34183"},{"n":"Holly Chavez","r":"CCO","i":"HC","c":"#e11d48","id":"2074da06-9560-45f7-9015-cd0cd8ccdf18"},{"n":"Jana Straubhar","r":"Vice President Human Resources","i":"JS","c":"#4f46e5","id":"22e5d4e7-facb-4edb-a58b-b947827179f8"},{"n":"Jenna Rohde","r":"Office Manager | Executive Assistant","i":"JR","c":"#4f46e5","id":"e72ec61b-72f0-4707-89cb-5a233975ae39"},{"n":"Jeremy Hall","r":"VP, Pharmacy Services","i":"JH","c":"#16a34a","id":"7bc69dc9-fc47-4483-83bc-05206031ad33"},{"n":"Joe Kelly","r":"CIO","i":"JK","c":"#e11d48","id":"a566d716-342a-4e8a-ab1f-cd11e9b96f13"},{"n":"Josh Williams","r":"CFO","i":"JW","c":"#0b7280","id":"d6e968b5-4135-4809-85d9-723c03708edf"},{"n":"Katie Harrison","r":"PDPM Resource","i":"KH","c":"#059669","id":"0bb9b96a-7f02-45cb-9f7f-4aec7c9b3614"},{"n":"Marques Binette","r":"Litigation Counsel","i":"MB","c":"#e11d48","id":"2217144f-aa06-4f66-88eb-4d5ab171caf6"},{"n":"Merrisue Corris","r":"Chief Compliance Officer","i":"MC","c":"#0b7280","id":"00b566b5-c688-4282-ab57-5659e9dd59a4"},{"n":"Michael Nielsen","r":"President","i":"MN","c":"#186e77","id":"f544d6b6-6c6f-4854-8e5c-b548f795d3da"},{"n":"Mike Duncan","r":"Director of Physical Facilities","i":"MD","c":"#0b7280","id":"44ca40de-0d90-41c1-997f-0883e917c93c"},{"n":"Owen Hammond","r":"CEO/Owner","i":"OH","c":"#d97706","id":"c42219a1-78ed-4799-b347-062fd21eec07"},{"n":"Samira Husic","r":"ARR","i":"SH","c":"#b45309","id":"8b6aeda5-e41a-4e89-bf9b-40d293d76529"},{"n":"Sophia Johnson","r":"Director of Accounts Receivable","i":"SJ","c":"#d97706","id":"75373ab3-a2c1-4de6-9761-1ac520b0c761"},{"n":"Tim Nelson","r":"COO/Owner","i":"TN","c":"#186e77","id":"ecb8565c-dd2b-4465-a0ca-17d76b3c9e97"},{"n":"Tris Rollins","r":"President of Columbia/Vincero","i":"TR","c":"#e11d48","id":"398e912a-8d39-4a66-857d-ea38f66ec5ea"}],"Cascadia of Boise":[{"n":"Gabriel Eifler","r":"Operations Director - CIT","i":"GE","c":"#b45309","id":"2ff079ec-9b36-41d0-bd79-bc8337ca85b8"},{"n":"Haden Nash","r":"CEO","i":"HN","c":"#059669","id":"e1281217-8492-4765-a84c-af7b687abadb"},{"n":"Rita Merrick","r":"CNO","i":"RM","c":"#e11d48","id":"08216a6c-78ee-45bf-be69-1876a5c9ccb0"}],"Cascadia of Lewiston":[{"n":"Ryan Marsh","r":"Administrator","i":"RM","c":"#d97706","id":"de2549c8-4a0b-4bcb-8630-112bba6377e3"}],"Cascadia of Nampa":[{"n":"Anna Schoolcraft","r":"RN, CNO","i":"AS","c":"#059669","id":"b3967a00-eba7-4a1d-af1a-78b4551f3dd0"},{"n":"Maximillian Allred","r":"CEO","i":"MA","c":"#186e77","id":"0eed4117-9d6b-4b35-ab62-d0511be762fc"}],"Cherry Ridge of Cascadia":[{"n":"Debbie Pape","r":"CNO","i":"DP","c":"#b45309","id":"42b28523-e9d1-4471-b8df-6fbf1647a8b7"},{"n":"Preston Rowe","r":"Administrator / CEO","i":"PR","c":"#059669","id":"df5d13b0-6a1b-484b-818a-2174a6e8c082"}],"Clarkston Health and Rehabilitation of Cascadia":[{"n":"Drew Schiller","r":"Administrator","i":"AS","c":"#e11d48","id":"63736b79-aac2-4eec-a47f-5e24694162d6"},{"n":"Jami Johnson","r":"RN, CNO","i":"JJ","c":"#4f46e5","id":"a92e7fd2-4c23-4d48-b856-065505c7bb62"}],"Clearwater Health & Rehabilitation of Cascadia":[{"n":"Andrea Bowen","r":"CEO","i":"AB","c":"#7c3aed","id":"659cf8f0-1e65-46ff-9b94-935af24d4c04"},{"n":"Leslie Griffin","r":"CNO","i":"LG","c":"#16a34a","id":"ebbc5ea5-9d17-4684-ac3d-23010cc1d21f"}],"Coeur d'Alene Health and Rehabilitation of Cascadia":[{"n":"Leslie Winkleman","r":"CNO","i":"LW","c":"#0b7280","id":"26f0333a-7089-4935-8a05-172beacb4f61"},{"n":"Rachel Toland","r":"CEO","i":"RT","c":"#c026d3","id":"b902f4d2-db23-441c-a750-6f7c2bae60e1"}],"Colfax Health and Rehabilitation of Cascadia":[{"n":"Reed Alvis","r":"Director of Operations","i":"JA","c":"#b45309","id":"bb1c2853-188d-4622-b4c8-298420b2437a"}],"Columbia Healthcare":[{"n":"Andrew Whipple","r":"CIT","i":"AW","c":"#4f46e5","id":"c4932f24-cf0b-46ad-b4aa-10608c7304c7"},{"n":"Kaelynn Wolfe","r":"AR Resource","i":"KW","c":"#16a34a","id":"4681413f-83ba-44e5-b683-df488f102a58"},{"n":"Meg McDaniel","r":"Director of Clinical Services","i":"MM","c":"#7c3aed","id":"746fa9a0-4075-4294-b764-4c303f79a6c8"},{"n":"Patty Gifford","r":"AR Resource","i":"PG","c":"#c026d3","id":"073db680-fd4f-4b6a-9e6d-f11cbf36a280"}],"Colville Health & Rehabilitation of Cascadia":[{"n":"Ariel Ackerman","r":"Chief Nursing Officer, MSN","i":"AA","c":"#c026d3","id":"be53424e-d0c3-4891-9660-2722f330995c"},{"n":"Tate Weichers","r":"Administrator","i":"RW","c":"#16a34a","id":"a6ed2394-d307-425f-bd78-ff8e15f0c49d"}],"Creekside Health and Rehabilitation of Cascadia":[{"n":"Jammie Posey","r":"CEO","i":"JP","c":"#186e77","id":"9d122bbb-7077-41af-b888-3aa503394131"},{"n":"Mackenzie Mason","r":"Chief Nursing Officer","i":"MM","c":"#b45309","id":"ea1fb976-9f43-4d48-9bee-7c3d57f1e9f2"}],"Curry Village Health and Rehabilitation of Cascadia":[{"n":"Jacklyn Stowe","r":"CEO","i":"JS","c":"#0369a1","id":"86cadf75-65b4-4422-8d91-692dbb49391d"},{"n":"Kristi Testa","r":"CNO","i":"KT","c":"#b45309","id":"4589033f-eb37-48c4-8fec-258a49b718a2"}],"Eagle Rock Health and Rehabilitation of Cascadia":[{"n":"Michael Call","r":"Chief Nursing Officer","i":"MC","c":"#b45309","id":"01ed084d-9778-464f-b5f1-9b7847f62f5b"},{"n":"Michael Davis","r":"Administrator","i":"MD","c":"#7c3aed","id":"42eee6b9-df2b-4683-aadf-fe1ea2febcd5"}],"Envision Healthcare":[{"n":"Braden Bair","r":"President of Envision","i":"BB","c":"#059669","id":"265a2f7d-a78a-4d78-a6e8-780619972f94"},{"n":"Jen Howerton","r":"Rehab Resource","i":"JH","c":"#186e77","id":"64fd1d2a-3c4b-4369-9e2e-7690c67e12c5"},{"n":"Katie Dobson","r":"Business Development Manager","i":"KD","c":"#16a34a","id":"0d1042f3-0a38-4151-b488-d3d0f55084d2"},{"n":"Rachel Gibney","r":"Director of Clinical Services","i":"RG","c":"#b45309","id":"46007d69-bfb8-407a-858b-63e3ae07bafb"}],"Fairlawn Health and Rehabilitation of Cascadia":[{"n":"Leslie Workman","r":"CEO","i":"LW","c":"#16a34a","id":"9bb9e530-977e-4acd-8a59-2a32fb9cb971"},{"n":"Teena Turner","r":"CNO","i":"TT","c":"#d97706","id":"d4ecda47-2687-4713-9d27-36d321ef7bbb"}],"Fairlawn of Olympus Retirement Living ILF":[{"n":"Tonya Hamilton","r":"CEO","i":"TH","c":"#d97706","id":"99c7b835-ea9f-44b6-9f26-4c82be3d7482"}],"Grangeville Health and Rehabilitation of Cascadia":[{"n":"Adam Jenkins","r":"CEO","i":"AJ","c":"#d97706","id":"4b2b11ca-0fab-4d41-a2a8-1adc497c50bd"}],"Highland Health & Rehabilitation of Cascadia":[{"n":"Nate Vance","r":"CEO","i":"NV","c":"#e11d48","id":"96dac163-8a57-40fd-8585-4471f159a16d"}],"Hudson Bay Health & Rehabilitation":[{"n":"Amie Barrio","r":"Chief Nursing Officer","i":"AB","c":"#e11d48","id":"8fc96b69-bdc9-4cc6-a6e2-443e75c1418d"},{"n":"Leslie Pickron","r":"Operations Manager","i":"LP","c":"#4f46e5","id":"c480d9df-4dad-4a21-b11f-0621622c3004"}],"Lewiston Transitional Care of Cascadia":[{"n":"Heather Davis","r":"Director of Operations","i":"HD","c":"#dc2626","id":"c6bcd942-95cc-44cd-9045-28a90165a62b"},{"n":"Kelsey Schrodt","r":"Chief Nursing Officer","i":"KS","c":"#0369a1","id":"ed459e76-6d13-429f-970c-2998dbe6ea80"}],"Libby Care Center of Cascadia":[{"n":"Bj Youngblood","r":"CEO","i":"BY","c":"#059669","id":"2476980b-6d2b-4fcf-b41b-b8a313e88e40"},{"n":"Sarah Soete","r":"Chief Nursing Officer","i":"SS","c":"#d97706","id":"0e30df42-4cad-408a-b1f2-dd2cb3071495"}],"Meadow View Assisted Living":[{"n":"Jace Keith","r":"Operations Director - CIT","i":"JK","c":"#0b7280","id":"5e932c90-6950-4678-bdc1-ce8dd908dc55"},{"n":"Nick Parisi","r":"CEO","i":"AP","c":"#d97706","id":"72d222c8-f644-4d65-a6cf-d6db8791ed38"},{"n":"Stacy Aslanzadeh","r":"Wellness Director","i":"SA","c":"#0b7280","id":"edf6d9d8-9cc9-489c-b3fe-d2aa4a0b88c0"}],"Mount Ascension Transitional Care of Cascadia":[{"n":"Miranda Burdsall","r":"Chief Nursing Officer","i":"MB","c":"#16a34a","id":"b91924be-ac17-4136-b845-b0094afd70a4"},{"n":"Shane Brady","r":"CEO","i":"SB","c":"#d97706","id":"c8b1e4d5-e653-4bcf-a0d5-3b21a859e124"}],"Mountain Valley of Cascadia":[{"n":"Emilee Kulin","r":"CEO","i":"EK","c":"#0369a1","id":"5081fca0-dfb0-4230-a0d4-f16ef223c508"},{"n":"Jodi Hagaman","r":"CNO","i":"JH","c":"#c026d3","id":"ced3d5f1-393b-45e4-84d6-52fec50078be"}],"Mountain View of Cascadia":[{"n":"Dan Demmerly","r":"CEO","i":"DD","c":"#0369a1","id":"0366548b-b239-4437-90cd-0484e63305c4"},{"n":"Traci Smith","r":"Chief Nursing Officer","i":"TS","c":"#0b7280","id":"eec4c07a-b57b-478f-a62c-3bd3bc035b71"}],"Northern Healthcare":[{"n":"Erin Canady","r":"MDS Resource","i":"EC","c":"#dc2626","id":"abad2da5-625a-4f9a-ba83-a71c24ec5de6"},{"n":"Joan Berkfield","r":"Clinical Resource","i":"JB","c":"#dc2626","id":"4a5ed158-079b-4215-9693-61a78e282f66"},{"n":"Jordan Monson","r":"President - Northern Healthcare","i":"JM","c":"#4f46e5","id":"13a641ca-539b-4e13-b349-ed8eb06292c2"},{"n":"Roberta Wallace","r":"Director of Clinical Services","i":"RW","c":"#059669","id":"c30b1583-1024-4554-9e21-091fc5c24d54"}],"NorthPark Health and Rehabilitation of Cascadia":[{"n":"Joshua Clark","r":"CEO","i":"JC","c":"#d97706","id":"0fc16bbd-e876-49bc-bb43-18cc4b10d936"},{"n":"Marla Ramirez","r":"CNO","i":"MP","c":"#4f46e5","id":"bf439cc0-d28e-4a1c-a3bb-1b3796f7c500"}],"Olympus Living at Spokane Valley-ALF":[{"n":"Brenda Twete","r":"Wellness Director","i":"BT","c":"#186e77","id":"d00fbb64-547f-403b-941a-47512fde3aed"},{"n":"Shelby Strider","r":"CEO","i":"SS","c":"#0b7280","id":"32316130-2519-4fff-95cb-7b83989f7fd0"}],"Olympus Retirement Living":[{"n":"Charlie Eagan","r":"Wellness Director","i":"CE","c":"#0b7280","id":"2e28a191-13a9-403c-a415-b96791c04892"},{"n":"Debrah Simpson","r":"Director of Clinical Services","i":"DS","c":"#d97706","id":"2470b6d3-9504-4cdd-b0f5-cf5af72d88b6"},{"n":"Melinda Dillon","r":"Director of Business Development","i":"MD","c":"#4f46e5","id":"0a76035f-d960-4778-ab04-66cfbf733e17"},{"n":"Nate Bascom","r":"President","i":"NB","c":"#16a34a","id":"dbd7c2d8-2318-4dcb-b50a-d4198f6cd7b0"}],"Paradise Creek Health and Rehabilitation of Cascadia - SNF":[{"n":"Daniel Bong","r":"LNHA/CEO","i":"DB","c":"#16a34a","id":"ea25a764-6b4a-4df9-bcec-83adcd0e3626"}],"Paradise Creek of Olympus Retirement Living - ALF":[{"n":"Emma Andersen","r":"CEO","i":"EA","c":"#0b7280","id":"3a433f96-da5e-49a9-af7b-83ea5520cf7d"},{"n":"Jennifer Anderson","r":"Wellness Director","i":"JA","c":"#b45309","id":"5f514ad1-1dce-4516-a7c2-1a7984f7dcc3"}],"Payette Healthcare of Cascadia":[{"n":"Jen McDonald","r":"CNO","i":"JM","c":"#e11d48","id":"6950fc2b-cf0e-4811-b268-adc514ac97eb"}],"Rosario Assisted Living and Memory Care":[{"n":"Tom Brooks","r":"CEO","i":"TB","c":"#0b7280","id":"62de9294-e3cf-4abd-a544-4dd43b78a4fb"}],"Royal Plaza Health and Rehabilitation of Cascadia":[{"n":"BJ Hoopes","r":"CIT","i":"BH","c":"#0369a1","id":"09f9c7fb-a38c-46d8-bc81-5894ea7388cd"},{"n":"Sarah Harrington","r":"Chief Nursing Officer","i":"SH","c":"#d97706","id":"bda0da70-c1ea-4852-a8df-71a5c0246540"},{"n":"Tj Fleming","r":"CEO","i":"TF","c":"#dc2626","id":"0e6112a0-3fac-4c22-9ce8-082d5e7afabb"}],"Royal Plaza of Olympus Living - ALF":[{"n":"David Archibald","r":"CIT","i":"DA","c":"#0369a1","id":"f45c8592-f6ee-48d0-b567-5bfb9883d136"},{"n":"David Weeks","r":"Chief Executive Officer LNHA/RCA","i":"DW","c":"#186e77","id":"455d7e99-514b-4a51-a959-52a1e10ee212"}],"Salem Transitional Care":[{"n":"Andrew Rosenbaum","r":"Chief Nursing Officer","i":"AR","c":"#e11d48","id":"a92e243f-a86f-4cd5-ad71-f4531e3bcb8d"},{"n":"Shawn Harbert","r":"CEO","i":"SH","c":"#d97706","id":"bb02586c-1631-437b-8fea-8b082147e77d"}],"Secora Rehabilitation of Cascadia":[{"n":"Desirae Gregory","r":"CNO","i":"DG","c":"#dc2626","id":"e6a4d6c3-5c60-4450-b91e-c08b254c8202"},{"n":"Dieu Dinh","r":"CEO","i":"DD","c":"#7c3aed","id":"ae777dc1-13c5-4c38-9d43-11468d9204a6"}],"Shaw Mountain of Cascadia":[{"n":"Bryan Bair","r":"CEO Administrator","i":"BB","c":"#0369a1","id":"f436f2fa-70d9-4baf-a4f3-0b201f6f0dd5"},{"n":"Monica Lopez","r":"RN, CNO","i":"ML","c":"#e11d48","id":"0a510ab5-d0fe-4f1a-89db-8f6d3e46649c"}],"Shores Hospice":[{"n":"Laura Ritter","r":"Vice President of Operations","i":"LR","c":"#c026d3","id":"0e7b708c-e97a-4af0-a023-9c2c59265ae4"}],"Silverton Health and Rehabilitation of Cascadia":[{"n":"Rob Nahmensen","r":"CEO","i":"RN","c":"#e11d48","id":"3fadeb0c-1b2e-4d97-ab8f-be90c066b55c"},{"n":"Teya Nahmensen","r":"CNO","i":"TN","c":"#dc2626","id":"f6f7c8be-dda6-482a-920d-f86b65ebd543"}],"Snohomish Health and Rehabilitation of Cascadia":[{"n":"Jared Barrett","r":"Director of Operations","i":"JB","c":"#059669","id":"e238e251-6537-4219-9390-749753ebdea7"},{"n":"Marquita Curry","r":"Chief Nursing Officer","i":"MC","c":"#16a34a","id":"7c2f40fe-13d4-4f1d-83a0-3e3b84b6bcb7"}],"Spokane Valley Health and Rehabilitation of Cascadia":[{"n":"Heidi Patterson","r":"CNO","i":"HP","c":"#186e77","id":"31949f51-4b07-47a1-a578-d82aa1b4bb0a"},{"n":"Jordan Barrett","r":"CEO","i":"JB","c":"#4f46e5","id":"994353b4-87fa-4647-95d7-b165e48a861f"}],"Stafholt Health and Rehabilitation of Cascadia":[{"n":"Danielle St. Germain","r":"CEO","i":"DG","c":"#4f46e5","id":"f8404d92-df1f-4067-b7a0-a47bac43f8be"},{"n":"Leah Buress","r":"CNO, Clinical Resource Northern WA","i":"LB","c":"#7c3aed","id":"6bebeee4-cb16-4784-9186-6c59bb1170ed"}],"Teton Healthcare of Cascadia":[{"n":"James Hammond","r":"CEO","i":"JH","c":"#0b7280","id":"39a37d76-45cf-4271-ab61-f2beb81c3309"}],"The Abbey of Olympus Retirement Living ILF":[{"n":"Michele Sheridan","r":"CEO","i":"MS","c":"#d97706","id":"87302efe-e024-483f-bb28-32d265d6ad73"}],"The Cove of Cascadia - SNF":[{"n":"Darwin Royeca","r":"CEO / LNHA","i":"DR","c":"#dc2626","id":"0d4b5c59-47e4-43ae-85f8-ea3020262a6c"},{"n":"Katelyn Denison","r":"CNO","i":"KD","c":"#059669","id":"dbc19c07-4984-4cf6-9e74-b6eb7c8dee2f"}],"The Orchards of Cascadia":[{"n":"Chanel Carter","r":"CEO","i":"CC","c":"#059669","id":"bd91ae0f-2ee5-4673-aa54-e176c21752aa"},{"n":"Jill Cox","r":"CNO","i":"JC","c":"#c026d3","id":"d46d21d6-b85a-4f90-813c-808922d73bda"}],"Three Rivers Healthcare":[{"n":"Breanna Jameson","r":"President of Three Rivers","i":"BJ","c":"#dc2626","id":"cae1c0a3-f14a-4e71-bbb4-8fc8f3bd2dba"},{"n":"Jenny Spruiell","r":"AR Resource","i":"JS","c":"#4f46e5","id":"aa4e6fd8-56a2-45a8-b0c0-d5d160e97872"},{"n":"Michelle Goulette","r":"Clinical Resource","i":"MG","c":"#4f46e5","id":"b3aabcb4-bb4e-490a-b761-5a3d1eefd71f"},{"n":"Zach Maas","r":"Therapy Resource","i":"ZM","c":"#0369a1","id":"b2875fd1-f852-43de-b1dd-d511e199c4d6"}],"Twin Falls Transitional Care of Cascadia":[{"n":"Sawyer Wilcox","r":"CEO","i":"SW","c":"#186e77","id":"f9a7265f-494e-499c-8897-379c6506482b"}],"Village Manor of Cascadia":[{"n":"Kyle Otey","r":"CEO","i":"KO","c":"#4f46e5","id":"a7924e49-fa78-426c-b4b3-c1a7da6e94af"},{"n":"Linda Weaver","r":"CNO","i":"LW","c":"#7c3aed","id":"a55fbb9b-4190-49be-8ce9-9bc10e65bd69"}],"Weiser Care of Cascadia":[{"n":"Dawn Parker","r":"CNO","i":"DP","c":"#186e77","id":"bd95f03d-51f7-4d2d-b1bb-0c029e78d5e7"},{"n":"Spencer Jensen","r":"Administrator","i":"SJ","c":"#d97706","id":"1e288148-ac61-4c68-aa09-df1ccb29855d"}],"Wellspring Health and Rehab of Cascadia":[{"n":"Cory Kelley","r":"CNO","i":"CK","c":"#e11d48","id":"91c3a296-1f3c-4d1b-85bf-8725997dbff3"},{"n":"Grant Thorsen","r":"CIT","i":"GT","c":"#16a34a","id":"07f53f1c-90a3-4df6-8177-f9a065715c0d"},{"n":"Jesse Hintz","r":"Administrator","i":"JH","c":"#16a34a","id":"1a836272-73b8-4dd1-a109-91f767b9c3f7"}]};
+
+var facilities = [{"name":"Cascadia Healthcare","city":"Boise","state":"ID"},{"name":"Envision Healthcare","city":"Boise","state":"ID"},{"name":"Northern Healthcare","city":"Boise","state":"ID"},{"name":"Three Rivers Healthcare","city":"Boise","state":"ID"},{"name":"Avencare Health","city":"Boise","state":"ID"},{"name":"Aspen Park of Cascadia","city":"Moscow","state":"ID"},{"name":"Cascadia of Boise","city":"Boise","state":"ID"},{"name":"Royal Plaza Health and Rehabilitation of Cascadia","city":"Lewiston","state":"ID"},{"name":"Royal Plaza of Olympus Living - ALF","city":"Lewiston","state":"ID"},{"name":"Shaw Mountain of Cascadia","city":"Boise","state":"ID"},{"name":"Meadow View Assisted Living","city":"Boise","state":"ID"},{"name":"Arbor Valley of Cascadia","city":"Boise","state":"ID"},{"name":"Caldwell of Cascadia","city":"Caldwell","state":"ID"},{"name":"Canyon West of Cascadia","city":"Caldwell","state":"ID"},{"name":"Cascadia of Nampa","city":"Nampa","state":"ID"},{"name":"Cascadia of Lewiston","city":"Lewiston","state":"ID"},{"name":"The Orchards of Cascadia","city":"Nampa","state":"ID"},{"name":"Cherry Ridge of Cascadia","city":"Emmett","state":"ID"},{"name":"Eagle Rock Health and Rehabilitation of Cascadia","city":"Idaho Falls","state":"ID"},{"name":"Paradise Creek Health and Rehabilitation of Cascadia","city":"Moscow","state":"ID"},{"name":"Paradise Creek of Olympus Retirement Living","city":"Moscow","state":"ID"},{"name":"Paradise Creek Fairview Estates of Olympus Retirement","city":"Moscow","state":"ID"},{"name":"Clearwater Health & Rehabilitation of Cascadia","city":"Orofino","state":"ID"},{"name":"Coeur d'Alene Health and Rehabilitation of Cascadia","city":"Coeur d'Alene","state":"ID"},{"name":"Grangeville Health and Rehabilitation of Cascadia","city":"Grangeville","state":"ID"},{"name":"Mountain Valley of Cascadia","city":"Kellogg","state":"ID"},{"name":"Payette Healthcare of Cascadia","city":"Payette","state":"ID"},{"name":"Silverton Health and Rehabilitation of Cascadia","city":"Silverton","state":"ID"},{"name":"Teton Healthcare of Cascadia","city":"Idaho Falls","state":"ID"},{"name":"The Cove of Cascadia","city":"Bellevue","state":"ID"},{"name":"Village Manor of Cascadia","city":"Wood Village","state":"OR"},{"name":"Weiser Care of Cascadia","city":"Weiser","state":"ID"},{"name":"Twin Falls Transitional Care of Cascadia","city":"Twin Falls","state":"ID"},{"name":"Columbia Healthcare","city":"Portland","state":"OR"},{"name":"Gabriel Park Post Acute","city":"Portland","state":"OR"},{"name":"Beaverton Post Acute of Cascadia","city":"Beaverton","state":"OR"},{"name":"Bend Transitional Care","city":"Bend","state":"OR"},{"name":"Clackamas Rehabilitation of Cascadia","city":"Gladstone","state":"OR"},{"name":"Coos Bay Rehabilitation of Cascadia","city":"Coos Bay","state":"OR"},{"name":"Creekside Health and Rehabilitation of Cascadia","city":"Eugene","state":"OR"},{"name":"Curry Village Health and Rehabilitation of Cascadia","city":"Brookings","state":"OR"},{"name":"Eugene Rehabilitation of Cascadia","city":"Eugene","state":"OR"},{"name":"Village Park Post Acute","city":"Eugene","state":"OR"},{"name":"Fairlawn Health and Rehabilitation of Cascadia","city":"Gresham","state":"OR"},{"name":"Fairlawn of Olympus Retirement Living","city":"Gresham","state":"OR"},{"name":"The Abbey of Olympus Retirement Living","city":"Gresham","state":"OR"},{"name":"Hillsboro Post Acute","city":"Hillsboro","state":"OR"},{"name":"Junction City Rehabilitation of Cascadia","city":"Junction City","state":"OR"},{"name":"Keizer Court Post Acute","city":"Keizer","state":"OR"},{"name":"King City Rehabilitation","city":"Tigard","state":"OR"},{"name":"Kruse Way Post Acute","city":"Lake Oswego","state":"OR"},{"name":"Lebanon Rehabilitation of Cascadia","city":"Lebanon","state":"OR"},{"name":"Newport Rehabilitation of Cascadia","city":"Newport","state":"OR"},{"name":"Oregon City Rehabilitation","city":"Oregon City","state":"OR"},{"name":"Salem Transitional Care","city":"Salem","state":"OR"},{"name":"Secora Rehabilitation of Cascadia","city":"Portland","state":"OR"},{"name":"Sunnyside Transitional Care","city":"Salem","state":"OR"},{"name":"Table Rock Post Acute","city":"Medford","state":"OR"},{"name":"Three Fountains Post Acute","city":"Medford","state":"OR"},{"name":"Alderwood Park Health & Rehabilitation","city":"Bellingham","state":"WA"},{"name":"Anacortes Health and Rehab","city":"Anacortes","state":"WA"},{"name":"Rosario Assisted Living and Memory Care","city":"Anacortes","state":"WA"},{"name":"Brookfield Health & Rehabilitation of Cascadia","city":"Battle Ground","state":"WA"},{"name":"Cascade Park Rehabilitation","city":"Vancouver","state":"WA"},{"name":"Hudson Bay Health & Rehabilitation","city":"Vancouver","state":"WA"},{"name":"Clarkston Health and Rehabilitation of Cascadia","city":"Clarkston","state":"WA"},{"name":"Colfax Health and Rehabilitation of Cascadia","city":"Colfax","state":"WA"},{"name":"Colville Health & Rehabilitation of Cascadia","city":"Colville","state":"WA"},{"name":"Cypress Assisted Living","city":"Spokane Valley","state":"WA"},{"name":"Olympus Living at Spokane Valley","city":"Spokane Valley","state":"WA"},{"name":"Olympus Retirement Living","city":"Spokane Valley","state":"WA"},{"name":"Spokane Valley Health and Rehabilitation of Cascadia","city":"Spokane Valley","state":"WA"},{"name":"Highland Health & Rehabilitation of Cascadia","city":"Bellingham","state":"WA"},{"name":"Stafholt Health and Rehabilitation of Cascadia","city":"Blaine","state":"WA"},{"name":"Pacific Ridge Post Acute","city":"Tacoma","state":"WA"},{"name":"Puget Sound Health and Rehabilitation","city":"Tacoma","state":"WA"},{"name":"Queen Anne Post Acute","city":"Seattle","state":"WA"},{"name":"Richmond Beach Rehabilitation","city":"Shoreline","state":"WA"},{"name":"Sequim Rehabilitation","city":"Sequim","state":"WA"},{"name":"Snohomish Health and Rehabilitation of Cascadia","city":"Snohomish","state":"WA"},{"name":"Libby Care Center of Cascadia","city":"Libby","state":"MT"},{"name":"Mount Ascension Transitional Care of Cascadia","city":"Helena","state":"MT"},{"name":"Mountain View of Cascadia","city":"Eureka","state":"MT"},{"name":"Boswell Transitional Care of Cascadia","city":"Sun City","state":"AZ"},{"name":"NorthPark Health and Rehabilitation of Cascadia","city":"Phoenix","state":"AZ"},{"name":"Shores Hospice","city":"Sacramento","state":"CA"}];
+
+// Build facility-to-state lookup
+var facilityStateMap = {};
+facilities.forEach(function(f){facilityStateMap[f.name]=f.state});
+
+var SN={ID:'Idaho',OR:'Oregon',WA:'Washington',MT:'Montana',AZ:'Arizona',CA:'California'};
+var SC={ID:'#43b692',OR:'#f5a623',WA:'#4a9ff5',MT:'#a77bca',AZ:'#f07d5e',CA:'#e85d97'};
+
+// Flatten staff
+var allStaff = [];
+Object.keys(staffByFacility).forEach(function(fac){
+  staffByFacility[fac].forEach(function(s){
+    var state = facilityStateMap[fac] || '';
+    allStaff.push({
+      name: s.n,
+      role: s.r || '',
+      initials: s.i || s.n.split(' ').map(function(w){return w[0]}).join('').substring(0,2).toUpperCase(),
+      color: s.c || '#8fa89e',
+      id: s.id,
+      facility: fac,
+      state: state
+    });
+  });
+});
+
+// Sort alphabetically by name
+allStaff.sort(function(a,b){return a.name.localeCompare(b.name)});
+
+// Populate stats
+document.getElementById('totalPeople').textContent = allStaff.length;
+var uniqueFacs = new Set();
+allStaff.forEach(function(s){if(s.facility!=='Unassigned')uniqueFacs.add(s.facility)});
+document.getElementById('totalFacilities').textContent = uniqueFacs.size;
+
+// Populate filter dropdowns
+var facNames = Object.keys(staffByFacility).filter(function(f){return f!=='Unassigned'}).sort();
+var facSelect = document.getElementById('facilityFilter');
+facNames.forEach(function(f){
+  var o=document.createElement('option');o.value=f;o.textContent=f;
+  facSelect.appendChild(o);
+});
+
+var stateSet = new Set();
+allStaff.forEach(function(s){if(s.state)stateSet.add(s.state)});
+var stateSelect = document.getElementById('stateFilter');
+Array.from(stateSet).sort(function(a,b){return (SN[a]||a).localeCompare(SN[b]||b)}).forEach(function(st){
+  var o=document.createElement('option');o.value=st;o.textContent=SN[st]||st;
+  stateSelect.appendChild(o);
+});
+
+var roleSet = new Set();
+allStaff.forEach(function(s){if(s.role)roleSet.add(s.role.trim())});
+var roleSelect = document.getElementById('roleFilter');
+var rolesSorted = Array.from(roleSet).sort();
+rolesSorted.forEach(function(r){
+  var o=document.createElement('option');o.value=r;o.textContent=r;
+  roleSelect.appendChild(o);
+});
+
+// Render
+var searchQuery='', filterFacility='', filterState='', filterRole='';
+
+document.getElementById('searchInput').addEventListener('input',function(e){searchQuery=e.target.value.toLowerCase();render()});
+document.getElementById('facilityFilter').addEventListener('change',function(e){filterFacility=e.target.value;render()});
+document.getElementById('stateFilter').addEventListener('change',function(e){filterState=e.target.value;render()});
+document.getElementById('roleFilter').addEventListener('change',function(e){filterRole=e.target.value;render()});
+
+function getFiltered(){
+  return allStaff.filter(function(s){
+    if(filterFacility && s.facility!==filterFacility) return false;
+    if(filterState && s.state!==filterState) return false;
+    if(filterRole && s.role.trim()!==filterRole) return false;
+    if(searchQuery){
+      var q=searchQuery;
+      if(s.name.toLowerCase().indexOf(q)!==-1) return true;
+      if(s.role.toLowerCase().indexOf(q)!==-1) return true;
+      if(s.facility.toLowerCase().indexOf(q)!==-1) return true;
+      return false;
+    }
+    return true;
+  });
+}
+
+function render(){
+  var filtered = getFiltered();
+  document.getElementById('resultsCount').textContent = filtered.length;
+
+  var desc = '';
+  if(filterFacility) desc = ' at ' + filterFacility;
+  else if(filterState) desc = ' in ' + (SN[filterState]||filterState);
+  document.getElementById('filterDesc').textContent = desc;
+
+  var grid = document.getElementById('staffGrid');
+  grid.innerHTML = '';
+
+  if(filtered.length === 0){
+    grid.innerHTML = '<div class="empty-state">' +
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>' +
+      '<div class="empty-title">No results found</div>' +
+      '<div class="empty-sub">Try adjusting your search or filters</div></div>';
+    return;
+  }
+
+  filtered.forEach(function(s){
+    var stateColor = SC[s.state] || '#8fa89e';
+    var stateName = SN[s.state] || s.state || '';
+    var card = document.createElement('div');
+    card.className = 'card';
+    card.onclick = function(){
+      if(s.id){
+        window.parent.postMessage({type:'openProfile',id:s.id},'*');
+      }
+    };
+    var stateTag = s.state ? '<div class="card-state" style="background:'+stateColor+'18;color:'+stateColor+';border:1px solid '+stateColor+'40">' + stateName + '</div>' : '';
+    var facLabel = s.facility !== 'Unassigned' ? s.facility : 'Unassigned';
+    card.innerHTML =
+      '<div class="card-avatar" style="background:'+s.color+'">'+s.initials+'</div>' +
+      '<div class="card-info">' +
+        '<div class="card-name">'+s.name+'</div>' +
+        (s.role ? '<div class="card-role">'+s.role+'</div>' : '') +
+        '<div class="card-facility"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>'+facLabel+'</div>' +
+      '</div>' +
+      stateTag;
+    grid.appendChild(card);
+  });
+}
+
+render();
+
+// Hide header when in iframe
+if(window !== window.parent){
+  var h = document.querySelector('.header');
+  if(h) h.style.display = 'none';
+}
+</script>
+</body>
+</html>
