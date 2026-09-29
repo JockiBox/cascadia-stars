@@ -87,35 +87,7 @@ html,body{height:100%;overflow:hidden;font-family:system-ui,-apple-system,sans-s
 var currentTab = 'directory';
 var mapLoaded = false;
 
-// Check for admin/login session and show logout button
-function checkSession(){
-  var hasSession = false;
-  try {
-    // Check all possible session keys
-    var keys = ['cf_session','cf_user','cf_admin','cf_token','cascadia_session','stars_session','stars_user'];
-    for(var i=0;i<keys.length;i++){
-      if(localStorage.getItem(keys[i])){hasSession=true;break;}
-    }
-    // Also check if sessionStorage has anything
-    if(!hasSession){
-      for(var i=0;i<keys.length;i++){
-        if(sessionStorage.getItem(keys[i])){hasSession=true;break;}
-      }
-    }
-    // Check for any key containing 'admin','session','user','token','auth'
-    if(!hasSession){
-      for(var j=0;j<localStorage.length;j++){
-        var k=localStorage.key(j).toLowerCase();
-        if(k.indexOf('admin')>-1||k.indexOf('session')>-1||k.indexOf('user')>-1||k.indexOf('token')>-1||k.indexOf('auth')>-1||k.indexOf('login')>-1){
-          hasSession=true;break;
-        }
-      }
-    }
-  }catch(e){}
-  var btn=document.getElementById('logoutBtn');
-  if(hasSession) btn.classList.add('visible');
-  else btn.classList.remove('visible');
-}
+// Sign Out button is always visible (no auth system)
 
 function doLogout(){
   try{
@@ -129,14 +101,7 @@ function doLogout(){
   window.location.href=window.location.origin+window.location.pathname;
 }
 
-// Run session check on load and periodically
-checkSession();
-setInterval(checkSession,3000);
-
-// Also listen for storage events from child iframes
-window.addEventListener('message',function(e){
-  if(e.data&&e.data.type==='sessionChanged') checkSession();
-});
+// No session check needed -- Sign Out always visible
 
 function switchTab(tab, opts) {
   opts = opts || {};
