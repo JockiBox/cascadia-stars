@@ -98,7 +98,7 @@ function doLogout(){
   document.cookie.split(';').forEach(function(c){
     document.cookie=c.replace(/^ +/,'').replace(/=.*/,'=;expires='+new Date().toUTCString()+';path=/');
   });
-  window.location.href=window.location.origin+window.location.pathname;
+  window.location.href=window.location.origin+'/onboard';
 }
 
 // No session check needed -- Sign Out always visible

@@ -157,6 +157,7 @@ a.staff-person:hover{background:#e0f5ec;transform:translateX(2px)}
     <div class="filters">
       <div class="filter-section"><div class="filter-label">State</div><div class="filter-row" id="stateFilters"></div></div>
       <div class="filter-section"><div class="filter-label">Facility Type</div><div class="filter-row" id="typeFilters"></div></div>
+      <div class="filter-section"><div class="filter-label">Portfolio</div><div class="filter-row" id="groupFilters"></div></div>
     </div>
     <div class="count-badge">
       <span>Showing <span class="count-num" id="filteredNum">87</span> facilities</span>
@@ -190,7 +191,9 @@ const SN={ID:'Idaho',OR:'Oregon',WA:'Washington',MT:'Montana',AZ:'Arizona',CA:'C
 const TL={snf:'Skilled Nursing',alf:'Assisted Living',ilf:'Independent Living',hospice:'Hospice',corporate:'Corporate',healthcare:'Healthcare Co.'};
 const TC={snf:'#43b692',alf:'#f5a623',ilf:'#a77bca',hospice:'#e85d97',corporate:'#78909c',healthcare:'#4a9ff5'};
 const TI={snf:'<svg width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="none"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>',alf:'<svg width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="none"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg>',ilf:'<svg width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="none"><path d="M17 11V3H7v4H3v14h8v-4h2v4h8V11h-4zM7 19H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm4 4H9v-2h2v2zm0-4H9V9h2v2zm0-4H9V5h2v2zm4 8h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm4 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/></svg>',hospice:'<svg width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="none"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>',corporate:'<svg width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="none"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>',healthcare:'<svg width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="none"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>'};
-let map,markers,activeMarker=null,selectedState=null,selectedType=null,searchQuery='';
+let map,markers,activeMarker=null,selectedState=null,selectedType=null,selectedGroup=null,searchQuery='';
+const GL={ohana:'Ohana',sapphire:'Sapphire',avamere:'Avamere'};
+const GC={ohana:'#e85d75',sapphire:'#4a9ff5',avamere:'#f5a623'};
 
 // Count total people
 let totalPeople=0;
@@ -227,11 +230,21 @@ Object.entries(typeCounts).sort((a,b)=>b[1]-a[1]).forEach(([tp,ct])=>{
   b.onclick=()=>{selectedType=selectedType===tp?null:tp;document.querySelectorAll('#typeFilters .filter-btn').forEach(x=>x.classList.toggle('active',x.dataset.type===selectedType));render()};
   tf.appendChild(b)});
 
+// Build group (portfolio) filters
+var groupCounts={};facilities.forEach(f=>{if(f.group){groupCounts[f.group]=(groupCounts[f.group]||0)+1}});
+var gf=document.getElementById('groupFilters');
+Object.entries(groupCounts).sort((a,b)=>b[1]-a[1]).forEach(([gr,ct])=>{
+  var b=document.createElement('button');b.className='filter-btn';b.dataset.group=gr;
+  b.innerHTML='<span class="filter-dot" style="background:'+(GC[gr]||'#999')+'"></span>'+(GL[gr]||gr)+' <span class="filter-count">'+ct+'</span>';
+  b.onclick=()=>{selectedGroup=selectedGroup===gr?null:gr;document.querySelectorAll('#groupFilters .filter-btn').forEach(x=>x.classList.toggle('active',x.dataset.group===selectedGroup));render()};
+  gf.appendChild(b)});
+
 document.getElementById('searchInput').addEventListener('input',function(e){searchQuery=e.target.value.toLowerCase();render()});
 
 function getFiltered(){return facilities.filter(f=>{
   if(selectedState&&f.state!==selectedState)return false;
   if(selectedType&&f.type!==selectedType)return false;
+  if(selectedGroup&&f.group!==selectedGroup)return false;
   if(searchQuery){
     // Search facilities AND people
     var q=searchQuery;
@@ -245,7 +258,7 @@ function render(){
   var filtered=getFiltered();
   document.getElementById('filteredNum').textContent=filtered.length;
   var fl=document.getElementById('filterLabel');
-  fl.textContent=selectedState?SN[selectedState]:(selectedType?TL[selectedType]:'');
+  fl.textContent=selectedGroup?(GL[selectedGroup]||selectedGroup):(selectedState?SN[selectedState]:(selectedType?TL[selectedType]:''));
 
   var list=document.getElementById('facilityList');list.innerHTML='';
   filtered.forEach(f=>{
@@ -277,7 +290,7 @@ function render(){
     m.on('click',()=>selectFacility(f));
     markers.addLayer(m)});
   map.addLayer(markers);
-  if(filtered.length>0&&(selectedState||selectedType||searchQuery)){
+  if(filtered.length>0&&(selectedState||selectedType||selectedGroup||searchQuery)){
     map.fitBounds(L.latLngBounds(filtered.map(f=>[f.lat,f.lng])),{padding:[50,50],maxZoom:10})}
 }
 
@@ -288,9 +301,10 @@ function selectFacility(f){
     document.getElementById('cardName').innerHTML=TI[f.type]+' '+f.name;
     document.getElementById('cardMeta').innerHTML=f.city+', '+(SN[f.state]||f.state)+(f.addr?'<br><a href="https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(f.addr)+'" target="_blank" rel="noopener" style="color:#2d9a7e;text-decoration:none;font-size:12px;display:inline-flex;align-items:center;gap:4px;margin-top:4px;font-weight:700" onmouseover="this.style.textDecoration=\'underline\'" onmouseout="this.style.textDecoration=\'none\'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>'+f.addr+'</a>':'');
     var sc=SC[f.state],tc=TC[f.type];
+    var groupBadge=f.group?'<span class="card-badge" style="background:'+(GC[f.group]||'#999')+'18;color:'+(GC[f.group]||'#999')+';border-color:'+(GC[f.group]||'#999')+'40">'+(GL[f.group]||f.group)+'</span>':'';
     document.getElementById('cardBadges').innerHTML=
       '<span class="card-badge" style="background:'+sc+'18;color:'+sc+';border-color:'+sc+'40">'+SN[f.state]+'</span>'+
-      '<span class="card-badge" style="background:'+tc+'18;color:'+tc+';border-color:'+tc+'40">'+TL[f.type]+'</span>';
+      '<span class="card-badge" style="background:'+tc+'18;color:'+tc+';border-color:'+tc+'40">'+TL[f.type]+'</span>'+groupBadge;
 
     // Staff roster
     var staff=getStaff(f.name);
