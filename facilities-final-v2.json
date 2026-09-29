@@ -811,7 +811,9 @@
     "lat": 44.0724378,
     "lng": -123.0365492,
     "type": "alf",
-    "addr": "2669 S Cloverleaf Loop, Springfield, OR 97477"
+    "addr": "2669 S Cloverleaf Loop, Springfield, OR 97477",
+    "group": "ohana",
+    "goLive": "2026-11-01"
   },
   {
     "name": "Fox Hollow",
@@ -820,7 +822,9 @@
     "lat": 43.9963161,
     "lng": -123.0887409,
     "type": "alf",
-    "addr": "5320 Fox Hollow Road, Eugene, OR 97405"
+    "addr": "5320 Fox Hollow Road, Eugene, OR 97405",
+    "group": "ohana",
+    "goLive": "2026-11-01"
   },
   {
     "name": "The Bridge Assisted Living",
@@ -829,7 +833,9 @@
     "lat": 42.434648,
     "lng": -123.331298,
     "type": "alf",
-    "addr": "201 SW Bridge Street, Grants Pass, OR 97526"
+    "addr": "201 SW Bridge Street, Grants Pass, OR 97526",
+    "group": "ohana",
+    "goLive": "2026-11-01"
   },
   {
     "name": "Countryside Living Memory Care",
@@ -838,7 +844,9 @@
     "lat": 45.2625473,
     "lng": -122.6968975,
     "type": "mc",
-    "addr": "390 NW 2nd Avenue, Canby, OR 97013"
+    "addr": "390 NW 2nd Avenue, Canby, OR 97013",
+    "group": "ohana",
+    "goLive": "2026-11-01"
   },
   {
     "name": "Countryside Living Memory Care South",
@@ -847,7 +855,9 @@
     "lat": 45.2623427,
     "lng": -122.6974572,
     "type": "mc",
-    "addr": "406 NW 2nd Avenue, Canby, OR 97013"
+    "addr": "406 NW 2nd Avenue, Canby, OR 97013",
+    "group": "ohana",
+    "goLive": "2026-11-01"
   },
   {
     "name": "Holly Residential Care Center",
@@ -856,7 +866,9 @@
     "lat": 44.1157887,
     "lng": -123.153654,
     "type": "snc",
-    "addr": "1075 Irvington Drive, Eugene, OR 97404"
+    "addr": "1075 Irvington Drive, Eugene, OR 97404",
+    "group": "ohana",
+    "goLive": "2026-11-01"
   },
   {
     "name": "Kelly Gardens Residential Care",
@@ -865,7 +877,9 @@
     "lat": 45.5031471,
     "lng": -122.4265958,
     "type": "snc",
-    "addr": "813 NE Kelly Avenue, Gresham, OR 97030"
+    "addr": "813 NE Kelly Avenue, Gresham, OR 97030",
+    "group": "ohana",
+    "goLive": "2026-11-01"
   },
   {
     "name": "Oak Lane Residential Care Facility",
@@ -874,7 +888,9 @@
     "lat": 42.4332788,
     "lng": -123.3355621,
     "type": "alf",
-    "addr": "727 SW Rogue River Ave, Grants Pass, OR 97526"
+    "addr": "727 SW Rogue River Ave, Grants Pass, OR 97526",
+    "group": "ohana",
+    "goLive": "2026-11-01"
   },
   {
     "name": "Orchards Assisted Living",
@@ -883,7 +899,9 @@
     "lat": 42.3396492,
     "lng": -122.8672386,
     "type": "alf",
-    "addr": "1018 Royal Court, Medford, OR 97504"
+    "addr": "1018 Royal Court, Medford, OR 97504",
+    "group": "ohana",
+    "goLive": "2026-11-01"
   },
   {
     "name": "Santiam Gardens Residential Care",
@@ -892,7 +910,9 @@
     "lat": 44.9397121,
     "lng": -123.0196237,
     "type": "snc",
-    "addr": "1625 Center Street NE, Salem, OR 97301"
+    "addr": "1625 Center Street NE, Salem, OR 97301",
+    "group": "ohana",
+    "goLive": "2026-11-01"
   },
   {
     "name": "Stephanie Gardens Residential Care",
@@ -901,7 +921,9 @@
     "lat": 45.519151,
     "lng": -122.4994729,
     "type": "alf",
-    "addr": "19751 SE Stark Street, Portland, OR 97233"
+    "addr": "19751 SE Stark Street, Portland, OR 97233",
+    "group": "ohana",
+    "goLive": "2026-11-01"
   },
   {
     "name": "Pacific View Memory Care",
@@ -910,7 +932,9 @@
     "lat": 43.1195634,
     "lng": -124.4094086,
     "type": "mc",
-    "addr": "1000 Sixth Avenue W, Bandon, OR 97411"
+    "addr": "1000 Sixth Avenue W, Bandon, OR 97411",
+    "group": "ohana",
+    "goLive": "2026-11-01"
   },
   {
     "name": "Pacific View Senior Living",
@@ -919,7 +943,9 @@
     "lat": 43.120363399999995,
     "lng": -124.4094086,
     "type": "alf",
-    "addr": "1000 Sixth Avenue W, Bandon, OR 97411"
+    "addr": "1000 Sixth Avenue W, Bandon, OR 97411",
+    "group": "ohana",
+    "goLive": "2026-11-01"
   },
   {
     "name": "Rosewood Memory Care",
@@ -928,7 +954,9 @@
     "lat": 45.501218,
     "lng": -122.9164331,
     "type": "mc",
-    "addr": "2550 SE Century Blvd, Hillsboro, OR 97123"
+    "addr": "2550 SE Century Blvd, Hillsboro, OR 97123",
+    "group": "ohana",
+    "goLive": "2026-11-01"
   },
   {
     "name": "Sunnyside Meadows Memory Care",
@@ -937,7 +965,9 @@
     "lat": 45.428679,
     "lng": -122.497174,
     "type": "mc",
-    "addr": "2500 Willamette Falls Dr #207, Happy Valley, OR 97086"
+    "addr": "2500 Willamette Falls Dr #207, Happy Valley, OR 97086",
+    "group": "ohana",
+    "goLive": "2026-11-01"
   },
   {
     "name": "Aspen Valley Senior Living",
@@ -946,7 +976,9 @@
     "lat": 43.568921,
     "lng": -116.1281161,
     "type": "alf",
-    "addr": "4455 E Warm Springs Avenue, Boise, ID 83716"
+    "addr": "4455 E Warm Springs Avenue, Boise, ID 83716",
+    "group": "ohana",
+    "goLive": "2026-11-01"
   },
   {
     "name": "Cedar Crossings Care",
@@ -955,7 +987,9 @@
     "lat": 45.4790217,
     "lng": -122.5246809,
     "type": "snf",
-    "addr": "6003 Southeast 136th Ave, Portland, OR 97236"
+    "addr": "6003 Southeast 136th Ave, Portland, OR 97236",
+    "group": "sapphire",
+    "goLive": "2026-12-01"
   },
   {
     "name": "Gresham Post Acute Care and Rehab",
@@ -964,7 +998,9 @@
     "lat": 45.5017864,
     "lng": -122.4270688,
     "type": "snf",
-    "addr": "405 NE 5th Street, Gresham, OR 97030"
+    "addr": "405 NE 5th Street, Gresham, OR 97030",
+    "group": "sapphire",
+    "goLive": "2026-12-01"
   },
   {
     "name": "Belmont Care and Rehab",
@@ -973,7 +1009,9 @@
     "lat": 45.5168859,
     "lng": -122.6131345,
     "type": "snf",
-    "addr": "812 Southeast 48th Ave, Portland, OR 97215"
+    "addr": "812 Southeast 48th Ave, Portland, OR 97215",
+    "group": "sapphire",
+    "goLive": "2026-12-01"
   },
   {
     "name": "Gracelen Care Center",
@@ -982,7 +1020,9 @@
     "lat": 45.491162,
     "lng": -122.5496537,
     "type": "snf",
-    "addr": "10948 SE Boise Street, Portland, OR 97266"
+    "addr": "10948 SE Boise Street, Portland, OR 97266",
+    "group": "sapphire",
+    "goLive": "2026-12-01"
   },
   {
     "name": "Myrtle Point Rehab and Care",
@@ -991,7 +1031,9 @@
     "lat": 43.0657198,
     "lng": -124.1403896,
     "type": "snf",
-    "addr": "637 Ash Street, Myrtle Point, OR 97258"
+    "addr": "637 Ash Street, Myrtle Point, OR 97258",
+    "group": "sapphire",
+    "goLive": "2026-12-01"
   },
   {
     "name": "Rose City Nursing and Rehab",
@@ -1000,7 +1042,9 @@
     "lat": 45.533717,
     "lng": -122.5461892,
     "type": "snf",
-    "addr": "11325 NE Weidler Street, Portland, OR 97220"
+    "addr": "11325 NE Weidler Street, Portland, OR 97220",
+    "group": "sapphire",
+    "goLive": "2026-12-01"
   },
   {
     "name": "Sapphire of Gateway",
@@ -1009,7 +1053,9 @@
     "lat": 45.5231432,
     "lng": -122.5583816,
     "type": "snf",
-    "addr": "39 Northeast 102nd Ave, Portland, OR 97220"
+    "addr": "39 Northeast 102nd Ave, Portland, OR 97220",
+    "group": "sapphire",
+    "goLive": "2026-12-01"
   },
   {
     "name": "Sapphire at Fernhill",
@@ -1018,7 +1064,9 @@
     "lat": 45.564401,
     "lng": -122.6261126,
     "type": "snf",
-    "addr": "5737 NE 37th Ave, Portland, OR 97211"
+    "addr": "5737 NE 37th Ave, Portland, OR 97211",
+    "group": "sapphire",
+    "goLive": "2026-12-01"
   },
   {
     "name": "Sapphire at Rivers Edge",
@@ -1027,7 +1075,9 @@
     "lat": 45.0968213,
     "lng": -123.3910954,
     "type": "snf",
-    "addr": "411 SE Sheridan Road, Sheridan, OR 97378"
+    "addr": "411 SE Sheridan Road, Sheridan, OR 97378",
+    "group": "sapphire",
+    "goLive": "2026-12-01"
   },
   {
     "name": "Sapphire at Tigard Rehab",
@@ -1036,7 +1086,9 @@
     "lat": 45.4174839,
     "lng": -122.786579,
     "type": "snf",
-    "addr": "14145 SW 105th Ave, Tigard, OR 97224"
+    "addr": "14145 SW 105th Ave, Tigard, OR 97224",
+    "group": "sapphire",
+    "goLive": "2026-12-01"
   },
   {
     "name": "Bridgecreek Memory Care",
@@ -1045,7 +1097,9 @@
     "lat": 44.5174391,
     "lng": -122.9214584,
     "type": "mc",
-    "addr": "1401 S 12th Street, Lebanon, OR 97355"
+    "addr": "1401 S 12th Street, Lebanon, OR 97355",
+    "group": "sapphire",
+    "goLive": "2026-12-01"
   },
   {
     "name": "The Amber",
@@ -1054,7 +1108,9 @@
     "lat": 46.1046022,
     "lng": -123.2080765,
     "type": "alf",
-    "addr": "365 Bel Air Drive, Clatskanie, OR 97016"
+    "addr": "365 Bel Air Drive, Clatskanie, OR 97016",
+    "group": "sapphire",
+    "goLive": "2026-12-01"
   },
   {
     "name": "Valley View",
@@ -1063,7 +1119,9 @@
     "lat": 44.4158398,
     "lng": -118.953431,
     "type": "alf",
-    "addr": "112 Northwest Valley View Drive, John Day, OR 97845"
+    "addr": "112 Northwest Valley View Drive, John Day, OR 97845",
+    "group": "sapphire",
+    "goLive": "2026-12-01"
   },
   {
     "name": "Brighten Court",
@@ -1072,7 +1130,9 @@
     "lat": 47.6685895,
     "lng": -117.2341677,
     "type": "alf",
-    "addr": "1308 N Vercler Road, Spokane Valley, WA 99216"
+    "addr": "1308 N Vercler Road, Spokane Valley, WA 99216",
+    "group": "sapphire",
+    "goLive": "2026-12-01"
   },
   {
     "name": "Woodway Senior Living",
@@ -1081,7 +1141,9 @@
     "lat": 48.7725206,
     "lng": -122.4932319,
     "type": "alf",
-    "addr": "1712 E Maplewood Ave, Bellingham, WA 98225"
+    "addr": "1712 E Maplewood Ave, Bellingham, WA 98225",
+    "group": "sapphire",
+    "goLive": "2026-12-01"
   },
   {
     "name": "Timberhill Place",
