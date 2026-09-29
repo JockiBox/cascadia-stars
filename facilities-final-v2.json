@@ -409,12 +409,12 @@
   },
   {
     "name": "The Abbey of Olympus Retirement Living",
-    "city": "Gresham",
+    "city": "Eugene",
     "state": "OR",
-    "lat": 45.504777,
-    "lng": -122.397743,
+    "lat": 44.019422,
+    "lng": -123.083496,
     "type": "ilf",
-    "addr": "3457 NE Division St, Gresham, OR 97030"
+    "addr": "3500 Hilyard St, Eugene, OR 97405"
   },
   {
     "name": "Hillsboro Post Acute",
