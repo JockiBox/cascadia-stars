@@ -14,6 +14,12 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e8f5e9 0
 .header-icon{font-size:42px;margin-bottom:8px}
 .header h1{font-size:24px;font-weight:900}
 .header p{font-size:14px;color:rgba(255,255,255,0.8);margin-top:4px;font-weight:600}
+.mode-toggle{text-align:center;margin:24px auto 0;max-width:480px;padding:0 20px}
+.mode-toggle-text{font-size:14px;color:#5a7568;font-weight:700}
+.mode-toggle-text a{color:#0d9488;font-weight:800;text-decoration:none;cursor:pointer}
+.mode-toggle-text a:hover{text-decoration:underline;color:#134e4a}
+.login-container{display:none;max-width:480px;margin:32px auto;padding:0 20px 40px}
+.login-error{display:none;background:#fef2f4;border:2px solid #fecdd3;border-radius:14px;padding:12px 16px;margin-bottom:16px;color:#be123c;font-size:13px;font-weight:700}
 .container{max-width:480px;margin:32px auto;padding:0 20px 40px}
 .card{background:white;border-radius:20px;padding:28px;box-shadow:0 4px 24px rgba(0,0,0,0.08);border:2px solid #e8efe9;margin-bottom:20px}
 .card-title{font-size:16px;font-weight:900;color:#1f7a6a;margin-bottom:16px;display:flex;align-items:center;gap:8px}
@@ -59,6 +65,20 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e8f5e9 0
 <h1>Join the Stars of Cascadia</h1>
 <p>Set up your profile in 60 seconds</p>
 </div>
+<div class="mode-toggle" id="modeToggle">
+  <div class="mode-toggle-text" id="modeToggleText">Already have an account? <a onclick="showLogin()">Sign In</a></div>
+</div>
+
+<div class="login-container" id="loginContainer">
+  <div class="login-error" id="loginError"></div>
+  <div class="card">
+    <div class="card-title"><span class="step">&#10003;</span> Sign In</div>
+    <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" id="loginEmail" placeholder="Your Cascadia email" autocomplete="email" /></div>
+    <div class="form-group"><label class="form-label">Password</label><input type="password" class="form-input" id="loginPassword" placeholder="Your password" autocomplete="current-password" /></div>
+    <button class="btn-submit" id="loginBtn" disabled>Sign In</button>
+  </div>
+</div>
+
 <div class="container" id="formContainer">
 <div class="facility-banner" id="facilityBanner" style="display:none">
 <div class="facility-banner-name" id="facilityBannerName"></div>
@@ -107,6 +127,10 @@ const params=new URLSearchParams(window.location.search);
 const preFac=params.get('facility');
 const isAdmin=params.get('admin')==='true';
 if(preFac){sel.value=preFac;if(sel.value===preFac){document.getElementById('facilityBanner').style.display='block';document.getElementById('facilityBannerName').textContent=preFac}}
+// If user was signed out (came from sign-out button), default to sign-in view
+var fromSignout = params.get('mode') === 'signin';
+if(fromSignout){ setTimeout(function(){ showLogin(); }, 50); }
+
 if(isAdmin){
   document.getElementById('formContainer').style.display='none';
   document.getElementById('adminSection').style.display='block';
@@ -141,6 +165,47 @@ function vf(){sb.disabled=!(nI.value.trim().length>=2&&eI.value.includes('@')&&r
 function gi(n){const p=n.trim().split(/\s+/);return p.length>=2?(p[0][0]+p[p.length-1][0]).toUpperCase():n.substring(0,2).toUpperCase()}
 function gc(n){const c=['#e11d48','#f59e0b','#10b981','#3b82f6','#8b5cf6','#ec4899','#06b6d4','#f97316','#6366f1','#14b8a6'];let h=0;for(let i=0;i<n.length;i++)h=n.charCodeAt(i)+((h<<5)-h);return c[Math.abs(h)%c.length]}
 async function sha(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(b=>b.toString(16).padStart(2,'0')).join('')}
+// --- Sign In / Sign Up toggle ---
+function showLogin(){
+  document.getElementById('formContainer').style.display='none';
+  document.getElementById('loginContainer').style.display='block';
+  document.getElementById('modeToggleText').innerHTML='New here? <a onclick="showSignup()">Create an Account</a>';
+  document.querySelector('.header h1').textContent='Welcome Back';
+  document.querySelector('.header p').textContent='Sign in to your profile';
+}
+function showSignup(){
+  document.getElementById('loginContainer').style.display='none';
+  document.getElementById('formContainer').style.display='block';
+  document.getElementById('modeToggleText').innerHTML='Already have an account? <a onclick="showLogin()">Sign In</a>';
+  document.querySelector('.header h1').textContent='Join the Stars of Cascadia';
+  document.querySelector('.header p').textContent='Set up your profile in 60 seconds';
+}
+
+// Login form validation
+const lEmail=document.getElementById('loginEmail'),lPw=document.getElementById('loginPassword'),lBtn=document.getElementById('loginBtn');
+[lEmail,lPw].forEach(el=>{el.addEventListener('input',()=>{lBtn.disabled=!(lEmail.value.includes('@')&&lPw.value.length>=1)})});
+lPw.addEventListener('keydown',(e)=>{if(e.key==='Enter'&&!lBtn.disabled)lBtn.click()});
+lBtn.addEventListener('click',async()=>{
+  lBtn.disabled=true;lBtn.textContent='Signing in...';
+  document.getElementById('loginError').style.display='none';
+  try{
+    const email=lEmail.value.trim().toLowerCase();
+    const hash=await sha(lPw.value);
+    const r=await fetch(SB_URL+'/rest/v1/cf_accounts?email=eq.'+encodeURIComponent(email)+'&select=*',{headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY}});
+    const accts=await r.json();
+    if(!accts.length) throw new Error('No account found with that email. Check spelling or create a new account.');
+    const acct=accts[0];
+    if(acct.password_hash!==hash) throw new Error('Incorrect password. Please try again.');
+    // Login success -- store session and redirect
+    try{localStorage.setItem('cascadia_user',JSON.stringify({email:acct.email,employee_id:acct.employee_id,role:acct.role}));sessionStorage.setItem('cascadia_auth','1')}catch(e){}
+    window.location.href=window.location.origin+'/';
+  }catch(err){
+    document.getElementById('loginError').textContent=err.message;
+    document.getElementById('loginError').style.display='block';
+    lBtn.disabled=false;lBtn.textContent='Sign In';
+  }
+});
+
 sb.addEventListener('click',async()=>{
   sb.disabled=true;sb.textContent='Creating account...';document.getElementById('errorBanner').style.display='none';
   try{

@@ -81,7 +81,7 @@ html,body{height:100%;overflow:hidden;font-family:system-ui,-apple-system,sans-s
 <div class="frame-container">
   <iframe id="frame-directory" class="visible" src="app.html"></iframe>
   <iframe id="frame-map" class="hidden" src="about:blank" data-src="map.html"></iframe>
-  <iframe id="frame-profile" class="hidden" src="about:blank"></iframe>
+
 </div>
 <script>
 var currentTab = 'directory';
@@ -98,7 +98,7 @@ function doLogout(){
   document.cookie.split(';').forEach(function(c){
     document.cookie=c.replace(/^ +/,'').replace(/=.*/,'=;expires='+new Date().toUTCString()+';path=/');
   });
-  window.location.href=window.location.origin+'/onboard';
+  window.location.href=window.location.origin+'/onboard?mode=signin';
 }
 
 // No session check needed -- Sign Out always visible
@@ -113,14 +113,16 @@ function switchTab(tab, opts) {
   });
 
   // Handle frame visibility
-  ['directory','map','profile'].forEach(function(t){
+  ['directory','map'].forEach(function(t){
     var frame = document.getElementById('frame-' + t);
-    if(t === tab){
-      frame.classList.remove('hidden');
-      frame.classList.add('visible');
-    } else {
-      frame.classList.add('hidden');
-      frame.classList.remove('visible');
+    if(frame){
+      if(t === tab){
+        frame.classList.remove('hidden');
+        frame.classList.add('visible');
+      } else {
+        frame.classList.add('hidden');
+        frame.classList.remove('visible');
+      }
     }
   });
 
@@ -131,27 +133,14 @@ function switchTab(tab, opts) {
     mapLoaded = true;
   }
 
-  // Load profile if switching to profile tab
-  if(tab === 'profile' && opts.profileId){
-    var profileFrame = document.getElementById('frame-profile');
-    if(profileFrame.src === 'about:blank' || !profileFrame.contentWindow){
-      profileFrame.src = '/profile.html?id=' + opts.profileId;
-    } else {
-      profileFrame.contentWindow.postMessage({type:'loadProfile', id: opts.profileId}, '*');
-    }
-  }
+
 }
 
 // Listen for messages from child frames
 window.addEventListener('message', function(e){
   if(!e.data || !e.data.type) return;
 
-  if(e.data.type === 'openProfile' && e.data.id){
-    // Load profile frame and switch to it
-    var profileFrame = document.getElementById('frame-profile');
-    profileFrame.src = '/profile.html?id=' + e.data.id;
-    switchTab('profile', {profileId: e.data.id});
-  }
+  // openProfile now handled inline in app.html -- no iframe needed
 
   if(e.data.type === 'backToMap'){
     switchTab('map');
