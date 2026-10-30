@@ -1,470 +1,434 @@
 [
-  {
-    "name": "Chateau Gardens",
-    "city": "Springfield",
-    "state": "OR",
-    "addr": "2669 S Cloverleaf Loop, Springfield, OR 97477",
-    "type": "alf",
-    "lat": 44.0724378,
-    "lng": -123.0365492
-  },
-  {
-    "name": "Fox Hollow",
-    "city": "Eugene",
-    "state": "OR",
-    "addr": "5320 Fox Hollow Road, Eugene, OR 97405",
-    "type": "alf",
-    "lat": 43.9963161,
-    "lng": -123.0887409
-  },
-  {
-    "name": "The Bridge Assisted Living",
-    "city": "Grants Pass",
-    "state": "OR",
-    "addr": "201 SW Bridge Street, Grants Pass, OR 97526",
-    "type": "alf",
-    "lat": 42.434648,
-    "lng": -123.331298
-  },
-  {
-    "name": "Countryside Living Memory Care",
-    "city": "Canby",
-    "state": "OR",
-    "addr": "390 NW 2nd Avenue, Canby, OR 97013",
-    "type": "mc",
-    "lat": 45.2625473,
-    "lng": -122.6968975
-  },
-  {
-    "name": "Countryside Living Memory Care South",
-    "city": "Canby",
-    "state": "OR",
-    "addr": "406 NW 2nd Avenue, Canby, OR 97013",
-    "type": "mc",
-    "lat": 45.2623427,
-    "lng": -122.6974572
-  },
-  {
-    "name": "Holly Residential Care Center",
-    "city": "Eugene",
-    "state": "OR",
-    "addr": "1075 Irvington Drive, Eugene, OR 97404",
-    "type": "snc",
-    "lat": 44.1157887,
-    "lng": -123.153654
-  },
-  {
-    "name": "Kelly Gardens Residential Care",
-    "city": "Gresham",
-    "state": "OR",
-    "addr": "813 NE Kelly Avenue, Gresham, OR 97030",
-    "type": "snc",
-    "lat": 45.5031471,
-    "lng": -122.4265958
-  },
-  {
-    "name": "Oak Lane Residential Care Facility",
-    "city": "Grants Pass",
-    "state": "OR",
-    "addr": "727 SW Rogue River Ave, Grants Pass, OR 97526",
-    "type": "alf",
-    "lat": 42.4332788,
-    "lng": -123.3355621
-  },
-  {
-    "name": "Orchards Assisted Living",
-    "city": "Medford",
-    "state": "OR",
-    "addr": "1018 Royal Court, Medford, OR 97504",
-    "type": "alf",
-    "lat": 42.3396492,
-    "lng": -122.8672386
-  },
-  {
-    "name": "Santiam Gardens Residential Care",
-    "city": "Salem",
-    "state": "OR",
-    "addr": "1625 Center Street NE, Salem, OR 97301",
-    "type": "snc",
-    "lat": 44.9397121,
-    "lng": -123.0196237
-  },
-  {
-    "name": "Stephanie Gardens Residential Care",
-    "city": "Portland",
-    "state": "OR",
-    "addr": "19751 SE Stark Street, Portland, OR 97233",
-    "type": "alf",
-    "lat": 45.519151,
-    "lng": -122.4994729
-  },
-  {
-    "name": "Pacific View Memory Care",
-    "city": "Bandon",
-    "state": "OR",
-    "addr": "1000 Sixth Avenue W, Bandon, OR 97411",
-    "type": "mc",
-    "lat": 43.1195634,
-    "lng": -124.4094086
-  },
-  {
-    "name": "Pacific View Senior Living",
-    "city": "Bandon",
-    "state": "OR",
-    "addr": "1000 Sixth Avenue W, Bandon, OR 97411",
-    "type": "alf",
-    "lat": 43.1195634,
-    "lng": -124.4094086
-  },
-  {
-    "name": "Rosewood Memory Care",
-    "city": "Hillsboro",
-    "state": "OR",
-    "addr": "2550 SE Century Blvd, Hillsboro, OR 97123",
-    "type": "mc",
-    "lat": 45.501218,
-    "lng": -122.9164331
-  },
-  {
-    "name": "Sunnyside Meadows Memory Care",
-    "city": "Happy Valley",
-    "state": "OR",
-    "addr": "2500 Willamette Falls Dr #207, Happy Valley, OR 97086",
-    "type": "mc",
-    "lat": 45.428679,
-    "lng": -122.497174
-  },
-  {
-    "name": "Aspen Valley Senior Living",
-    "city": "Boise",
-    "state": "ID",
-    "addr": "4455 E Warm Springs Avenue, Boise, ID 83716",
-    "type": "alf",
-    "lat": 43.568921,
-    "lng": -116.1281161
-  },
-  {
-    "name": "Cedar Crossings Care",
-    "city": "Portland",
-    "state": "OR",
-    "addr": "6003 Southeast 136th Ave, Portland, OR 97236",
-    "type": "snf",
-    "lat": 45.4790217,
-    "lng": -122.5246809
-  },
-  {
-    "name": "Gresham Post Acute Care and Rehab",
-    "city": "Gresham",
-    "state": "OR",
-    "addr": "405 NE 5th Street, Gresham, OR 97030",
-    "type": "snf",
-    "lat": 45.5017864,
-    "lng": -122.4270688
-  },
-  {
-    "name": "Belmont Care and Rehab",
-    "city": "Portland",
-    "state": "OR",
-    "addr": "812 Southeast 48th Ave, Portland, OR 97215",
-    "type": "snf",
-    "lat": 45.5168859,
-    "lng": -122.6131345
-  },
-  {
-    "name": "Gracelen Care Center",
-    "city": "Portland",
-    "state": "OR",
-    "addr": "10948 SE Boise Street, Portland, OR 97266",
-    "type": "snf",
-    "lat": 45.491162,
-    "lng": -122.5496537
-  },
-  {
-    "name": "Myrtle Point Rehab and Care",
-    "city": "Myrtle Point",
-    "state": "OR",
-    "addr": "637 Ash Street, Myrtle Point, OR 97258",
-    "type": "snf",
-    "lat": 43.0657198,
-    "lng": -124.1403896
-  },
-  {
-    "name": "Rose City Nursing and Rehab",
-    "city": "Portland",
-    "state": "OR",
-    "addr": "11325 NE Weidler Street, Portland, OR 97220",
-    "type": "snf",
-    "lat": 45.533717,
-    "lng": -122.5461892
-  },
-  {
-    "name": "Sapphire of Gateway",
-    "city": "Portland",
-    "state": "OR",
-    "addr": "39 Northeast 102nd Ave, Portland, OR 97220",
-    "type": "snf",
-    "lat": 45.5231432,
-    "lng": -122.5583816
-  },
-  {
-    "name": "Sapphire at Fernhill",
-    "city": "Portland",
-    "state": "OR",
-    "addr": "5737 NE 37th Ave, Portland, OR 97211",
-    "type": "snf",
-    "lat": 45.564401,
-    "lng": -122.6261126
-  },
-  {
-    "name": "Sapphire at Rivers Edge",
-    "city": "Sheridan",
-    "state": "OR",
-    "addr": "411 SE Sheridan Road, Sheridan, OR 97378",
-    "type": "snf",
-    "lat": 45.0968213,
-    "lng": -123.3910954
-  },
-  {
-    "name": "Sapphire at Tigard Rehab",
-    "city": "Tigard",
-    "state": "OR",
-    "addr": "14145 SW 105th Ave, Tigard, OR 97224",
-    "type": "snf",
-    "lat": 45.4174839,
-    "lng": -122.786579
-  },
-  {
-    "name": "Bridgecreek Memory Care",
-    "city": "Lebanon",
-    "state": "OR",
-    "addr": "1401 S 12th Street, Lebanon, OR 97355",
-    "type": "mc",
-    "lat": 44.5174391,
-    "lng": -122.9214584
-  },
-  {
-    "name": "The Amber",
-    "city": "Clatskanie",
-    "state": "OR",
-    "addr": "365 Bel Air Drive, Clatskanie, OR 97016",
-    "type": "alf",
-    "lat": 46.1046022,
-    "lng": -123.2080765
-  },
-  {
-    "name": "Valley View",
-    "city": "John Day",
-    "state": "OR",
-    "addr": "112 Northwest Valley View Drive, John Day, OR 97845",
-    "type": "alf",
-    "lat": 44.4158398,
-    "lng": -118.953431
-  },
-  {
-    "name": "Brighten Court",
-    "city": "Spokane Valley",
-    "state": "WA",
-    "addr": "1308 N Vercler Road, Spokane Valley, WA 99216",
-    "type": "alf",
-    "lat": 47.6685895,
-    "lng": -117.2341677
-  },
-  {
-    "name": "Woodway Senior Living",
-    "city": "Bellingham",
-    "state": "WA",
-    "addr": "1712 E Maplewood Ave, Bellingham, WA 98225",
-    "type": "alf",
-    "lat": 48.7725206,
-    "lng": -122.4932319
-  },
-  {
-    "name": "Timberhill Place",
-    "city": "Corvallis",
-    "state": "OR",
-    "addr": "989 NW Spruce Ave, Corvallis, OR 97330",
-    "type": "alf",
-    "lat": 44.5877283,
-    "lng": -123.2617804
-  },
-  {
-    "name": "Trio Home Health",
-    "city": "Encinitas",
-    "state": "CA",
-    "addr": "1991 Village Park Way #2I, Encinitas, CA 92024",
-    "type": "hospice",
-    "lat": 33.0431846,
-    "lng": -117.2849848
-  },
-  {
-    "name": "Avamere at Three Fountains",
-    "city": "Medford",
-    "state": "OR",
-    "addr": "835 Crater Lake Ave, Medford, OR 97504",
-    "type": "snf",
-    "lat": 42.3373912,
-    "lng": -122.8612921
-  },
-  {
-    "name": "Avamere Court at Keizer",
-    "city": "Keizer",
-    "state": "OR",
-    "addr": "4880 River Rd N, Keizer, OR 97303",
-    "type": "snf",
-    "lat": 44.9943904,
-    "lng": -123.0261048
-  },
-  {
-    "name": "Avamere Crestview of Portland",
-    "city": "Portland",
-    "state": "OR",
-    "addr": "6530 SW 30th Ave, Portland, OR 97005",
-    "type": "snf",
-    "lat": 45.4766101,
-    "lng": -122.7070208
-  },
-  {
-    "name": "Avamere Health Services of Rogue Valley",
-    "city": "Medford",
-    "state": "OR",
-    "addr": "625 Stevens St, Medford, OR 97504",
-    "type": "snf",
-    "lat": 42.3351823,
-    "lng": -122.8668688
-  },
-  {
-    "name": "Avamere Rehab of Clackamas",
-    "city": "Gladstone",
-    "state": "OR",
-    "addr": "220 E Hereford St, Gladstone, OR 97015",
-    "type": "snf",
-    "lat": 45.3840466,
-    "lng": -122.5948556
-  },
-  {
-    "name": "Avamere Rehab of Coos Bay",
-    "city": "Coos Bay",
-    "state": "OR",
-    "addr": "2625 Koos Bay Blvd, Coos Bay, OR 97420",
-    "type": "snf",
-    "lat": 43.3860413,
-    "lng": -124.2246738
-  },
-  {
-    "name": "Avamere Rehab of Eugene",
-    "city": "Eugene",
-    "state": "OR",
-    "addr": "2360 Chambers St, Eugene, OR 97405",
-    "type": "snf",
-    "lat": 44.0336279,
-    "lng": -123.1186723
-  },
-  {
-    "name": "Avamere Rehab of Hillsboro",
-    "city": "Hillsboro",
-    "state": "OR",
-    "addr": "650 SE Oak St, Hillsboro, OR 97123",
-    "type": "snf",
-    "lat": 45.5186788,
-    "lng": -122.9799103
-  },
-  {
-    "name": "Avamere Rehab of Junction City",
-    "city": "Junction City",
-    "state": "OR",
-    "addr": "530 Birch St, Junction City, OR 97448",
-    "type": "snf",
-    "lat": 44.2189319,
-    "lng": -123.196064
-  },
-  {
-    "name": "Avamere Rehab of King City",
-    "city": "Tigard",
-    "state": "OR",
-    "addr": "16485 SW Pacific Hwy, Tigard, OR 97224",
-    "type": "snf",
-    "lat": 45.4005174,
-    "lng": -122.7996605
-  },
-  {
-    "name": "Avamere Rehab of Lebanon",
-    "city": "Lebanon",
-    "state": "OR",
-    "addr": "875 Crowfoot Rd, Lebanon, OR 97355",
-    "type": "snf",
-    "lat": 44.5077845,
-    "lng": -122.9000466
-  },
-  {
-    "name": "Avamere Rehab of Newport",
-    "city": "Newport",
-    "state": "OR",
-    "addr": "835 SW 11th St, Newport, OR 97365",
-    "type": "snf",
-    "lat": 44.6277328,
-    "lng": -124.0582788
-  },
-  {
-    "name": "Avamere Rehab of Oregon City",
-    "city": "Oregon City",
-    "state": "OR",
-    "addr": "1400 Division St, Oregon City, OR 97045",
-    "type": "snf",
-    "lat": 45.3553077,
-    "lng": -122.5866445
-  },
-  {
-    "name": "Avamere Riverpark of Eugene",
-    "city": "Eugene",
-    "state": "OR",
-    "addr": "1500 Village Dr, Eugene, OR 97401",
-    "type": "snf",
-    "lat": 44.0505054,
-    "lng": -123.0950506
-  },
-  {
-    "name": "Avamere Transitional Care at Sunnyside",
-    "city": "Salem",
-    "state": "OR",
-    "addr": "4515 Sunnyside Rd SE, Salem, OR 97302",
-    "type": "snf",
-    "lat": 44.889606,
-    "lng": -123.0368974
-  },
-  {
-    "name": "Avamere at Pacific Ridge",
-    "city": "Tacoma",
-    "state": "WA",
-    "addr": "915 Pacific Ave, Tacoma, WA 98402",
-    "type": "snf",
-    "lat": 47.2548611,
-    "lng": -122.4386668
-  },
-  {
-    "name": "Avamere Olympic Rehab of Sequim",
-    "city": "Sequim",
-    "state": "WA",
-    "addr": "503 N 5th Ave, Sequim, WA 98382",
-    "type": "snf",
-    "lat": 48.0834622,
-    "lng": -123.1132644
-  },
-  {
-    "name": "Avamere Rehab of Cascade Park",
-    "city": "Vancouver",
-    "state": "WA",
-    "addr": "220 NE 136th Ave, Vancouver, WA 98684",
-    "type": "snf",
-    "lat": 45.6361223,
-    "lng": -122.5325789
-  },
-  {
-    "name": "Avamere Transitional Care of Puget Sound",
-    "city": "Tacoma",
-    "state": "WA",
-    "addr": "4611 S 8th St, Tacoma, WA 98405",
-    "type": "snf",
-    "lat": 47.2534898,
-    "lng": -122.4985559
-  }
+    {
+        "name": "Chateau Gardens",
+        "city": "Springfield",
+        "state": "OR",
+        "addr": "2669 S Cloverleaf Loop, Springfield, OR 97477",
+        "type": "alf",
+        "lat": 44.0724378,
+        "lng": -123.0365492
+    },
+    {
+        "name": "Fox Hollow",
+        "city": "Eugene",
+        "state": "OR",
+        "addr": "5320 Fox Hollow Road, Eugene, OR 97405",
+        "type": "alf",
+        "lat": 43.9963161,
+        "lng": -123.0887409
+    },
+    {
+        "name": "The Bridge Assisted Living",
+        "city": "Grants Pass",
+        "state": "OR",
+        "addr": "201 SW Bridge Street, Grants Pass, OR 97526",
+        "type": "alf",
+        "lat": 42.434648,
+        "lng": -123.331298
+    },
+    {
+        "name": "Countryside Living Memory Care",
+        "city": "Canby",
+        "state": "OR",
+        "addr": "390 NW 2nd Avenue, Canby, OR 97013",
+        "type": "mc",
+        "lat": 45.2625473,
+        "lng": -122.6968975
+    },
+    {
+        "name": "Countryside Living Memory Care South",
+        "city": "Canby",
+        "state": "OR",
+        "addr": "406 NW 2nd Avenue, Canby, OR 97013",
+        "type": "mc",
+        "lat": 45.2623427,
+        "lng": -122.6974572
+    },
+    {
+        "name": "Holly Residential Care Center",
+        "city": "Eugene",
+        "state": "OR",
+        "addr": "1075 Irvington Drive, Eugene, OR 97404",
+        "type": "snc",
+        "lat": 44.1157887,
+        "lng": -123.153654
+    },
+    {
+        "name": "Kelly Gardens Residential Care",
+        "city": "Gresham",
+        "state": "OR",
+        "addr": "813 NE Kelly Avenue, Gresham, OR 97030",
+        "type": "snc",
+        "lat": 45.5031471,
+        "lng": -122.4265958
+    },
+    {
+        "name": "Oak Lane Residential Care Facility",
+        "city": "Grants Pass",
+        "state": "OR",
+        "addr": "727 SW Rogue River Ave, Grants Pass, OR 97526",
+        "type": "alf",
+        "lat": 42.4332788,
+        "lng": -123.3355621
+    },
+    {
+        "name": "Orchards Assisted Living",
+        "city": "Medford",
+        "state": "OR",
+        "addr": "1018 Royal Court, Medford, OR 97504",
+        "type": "alf",
+        "lat": 42.3396492,
+        "lng": -122.8672386
+    },
+    {
+        "name": "Santiam Gardens Residential Care",
+        "city": "Salem",
+        "state": "OR",
+        "addr": "1625 Center Street NE, Salem, OR 97301",
+        "type": "snc",
+        "lat": 44.9397121,
+        "lng": -123.0196237
+    },
+    {
+        "name": "Stephanie Gardens Residential Care",
+        "city": "Portland",
+        "state": "OR",
+        "addr": "19751 SE Stark Street, Portland, OR 97233",
+        "type": "alf",
+        "lat": 45.519151,
+        "lng": -122.4994729
+    },
+    {
+        "name": "Pacific View Memory Care",
+        "city": "Bandon",
+        "state": "OR",
+        "addr": "1000 Sixth Avenue W, Bandon, OR 97411",
+        "type": "mc",
+        "lat": 43.1195634,
+        "lng": -124.4094086
+    },
+    {
+        "name": "Pacific View Senior Living",
+        "city": "Bandon",
+        "state": "OR",
+        "addr": "1000 Sixth Avenue W, Bandon, OR 97411",
+        "type": "alf",
+        "lat": 43.1195634,
+        "lng": -124.4094086
+    },
+    {
+        "name": "Rosewood Memory Care",
+        "city": "Hillsboro",
+        "state": "OR",
+        "addr": "2550 SE Century Blvd, Hillsboro, OR 97123",
+        "type": "mc",
+        "lat": 45.501218,
+        "lng": -122.9164331
+    },
+    {
+        "name": "Sunnyside Meadows Memory Care",
+        "city": "Happy Valley",
+        "state": "OR",
+        "addr": "2500 Willamette Falls Dr #207, Happy Valley, OR 97086",
+        "type": "mc",
+        "lat": 45.428679,
+        "lng": -122.497174
+    },
+    {
+        "name": "Aspen Valley Senior Living",
+        "city": "Boise",
+        "state": "ID",
+        "addr": "4455 E Warm Springs Avenue, Boise, ID 83716",
+        "type": "alf",
+        "lat": 43.568921,
+        "lng": -116.1281161
+    },
+    {
+        "name": "Cedar Crossings Care",
+        "city": "Portland",
+        "state": "OR",
+        "addr": "6003 Southeast 136th Ave, Portland, OR 97236",
+        "type": "snf",
+        "lat": 45.4790217,
+        "lng": -122.5246809
+    },
+    {
+        "name": "Gresham Post Acute Care and Rehab",
+        "city": "Gresham",
+        "state": "OR",
+        "addr": "405 NE 5th Street, Gresham, OR 97030",
+        "type": "snf",
+        "lat": 45.5017864,
+        "lng": -122.4270688
+    },
+    {
+        "name": "Belmont Care and Rehab",
+        "city": "Portland",
+        "state": "OR",
+        "addr": "812 Southeast 48th Ave, Portland, OR 97215",
+        "type": "snf",
+        "lat": 45.5168859,
+        "lng": -122.6131345
+    },
+    {
+        "name": "Gracelen Care Center",
+        "city": "Portland",
+        "state": "OR",
+        "addr": "10948 SE Boise Street, Portland, OR 97266",
+        "type": "snf",
+        "lat": 45.491162,
+        "lng": -122.5496537
+    },
+    {
+        "name": "Myrtle Point Rehab and Care",
+        "city": "Myrtle Point",
+        "state": "OR",
+        "addr": "637 Ash Street, Myrtle Point, OR 97258",
+        "type": "snf",
+        "lat": 43.0657198,
+        "lng": -124.1403896
+    },
+    {
+        "name": "Rose City Nursing and Rehab",
+        "city": "Portland",
+        "state": "OR",
+        "addr": "11325 NE Weidler Street, Portland, OR 97220",
+        "type": "snf",
+        "lat": 45.533717,
+        "lng": -122.5461892
+    },
+    {
+        "name": "Bridgecreek Memory Care",
+        "city": "Lebanon",
+        "state": "OR",
+        "addr": "1401 S 12th Street, Lebanon, OR 97355",
+        "type": "mc",
+        "lat": 44.5174391,
+        "lng": -122.9214584
+    },
+    {
+        "name": "The Amber",
+        "city": "Clatskanie",
+        "state": "OR",
+        "addr": "365 Bel Air Drive, Clatskanie, OR 97016",
+        "type": "alf",
+        "lat": 46.1046022,
+        "lng": -123.2080765
+    },
+    {
+        "name": "Valley View",
+        "city": "John Day",
+        "state": "OR",
+        "addr": "112 Northwest Valley View Drive, John Day, OR 97845",
+        "type": "alf",
+        "lat": 44.4158398,
+        "lng": -118.953431
+    },
+    {
+        "name": "Brighten Court",
+        "city": "Spokane Valley",
+        "state": "WA",
+        "addr": "1308 N Vercler Road, Spokane Valley, WA 99216",
+        "type": "alf",
+        "lat": 47.6685895,
+        "lng": -117.2341677
+    },
+    {
+        "name": "Woodway Senior Living",
+        "city": "Bellingham",
+        "state": "WA",
+        "addr": "1712 E Maplewood Ave, Bellingham, WA 98225",
+        "type": "alf",
+        "lat": 48.7725206,
+        "lng": -122.4932319
+    },
+    {
+        "name": "Timberhill Place",
+        "city": "Corvallis",
+        "state": "OR",
+        "addr": "989 NW Spruce Ave, Corvallis, OR 97330",
+        "type": "alf",
+        "lat": 44.5877283,
+        "lng": -123.2617804
+    },
+    {
+        "name": "Trio Home Health",
+        "city": "Encinitas",
+        "state": "CA",
+        "addr": "1991 Village Park Way #2I, Encinitas, CA 92024",
+        "type": "hospice",
+        "lat": 33.0431846,
+        "lng": -117.2849848
+    },
+    {
+        "name": "Avamere at Three Fountains",
+        "city": "Medford",
+        "state": "OR",
+        "addr": "835 Crater Lake Ave, Medford, OR 97504",
+        "type": "snf",
+        "lat": 42.3373912,
+        "lng": -122.8612921
+    },
+    {
+        "name": "Avamere Court at Keizer",
+        "city": "Keizer",
+        "state": "OR",
+        "addr": "4880 River Rd N, Keizer, OR 97303",
+        "type": "snf",
+        "lat": 44.9943904,
+        "lng": -123.0261048
+    },
+    {
+        "name": "Avamere Crestview of Portland",
+        "city": "Portland",
+        "state": "OR",
+        "addr": "6530 SW 30th Ave, Portland, OR 97005",
+        "type": "snf",
+        "lat": 45.4766101,
+        "lng": -122.7070208
+    },
+    {
+        "name": "Avamere Health Services of Rogue Valley",
+        "city": "Medford",
+        "state": "OR",
+        "addr": "625 Stevens St, Medford, OR 97504",
+        "type": "snf",
+        "lat": 42.3351823,
+        "lng": -122.8668688
+    },
+    {
+        "name": "Avamere Rehab of Clackamas",
+        "city": "Gladstone",
+        "state": "OR",
+        "addr": "220 E Hereford St, Gladstone, OR 97015",
+        "type": "snf",
+        "lat": 45.3840466,
+        "lng": -122.5948556
+    },
+    {
+        "name": "Avamere Rehab of Coos Bay",
+        "city": "Coos Bay",
+        "state": "OR",
+        "addr": "2625 Koos Bay Blvd, Coos Bay, OR 97420",
+        "type": "snf",
+        "lat": 43.3860413,
+        "lng": -124.2246738
+    },
+    {
+        "name": "Avamere Rehab of Eugene",
+        "city": "Eugene",
+        "state": "OR",
+        "addr": "2360 Chambers St, Eugene, OR 97405",
+        "type": "snf",
+        "lat": 44.0336279,
+        "lng": -123.1186723
+    },
+    {
+        "name": "Avamere Rehab of Hillsboro",
+        "city": "Hillsboro",
+        "state": "OR",
+        "addr": "650 SE Oak St, Hillsboro, OR 97123",
+        "type": "snf",
+        "lat": 45.5186788,
+        "lng": -122.9799103
+    },
+    {
+        "name": "Avamere Rehab of Junction City",
+        "city": "Junction City",
+        "state": "OR",
+        "addr": "530 Birch St, Junction City, OR 97448",
+        "type": "snf",
+        "lat": 44.2189319,
+        "lng": -123.196064
+    },
+    {
+        "name": "Avamere Rehab of King City",
+        "city": "Tigard",
+        "state": "OR",
+        "addr": "16485 SW Pacific Hwy, Tigard, OR 97224",
+        "type": "snf",
+        "lat": 45.4005174,
+        "lng": -122.7996605
+    },
+    {
+        "name": "Avamere Rehab of Lebanon",
+        "city": "Lebanon",
+        "state": "OR",
+        "addr": "875 Crowfoot Rd, Lebanon, OR 97355",
+        "type": "snf",
+        "lat": 44.5077845,
+        "lng": -122.9000466
+    },
+    {
+        "name": "Avamere Rehab of Newport",
+        "city": "Newport",
+        "state": "OR",
+        "addr": "835 SW 11th St, Newport, OR 97365",
+        "type": "snf",
+        "lat": 44.6277328,
+        "lng": -124.0582788
+    },
+    {
+        "name": "Avamere Rehab of Oregon City",
+        "city": "Oregon City",
+        "state": "OR",
+        "addr": "1400 Division St, Oregon City, OR 97045",
+        "type": "snf",
+        "lat": 45.3553077,
+        "lng": -122.5866445
+    },
+    {
+        "name": "Avamere Riverpark of Eugene",
+        "city": "Eugene",
+        "state": "OR",
+        "addr": "1500 Village Dr, Eugene, OR 97401",
+        "type": "snf",
+        "lat": 44.0505054,
+        "lng": -123.0950506
+    },
+    {
+        "name": "Avamere Transitional Care at Sunnyside",
+        "city": "Salem",
+        "state": "OR",
+        "addr": "4515 Sunnyside Rd SE, Salem, OR 97302",
+        "type": "snf",
+        "lat": 44.889606,
+        "lng": -123.0368974
+    },
+    {
+        "name": "Avamere at Pacific Ridge",
+        "city": "Tacoma",
+        "state": "WA",
+        "addr": "915 Pacific Ave, Tacoma, WA 98402",
+        "type": "snf",
+        "lat": 47.2548611,
+        "lng": -122.4386668
+    },
+    {
+        "name": "Avamere Olympic Rehab of Sequim",
+        "city": "Sequim",
+        "state": "WA",
+        "addr": "503 N 5th Ave, Sequim, WA 98382",
+        "type": "snf",
+        "lat": 48.0834622,
+        "lng": -123.1132644
+    },
+    {
+        "name": "Avamere Rehab of Cascade Park",
+        "city": "Vancouver",
+        "state": "WA",
+        "addr": "220 NE 136th Ave, Vancouver, WA 98684",
+        "type": "snf",
+        "lat": 45.6361223,
+        "lng": -122.5325789
+    },
+    {
+        "name": "Avamere Transitional Care of Puget Sound",
+        "city": "Tacoma",
+        "state": "WA",
+        "addr": "4611 S 8th St, Tacoma, WA 98405",
+        "type": "snf",
+        "lat": 47.2534898,
+        "lng": -122.4985559
+    }
 ]
